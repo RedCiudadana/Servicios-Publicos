@@ -113,7 +113,33 @@
   <div class="w-100 bg-white">
     <div class="container py-5">
       <div class="row">
+        <div class="bg-white col-7">
+          <h1>Descripción</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit imperdiet, mus malesuada iaculis fringilla enim varius habitasse, eget suspendisse gravida justo quam conubia parturient. <br><br>Parturient integer netus tincidunt malesuada convallis auctor senectus tristique pulvinar etiam aliquet ligula, nullam dapibus aptent morbi magna maecenas inceptos imperdiet neque vivamus himenaeos. <br><br>Nisi platea nec aptent in quam fermentum primis eros, porttitor netus sodales mattis suspendisse sed parturient non, auctor ridiculus augue tincidunt diam conubia senectus.</p>
+          <br>
+
+          <!--Acordiones de informacion-->
+          <div class="accordion-container">
+        <a href="#" class="accordion-titulo">Lorem ipsum<span class="toggle-icon"></span></a>
+        <div class="accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+ 
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>  
+        </div>
         
+        <div class="accordion-container">
+            <a href="#" class="accordion-titulo">Lorem ipsum<span class="toggle-icon"></span></a>
+            <div class="accordion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+     
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+        
+        <div class="bg-white col-5">
+          
+        </div>
       </div>
     </div>
   </div>
@@ -291,6 +317,27 @@
         loop: true
       });
     </script>
+
+    <!--  CUADROS DESPLEGABLES-->
+    <script>
+      $(function(){
+        $(".accordion-titulo").click(function(e){      
+          e.preventDefault();
+      
+          var contenido=$(this).next(".accordion-content");
+
+          if(contenido.css("display")=="none"){ //open    
+            contenido.slideDown(250);     
+            $(this).addClass("open");
+          }
+          else{ //close   
+            contenido.slideUp(250);
+            $(this).removeClass("open");  
+          }
+        });
+      });
+    </script>
+    
 
   </body>
 </html>
