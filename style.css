@@ -16925,7 +16925,7 @@ label.checkbox { padding-left: 20px; }
  * Configurable Styles *
  ***********************/
 .flexsearch {
-  padding: 0 200px 0 200px; /* Padding for other horizontal elements */
+  padding: 0 10vw 0 10vw; /* Padding for other horizontal elements */
 }
 
 .flexsearch--input {
