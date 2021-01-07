@@ -101,34 +101,34 @@
 }
 
 @font-face{
-	font-family: "Lato-Black";
+	font-family: "Metropolis-Black";
 
-	src: url(ELEMENTOS/FUENTE/Lato-Black.ttf);
+	src: url(ELEMENTOS/FONT/Metropolis-Black.otf);
 }
 @font-face{
-	font-family: "Lato-Bold";
+	font-family: "Metropolis-Bold";
 
-	src: url(ELEMENTOS/FUENTE/Lato-Bold.ttf);
+	src: url(ELEMENTOS/FONT/Metropolis-Bold.otf);
 }
 @font-face{
-	font-family: "Lato-Heavy";
+	font-family: "Metropolis-ExtraBold";
 
-	src: url(ELEMENTOS/FUENTE/Lato-Heavy.ttf);
+	src: url(ELEMENTOS/FONT/Metropolis-ExtraBold.otf);
 }
 @font-face{
-	font-family: "Lato-Medium";
+	font-family: "Metropolis-Light";
 
-	src: url(ELEMENTOS/FUENTE/Lato-Medium.ttf);
+	src: url(ELEMENTOS/FONT/Metropolis-Light.otf);
 }
 @font-face{
-	font-family: "Lato-Regular";
+	font-family: "Metropolis-Medium";
 
-	src: url(ELEMENTOS/FUENTE/Lato-Regular.ttf);
+	src: url(ELEMENTOS/FONT/Metropolis-Medium.otf);
 }
 @font-face{
-	font-family: "Lato-Semibold";
+	font-family: "Metropolis-Regular";
 
-	src: url(ELEMENTOS/FUENTE/Lato-Semibold.ttf);
+	src: url(ELEMENTOS/FONT/Lato-Regular.otf);
 }
 
 /* ----------------------------------------------------------------
@@ -183,7 +183,7 @@ body #pB{
 body,p,a {
 	line-height: 1.5;
 	color: #555;
-	font-family: 'Lato-Regular', sans-serif;
+	font-family: 'Metropolis-Regular';
 }
 
 
@@ -219,7 +219,6 @@ h5,
 	font-weight: 600;
 	line-height: 1.5;
 	margin: 0 0 30px 0;
-	font-family: 'Lato-Black'!important, sans-serif;
 }
 
 
@@ -228,20 +227,27 @@ h4{
 	font-weight: 600;
 	line-height: 1.5;
 	margin: 0 0 4px 0;
-	font-family: 'Lato-Bold'!important, sans-serif;
+	font-family: 'Metropolis-Bold'!important;
 }
 
-h5{ margin-bottom: 20px; }
+h5{ margin-bottom: 20px; 
+	font-family: 'Metropolis-Medium'!important;}
 
-h1 { font-size: 36px; 
+h1 { font-size: 36px;
+	font-family: 'Metropolis-Bold'!important; 
 	}
 
 h2 { 
 	font-size: 35px; 
+	font-family: 'Metropolis-Bold'!important;
 	}
 
 h4,h6 { 
 	text-align: center;
+}
+
+h3{
+	font-family: 'Metropolis-Medium'!important;
 }
 
 h1,h2,h3,h4,h5,h6,p{
