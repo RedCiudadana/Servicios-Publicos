@@ -1,7 +1,15 @@
+---
+pagination:
+  data: datos.json
+  size: 1
+  addAllPagesToCollections: true
+  alias: datos
+---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "src/_includes/baseToExtend.njk" %}
+
+
+{% block head %}
   <!-- Generated from the 11ty Netlify Jumpstart: https://github.com/5t3ph/11ty-netlify-jumpstart -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,8 +56,8 @@
   <meta property="article:author" content="https://www.facebook.com/Redciudadanagt/">
 
 <!--HEADER-->
-</head>
-<body>
+{% endblock %}
+{% block content %}
 
 
 	<div class="w-100" style="padding: 0 1rem 0 1rem; background-color: #02b08f">
@@ -62,8 +70,8 @@
         <div class="col-12 mb-2 col-md-3 text-center px-md-4">
           <a href="https://www.facebook.com/Redciudadanagt" class="nav-link-social text-white" target="_blank"><i class="fa fa-facebook" aria-hidden="true" style="padding: 1.2rem 1rem 0 0"></i></a>              
           <a href="https://twitter.com/RedxGuate" class="nav-link-social text-white" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="padding: 1.2rem 1rem 0 0"></i></a>
-          <a href="https://www.instagram.com/RedxGuate" class="nav-link-social text-white" target="_blank"><i class="fa fa-instagram" aria-hidden="true" style="padding: 1.2rem 1rem 0 0"></i></a>
-          <a href="https://www.youtube.com/channel/UCQwc62j7beStZYFzwPxBEQg" class="nav-link-social text-white" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true" style="padding: 1.2rem 1rem 0 0"></i></a>
+          <a href="https://twitter.com/RedxGuate" class="nav-link-social text-white" target="_blank"><i class="fa fa-instagram" aria-hidden="true" style="padding: 1.2rem 1rem 0 0"></i></a>
+          <a href="https://twitter.com/RedxGuate" class="nav-link-social text-white" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true" style="padding: 1.2rem 1rem 0 0"></i></a>
         </div>
       </div>
     </div>
@@ -105,13 +113,13 @@
           <div class="d-flex">
             <a  href="index.html" style="color: #03324e!important;text-decoration: underline!important;"> Inicio</a>
             <p>&nbsp / &nbsp</p>
-            <a href="perfil1.html" style="color: #03324e!important;text-decoration: underline!important;">Perfil 1</a>
+            <a href="perfil1.html" style="color: #03324e!important;text-decoration: underline!important;">{{datos.Nombre}}</a>
           </div>
           <br>
           
-          <h1>Titulo de Servicio público Salud</h1>
-          <h6 class="text-left">Información proporcionada por <a href="inst1.html" style="color: #03324e!important; text-decoration: underline!important;">Institución</a></h6>
-          <h6 class="text-left"><strong>Última actualización: 12/12/2020</strong></h6>
+          <h1>{{datos.Nombre}}</h1>
+          <h6 class="text-left">Información proporcionada por <a href="inst1.html" style="color: #03324e!important; text-decoration: underline!important;">{{datos.Unidad Ejecutora}}</a></h6>
+          <h6 class="text-left"><strong>Última actualización: 13/01/2021</strong></h6>
           <div class="linea"></div>
           <br>
           <div class="linea"></div>
@@ -144,7 +152,7 @@
               <br>
               <br>
               <br>
-              <a href="" class="btnAzulO" style="margin-left: 15%;">Ir al trámite en línea</a>
+              <a href="{{datos.Enlace}}" class="btnAzulO" style="margin-left: 15%;">Ir al trámite en línea</a>
               <br>
               <br>
               <br>
@@ -397,5 +405,4 @@
     </script>
     
 
-</body>
-</html>
+{% endblock %}
