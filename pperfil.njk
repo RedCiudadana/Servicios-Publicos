@@ -1,12 +1,12 @@
 ---
 pagination:
-  data: datos.json
+  data: datos
   size: 1
   addAllPagesToCollections: true
   alias: datos
 ---
 
-{% extends "src/base.njk" %}
+{% extends "base.njk" %}
 
 
 {% block head %}
@@ -30,7 +30,7 @@ pagination:
           <br>
           
           <h1>{{datos.Nombre}}</h1>
-          <h6 class="text-left">Información proporcionada por <a href="inst1.html" style="color: #03324e!important; text-decoration: underline!important;">{{datos.Unidad Ejecutora}}</a></h6>
+          <h6 class="text-left">Información proporcionada por <a href="inst1.html" style="color: #03324e!important; text-decoration: underline!important;">{{datos["Unidad Ejecutora"]}}</a></h6>
           <h6 class="text-left"><strong>Última actualización: 13/01/2021</strong></h6>
           <div class="linea"></div>
           <br>
