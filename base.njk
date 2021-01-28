@@ -4,13 +4,10 @@
   <!-- Generated from the 11ty Netlify Jumpstart: https://github.com/5t3ph/11ty-netlify-jumpstart -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
   <title>Servicios Web</title>
-  
 
   <link rel="icon" href="/assets/favicon.ico" />
-  <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/b1ba3b7eb1d40f6e641687f4d89ca7c7e69f94ff/assets/css/style.css'/>
-
 
   <link
     rel="alternate"
@@ -45,20 +42,14 @@
   <meta property="og:image:height" content="300" />
   <meta property="og:image:alt" content="PartidosPublicos - Red Ciudadana por Red Ciudadana" />
   <meta property="article:author" content="https://www.facebook.com/Redciudadanagt/">
-    
-  <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/5469202ecf9914079c065869413b647e2e1f5d41/assets/css/retainable.css'/>
 
-  <link rel="stylesheet" href="../../css/bootstrap.css" type="text/css" />
-  <link rel="stylesheet" href="../../style.css" type="text/css" />
+  <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="/style.css" type="text/css" />
 
-  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
-
-    {% block head %}
-    {% endblock %}
-
-
+  {% block head %}
+  {% endblock %}
 </head>
 <body>
 
@@ -82,8 +73,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="../../ELEMENTOS//LOGOTIPO-GOBIERNO-DIGITAL.png" alt="Bandera de Guatemala" height="55px" width="auto">
+        <a class="navbar-brand" href="/index.html">
+            <img src="/ELEMENTOS/LOGOTIPO-GOBIERNO-DIGITAL.png" alt="Bandera de Guatemala" height="55px" width="auto">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -186,93 +177,6 @@
       </div> 
 
     {% block body_javascripts %}
-      <!--Script SLider-->
-    <script>
-      jQuery(document).ready( function(){
-
-        $('input[type="file"]').change(function(e){
-          var fileName = e.target.files[0].name;
-          $('.custom-file-label').html(fileName);
-        });
-
-        tinymce.init({
-          selector: '#post-message',
-          menubar: false,
-          setup: function(editor) {
-            editor.on('change', function(e) {
-              editor.save();
-            });
-          }
-        });
-
-        $(function(){
-            if(window.location.hash) {
-                var hash = window.location.hash;
-                $(hash).modal('toggle');
-            }
-        });
-      });
-    </script>
-    <script>
-      var mySwiper = new Swiper('.swiper-container', {
-        navigation: {
-          nextEl: '.slider-arrow-right',
-          prevEl: '.slider-arrow-left',
-        },
-        loop: true
-      });
-    </script>
-
-    <!--Script Google Analytics-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129113306-2"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-XXXXXXXX');
-    </script>
-
-    <script src='https://d33wubrfki0l68.cloudfront.net/js/f3dc40317174b11b36db3411876565ef4302fdb7/assets/js/retainable.js'></script>
-    <!--Only 5.7kb GZipped. You may want to bundle this with your application code. -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
-    <script>
-      (function(window, document) {
-      "use strict";
-
-      const search = e => {
-        const results = window.searchIndex.search(e.target.value);
-
-        const ol = document.getElementById("searchResults");
-        const searchResultsContainer = document.getElementById("searchResultsContainer");
-        ol.innerHTML = "";
-        searchResultsContainer.style.position = 'none';
-        if (results && results.length > 0) {
-          searchResultsContainer.style.position = 'absolute';
-          results.map(r => {
-            const { id, departamento, municipio } = r.doc;
-
-            // this is where you'll go wild with your own HTML injection.
-            const li = document.createElement("li");
-            ol.appendChild(li);
-
-            const a = document.createElement("a");
-            a.setAttribute("href", id);
-            a.textContent = `${departamento}, ${municipio}`;
-            li.appendChild(a);
-          });
-        }
-      };
-
-      fetch("/search-index.json").then(response =>
-        response.json().then(rawIndex => {
-          window.searchIndex = elasticlunr.Index.load(rawIndex);
-          document.getElementById("searchField").addEventListener("input", search);
-        })
-      );
-    })(window, document);
-    </script>
-
     {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -1,0 +1,116 @@
+{% extends "base.njk" %}
+
+{% block head %}{% endblock %}
+
+{% block content %}
+  <!--Buscador-->
+  <div class="w-100" style="background-color: #03324e">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 py-2" style="justify-content: center;">
+          <h1 style="color: #fff!important" class="text-center">Encuentra Servicios y Beneficios del Estado</h1>
+          <br>
+          <br>
+          <div class="col-md-12" style="justify-content: center;">
+            <div class="flexsearch">
+              <div class="flexsearch--wrapper">
+                <form class="flexsearch--form" action="resultados.html" method="post">
+                  <div class="flexsearch--input-wrapper">
+                    <input class="flexsearch--input" type="search" placeholder="Buscar">
+                  </div>
+                  <input class="flexsearch--submit" type="submit" value="&#10140;"/>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100 bg-white">
+    <div class="container py-5">
+      <div class="row row-eq-height">
+        {% for item in collections.categoria %}
+          <div class="col-12 col-md-4 col-lg-3 p-2">
+            <div class="w-100 h-100 border rounded row m-0">
+              <div class="col-12 col-lg-4 p-2 pr-lg-0 m-0 d-flex">
+                <img class="img-fluid w-100 my-auto" src="/ELEMENTOS/SERVICIOS/GD-02.jpg">
+              </div>
+              <div class="col-12 col-lg-8 p-4 pl-lg-0 text-center">
+                <a href="{{item.url}}" class="h-100 d-flex">
+                  <h4 class="align-middle my-auto w-100">{{item.data.categoria}}</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="w-100 py-5" style="background-color: #e8edf1; display: none;">
+      <div class="container py-5" style="padding-bottom: 0.2rem!important;">
+        <div class="row">
+
+          <div class="col-12 mb-2">
+            <h1 >
+            Trámites
+          </h1>
+            <br>
+          </div>
+
+          <div class="col-12 col-lg-4 py-1" style="padding-left: 15px!important; padding-right: 15px!important">
+            <div class="bg-white w-100 border" style="border-radius: 10px">
+              <div class="w-100 p-3">
+                <h3 class="text-left">Lorem Ipsum</h3>
+                <br>
+                <h4 class="txtVerde">Lorem Ipsum dolor sit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit senectus ultricies rutrum, lacus dictumst placerat felis sodales primis diam faucibus phasellus.</p>
+                <br>
+                <h4 class="txtVerde">Lorem Ipsum dolor sit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit senectus ultricies rutrum, lacus dictumst placerat felis sodales primis diam faucibus phasellus.</p>
+                <br>
+                <h4 class="txtVerde">Lorem Ipsum dolor sit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit senectus ultricies rutrum, lacus dictumst placerat felis sodales primis diam faucibus phasellus.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4 py-1" style="padding-left: 15px!important; padding-right: 15px!important">
+            <div class="bg-white w-100 border" style="border-radius: 10px">
+              <div class="w-100 p-3">
+                <h3 class="text-left">Lorem Ipsum</h3>
+                <br>
+                <h4 class="txtVerde">Lorem Ipsum dolor sit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit senectus ultricies rutrum, lacus dictumst placerat felis sodales primis diam faucibus phasellus.</p>
+                <br>
+                <h4 class="txtVerde">Lorem Ipsum dolor sit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit senectus ultricies rutrum, lacus dictumst placerat felis sodales primis diam faucibus phasellus.</p>
+                <br>
+                <h4 class="txtVerde">Lorem Ipsum dolor sit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit senectus ultricies rutrum, lacus dictumst placerat felis sodales primis diam faucibus phasellus.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4 py-1" style="padding-left: 15px!important; padding-right: 15px!important">
+            <div class="bg-white w-100 border" style="border-radius: 10px">
+              <div class="w-100 p-3">
+                <h3 class="text-left">Lorem Ipsum</h3>
+                <br>
+                <h4 class="txtVerde">Lorem Ipsum dolor sit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit senectus ultricies rutrum, lacus dictumst placerat felis sodales primis diam faucibus phasellus.</p>
+                <br>
+                <h4 class="txtVerde">Lorem Ipsum dolor sit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit senectus ultricies rutrum, lacus dictumst placerat felis sodales primis diam faucibus phasellus.</p>
+                <br>
+                <h4 class="txtVerde">Lorem Ipsum dolor sit</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit senectus ultricies rutrum, lacus dictumst placerat felis sodales primis diam faucibus phasellus.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  {% endblock %}

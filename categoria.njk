@@ -1,0 +1,70 @@
+---
+pagination:
+  data: categorias
+  size: 1
+  alias: categoria
+  addAllPagesToCollections: true
+permalink: "categorias/{{categoria | slug}}/index.html"
+tags:
+  - categoria
+---
+{% extends "base.njk" %}
+
+{% block head %}{% endblock %}
+
+{% block content %}
+  <!-- BUSCADOR-->
+  <div class="w-100" style="background-color: #03324e">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 py-2" style="justify-content: center;">
+          <h1 style="color: #fff!important" class="text-center">{{categoria}}</h1>
+          <br>
+          <br>
+
+          <div class="col-md-12" style="justify-content: center; display: none;">
+            <div class="flexsearch">
+              <div class="flexsearch--wrapper">
+                <form class="flexsearch--form" action="#" method="post">
+                  <div class="flexsearch--input-wrapper">
+                    <input class="flexsearch--input" type="search" placeholder="Buscar">
+                  </div>
+                  <input class="flexsearch--submit" type="submit" value="&#10140;"/>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--CONTENIDO-->
+  <div class="w-100 bg-white">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 col-lg-7">
+
+          {% for item in collections[categoria] %}
+            <div class="col-12 border">
+              <br>
+              <div>
+                <a href="" style="font-size: 25px; color: blue;text-decoration: underline!important;">
+                  {{item.data.servicio.pagina_web}}
+                </a>
+                <h3 style="color: #ccc; font-size: 20px"></h3>
+                <p style="font-size: 15px">
+                  {{item.data.servicio.nombre}}
+                </p>
+              </div>
+              <br>
+            </div>
+            <br>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

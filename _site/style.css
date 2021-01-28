@@ -128,7 +128,7 @@
 @font-face{
 	font-family: "Metropolis-Regular";
 
-	src: url(ELEMENTOS/FONT/Lato-Regular.otf);
+	src: url(ELEMENTOS/FONT/Lato-Regular.ttf);
 }
 
 /* ----------------------------------------------------------------
@@ -194,9 +194,9 @@ a {
 
 a:hover { color: #ccc; }
 
-a img { border: none; height: 60px;}
+/* a img { border: none; height: 60px;}
 
-img { max-width: 100%; }
+img { max-width: 100%; } */
 
 iframe {
 	width: 100%;
