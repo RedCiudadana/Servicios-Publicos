@@ -34,12 +34,12 @@
         {% for item in collections.categoria %}
           <div class="col-12 col-md-4 col-lg-3 p-2">
             <div class="w-100 h-100 border rounded row m-0">
-              <div class="col-12 col-lg-4 p-2 pr-lg-0 m-0 d-flex">
-                <img class="img-fluid w-100 my-auto" src="/ELEMENTOS/SERVICIOS/GD-02.jpg">
+              <div class="col-12 col-lg-4 p-5 p-lg-2 pr-lg-0 m-0 d-flex">
+                <img class="img-fluid w-100 my-auto" src="{{item.data.categoria.img}}">
               </div>
               <div class="col-12 col-lg-8 p-4 pl-lg-0 text-center">
                 <a href="{{item.url}}" class="h-100 d-flex">
-                  <h4 class="align-middle my-auto w-100">{{item.data.categoria}}</h4>
+                  <h4 class="align-middle my-auto w-100">{{item.data.categoria.nombre}}</h4>
                 </a>
               </div>
             </div>

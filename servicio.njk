@@ -35,7 +35,7 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
           </div>
           <br>
 
-          <h1 class="break-word">{{servicio.pagina_web}}</h1>
+          <h1 class="break-word">{{servicio.enlace}}</h1>
           <small>
             Información proporcionada por: <br>
             {{servicio.unidad_ejecutora}}
@@ -45,14 +45,12 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
             Última actualización: <br>
             13/01/2021
           </small>
-          <div class="linea"></div>
           <br>
-          <div class="linea"></div>
-
+          <br>
           <h4 class="text-left">Descripción</h4>
           <p>{{servicio.nombre}}</p>
           <br>
-          <a target="_blank" href="{{servicio.pagina_web}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
+          <a target="_blank" href="{{servicio.enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
         </div>
 
         <div class="bg-white col-lg-5">

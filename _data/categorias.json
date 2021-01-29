@@ -1,9 +1,30 @@
 [
-    "1 Servicios públicos generales",
-    "3 Orden público y seguridad",
-    "4 Asuntos económicos",
-    "5 Protección del medio ambiente",
-    "6 Vivienda y servicios comunitarios",
-    "7 Salud",
-    "9 Educación"
+    {
+        "nombre": "1 Servicios públicos generales",
+        "img": "/ELEMENTOS/SERVICIOS/servicio_publicos_generales.jpg"
+    },
+    {
+        "nombre": "3 Orden público y seguridad",
+        "img": "/ELEMENTOS/SERVICIOS/orden_publico_seguridad.jpg"
+    },
+    {
+        "nombre": "4 Asuntos económicos",
+        "img": "/ELEMENTOS/SERVICIOS/asuntos_economicos.jpg"
+    },
+    {
+        "nombre": "5 Protección del medio ambiente",
+        "img": "/ELEMENTOS/SERVICIOS/proteccion_medio_ambiente.jpg"
+    },
+    {
+        "nombre": "6 Vivienda y servicios comunitarios",
+        "img": "/ELEMENTOS/SERVICIOS/vivienda_servicios_comunitarios.jpg"
+    },
+    {
+        "nombre": "7 Salud",
+        "img": "/ELEMENTOS/SERVICIOS/salud.jpg"
+    },
+    {
+        "nombre": "9 Educación",
+        "img": "/ELEMENTOS/SERVICIOS/educacion.jpg"
+    }
 ]
