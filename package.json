@@ -22,6 +22,7 @@
     "@11ty/eleventy": "^0.11.1"
   },
   "dependencies": {
+    "elasticlunr": "^0.9.5",
     "nunjucks": "^3.2.2"
   }
 }

@@ -1,3 +1,5 @@
+const searchFilter = require('./filters/searchFilter');
+
 const categorias = [
     "1 Servicios públicos generales",
     "3 Orden público y seguridad",
@@ -21,4 +23,6 @@ module.exports = function (eleventyConfig) {
             return collection;
         });
     });
+
+    eleventyConfig.addFilter("search", searchFilter);
 }
