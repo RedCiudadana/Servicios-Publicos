@@ -143,15 +143,17 @@
       "use strict";
 
       const search = e => {
+        //console.log(e);
         const results = window.searchIndex.search(e.target.value);
-
+        //console.log(e.target.value);
+        //console.log(results);
         const ol = document.getElementById("searchResults");
         const searchResultsContainer = document.getElementById("searchResultsContainer");
         ol.innerHTML = "";
         searchResultsContainer.style.position = 'none';
         if (results && results.length > 0) {
           searchResultsContainer.style.position = 'absolute';
-          results.map(r => {
+          results.forEach(r => {
             const { id, nombre, ministerios } = r.doc;
 
             // this is where you'll go wild with your own HTML injection.

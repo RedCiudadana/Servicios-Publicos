@@ -213,7 +213,7 @@ iframe {
 h1,
 h2,
 h3,
-h5,
+h5
 {
 	color: #444;
 	font-weight: 600;
@@ -5860,9 +5860,7 @@ body:not(.stretched) .slider-parallax .slider-inner { left: auto; }
 
 /* Swiper Slider
 -----------------------------------------------------------------*/
-$('.carousel').carousel({
-  interval: 2000
-})
+
 
 
 .swiper_wrapper {
@@ -17086,11 +17084,11 @@ input:-moz-placeholder {
 }
 
 .pad0l{
-	padding-left: : 0!important;
+	padding-left: 0!important;
 }
 
 .pad10l{
-	padding-left: : 10px!important;
+	padding-left: 10px!important;
 }
 
 .padT05{
@@ -17122,7 +17120,7 @@ input:-moz-placeholder {
 }
 
 .pad1515{
-	padding: 0 15px!important 0 15px!important;
+	padding: 0 15px!important;
 }
 
 .pad00010{
@@ -17141,9 +17139,6 @@ input:-moz-placeholder {
 	font-size: 30px!important
 }
 
-.tam2rem{
-
-}
 
 .tam5{
 	height: 5vw!important;
