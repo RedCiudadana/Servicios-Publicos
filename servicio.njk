@@ -15,6 +15,9 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
 
 {% block head %}
 
+<!--LINK DE REFERENCIA PARA RATING https://www.youtube.com/watch?v=KdO9P8FnVN4&t=0s-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 {% endblock %}
 
 {% block content %}
@@ -62,10 +65,9 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
 
               <h4>Puntea este servicio!</h4>
 
-              <div class="containerR">
+              <div id="containerR" class="containerR">
                 <div class="postR">
                   <div class="textR">Gracias por el Comentario!</div>
-                  <div class="edit">EDITAR</div>
                 </div>
                 <div class="star-widget">
                   <input type="radio" name="rate" id="rate-5">
@@ -78,19 +80,24 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
                   <label for="rate-2" class="fas fa-star"></label>
                   <input type="radio" name="rate" id="rate-1">
                   <label for="rate-1" class="fas fa-star"></label>
-                  <form action="#">
+                  
+                  <form action="#" onsubmit="return postToGoogle();return ocultar();">
                     <header></header>
                     <div class="textarea">
-                      <textarea cols="30" placeholder="Describe la puntuación.."></textarea>
+                      <textarea id="comentario" cols="30" placeholder="Describe la puntuación..."></textarea>
                     </div>
                     <div class="btn">
-                      <button type="submit">Comentar</button>
+                      <button type="submit" id="send" onclick="ocultar()">Comentar</button>
                     </div>
                   </form>
                 </div>
               </div>
                 
             </div>
+
+            <h3 id="success-msg" style="text-align: center !important; margin-top:190px !important; display:none; color:#fff"> Se registro su comentario</h3>
+
+
           </div>
         </div>
 
@@ -136,21 +143,63 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
 {% endblock %}
 
 {% block body_javascripts%}
+<script>
 
-  <script>
-    const btn = document.querySelector("button");
-    const post = document.querySelector(".postR");
-    const widget = document.querySelector(".star-widget");
-    const editBtn = document.querySelector(".edit");
-    btn.onclick = ()=>{
-      widget.style.display = "none";
-      post.style.display = "block";
-      editBtn.onclick = ()=>{
-        widget.style.display = "block";
-        post.style.display = "none";
-      }
-      return false;
+function ocultar(){
+  var x = document.getElementById("containerR");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
     }
-  </script>
+}
+
+function postToGoogle() {
+        var field1 = field1 = "{{servicio.nombre}}"
+        var field2 = ""
+        var field3 = $("#comentario").val();
+
+        if(field3 == ""){
+          alert('Por favor escribe un comentario');
+          document.getElementById("comentario").focus();
+          return false;
+        }
+
+        if(document.getElementById("rate-1").checked){
+          field2="1";
+        }
+        if(document.getElementById("rate-2").checked){
+          field2="2";
+        }
+        if(document.getElementById("rate-3").checked){
+          field2="3";
+        }
+        if(document.getElementById("rate-4").checked){
+          field2="4";
+        }
+        if(document.getElementById("rate-5").checked){
+          field2="5";
+        }
+
+        $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLSfU4MPldxusLTxY2ZrzhHSXBjuNnpcQdsrkmJEp1fcxpB5HcA/formResponse?",
+            data: {"entry.1697369419": field1, "entry.1108195081": field2, "entry.138253872": field3},
+            type: "POST",
+            dataType: "xml",
+            success: function(d)
+
+        
+  {
+  },
+  error: function(x, y, z)
+    {
+
+      $('#success-msg').show();
+      
+    }
+        });
+return false;
+    }
+</script>
 
 {% endblock%}

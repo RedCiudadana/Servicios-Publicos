@@ -17313,3 +17313,8 @@ input:-moz-placeholder {
     color: #fff;
     opacity: 1; /* Firefox */
 }
+
+/*hasta aca*/
+.displayN{
+	display: none!important;
+}
