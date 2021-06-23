@@ -59,6 +59,7 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
           <a target="_blank" href="{{servicio.enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
         </div>
 
+        <!--Rating-->
         <div class="bg-white col-lg-5">
           <div class="container">
             <div class="col-12" style="justify-content: center;">
@@ -96,11 +97,51 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
             </div>
 
             <h3 id="success-msg" style="text-align: center !important; margin-top:190px !important; display:none; color:#fff"> Se registro su comentario</h3>
-
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="col-12 border" style="background-color: #03324e; border-radius: 20px">
+              <br>
+              <h4 class="text-white">¿Tienes dudas con este servicio?</h4>
+              <h6 class="text-white">Comunicate con nosotros:</h6>
+              <br>
+              <div class="row" style="justify-content: center;">
+                <a href="" class="nav-link-social text-white" target="_blank"><i class="fab fa-facebook" aria-hidden="true" > Facebook</i></a>     
+              </div>
+              <div class="row" style="justify-content: center;">              
+                <a href="" class="nav-link-social text-white" target="_blank"><i class="fab fa-twitter" aria-hidden="true" > Twitter</i></a>
+              </div>           
+              <div class="row" style="justify-content: center;">
+                <a href="" class="nav-link-social text-white" target="_blank"><i class="fab fa-instagram" aria-hidden="true" > Instagram</i></a>
+              </div>
+              <br>
+            </div>
 
           </div>
         </div>
 
+      </div>
+    </div>
+  </div>
+
+
+  <!--Comentarios-->
+  <div class="w-100">
+    <div class="container py-5">
+      <div class="row">
+        <!---->
+        <table class="table" id="comentarios">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Rating</th>
+              <th scope="col">Comentario</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -143,8 +184,9 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
 {% endblock %}
 
 {% block body_javascripts%}
+<!--Script para ocultar el cuadro de comentarios y para realizar el sistema de rating-->
 <script>
-
+//ocultar cuadro de comentarios
 function ocultar(){
   var x = document.getElementById("containerR");
     if (x.style.display === "none") {
@@ -154,6 +196,7 @@ function ocultar(){
     }
 }
 
+//realizar el envio de formulario a la base de datos
 function postToGoogle() {
         var field1 = field1 = "{{servicio.nombre}}"
         var field2 = ""
@@ -200,6 +243,33 @@ function postToGoogle() {
         });
 return false;
     }
+</script>
+
+<!--Script para la lectura de los comentarios en la base de datos-->
+<script>
+
+  const tabla = document.querySelector('#comentarios');
+
+  function cargarComentarios(){
+    fetch('https://raw.githubusercontent.com/MarianoReyes/ComentsJson/main/comentarios.json')
+        .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
+        .then(data => {
+            console.log(data);
+            data.forEach(data => {
+                const row = document.createElement('tr');
+                row.innerHTML += `
+                    <td>${data.Nombre}</td>
+                    <td>${data.Rating}</td>
+                    <td>${data.Comentario}</td>
+                `;
+                tabla.appendChild(row);                
+            });
+        }) // Aquí mostramos dicha información
+        .catch(error => console.log('Hubo un error : ' + error.message))
+  }
+
+  cargarComentarios();
+
 </script>
 
 {% endblock%}

@@ -1,4 +1,5 @@
 const searchFilter = require('./filters/searchFilter');
+const searchFilterUE = require('./filters/searchFilterUE');
 
 const categorias = [
     "1 Servicios públicos generales",
@@ -25,4 +26,5 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addFilter("search", searchFilter);
+    eleventyConfig.addFilter("search2", searchFilterUE);
 }
