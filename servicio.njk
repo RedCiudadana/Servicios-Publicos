@@ -129,16 +129,12 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
   <!--Comentarios-->
   <div class="w-100">
     <div class="container py-5">
-      <div class="row">
+      <div class="row col-12">
         <!---->
+        <h4>Comentarios</h4>
         <table class="table" id="comentarios">
-          <thead>
-            <tr>
-              <th scope="col">Rating</th>
-              <th scope="col">Comentario</th>
-            </tr>
-          </thead>
-          <tbody>
+
+          <tbody id="bodytable">
           </tbody>
         </table>
       </div>
@@ -270,6 +266,7 @@ return false;
 
     }) // Aquí mostramos dicha información
     .catch(error => console.log('Hubo un error : ' + error.message))
+
   }
 
   cargarComentarios();
