@@ -134,7 +134,6 @@ permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora |
         <table class="table" id="comentarios">
           <thead>
             <tr>
-              <th scope="col">Nombre</th>
               <th scope="col">Rating</th>
               <th scope="col">Comentario</th>
             </tr>
@@ -251,21 +250,26 @@ return false;
   const tabla = document.querySelector('#comentarios');
 
   function cargarComentarios(){
-    fetch('https://raw.githubusercontent.com/MarianoReyes/ComentsJson/main/comentarios.json')
-        .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
-        .then(data => {
-            console.log(data);
-            data.forEach(data => {
-                const row = document.createElement('tr');
-                row.innerHTML += `
-                    <td>${data.Nombre}</td>
-                    <td>${data.Rating}</td>
-                    <td>${data.Comentario}</td>
-                `;
-                tabla.appendChild(row);                
-            });
-        }) // Aquí mostramos dicha información
-        .catch(error => console.log('Hubo un error : ' + error.message))
+    fetch('https://raw.githubusercontent.com/RedCiudadana/Servicios-Publicos/main/_data/comentarios.json')
+    .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
+    .then(data => {
+        for (var i = 0; i < data[0].length; i++) {
+
+          if(data[0][i].Nombre=="{{servicio.nombre}}"){
+            const row = document.createElement('tr');
+            row.innerHTML += `
+                <td>${data[0][i].Rating}</td>
+                <td>${data[0][i].Comentario}</td>
+            `;
+            
+            tabla.appendChild(row);  
+          }
+          
+          
+        }
+
+    }) // Aquí mostramos dicha información
+    .catch(error => console.log('Hubo un error : ' + error.message))
   }
 
   cargarComentarios();

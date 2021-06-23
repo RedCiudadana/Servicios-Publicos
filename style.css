@@ -17196,12 +17196,13 @@ input:-moz-placeholder {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	max-width: 100%;
   }
   .containerR .postR{
 	display: none;
   }
   .containerR .textR{
-	font-size: 25px;
+	font-size: 20px;
 	color: #666;
 	font-weight: 500;
   }
@@ -17221,7 +17222,7 @@ input:-moz-placeholder {
 	display: none;
   }
   .star-widget label{
-	font-size: 40px;
+	font-size: 20px;
 	color: #444;
 	padding: 10px;
 	float: right;
@@ -17240,18 +17241,23 @@ input:-moz-placeholder {
   }
   #rate-1:checked ~ form header:before{
 	content: "Muy Malo ";
+	font-size: 20px;
   }
   #rate-2:checked ~ form header:before{
 	content: "Malo";
+	font-size: 20px;
   }
   #rate-3:checked ~ form header:before{
 	content: "Regular";
+	font-size: 20px;
   }
   #rate-4:checked ~ form header:before{
 	content: "Bueno";
+	font-size: 20px;
   }
   #rate-5:checked ~ form header:before{
 	content: "Muy Bueno";
+	font-size: 20px;
   }
   .containerR form{
 	display: none;
@@ -17318,3 +17324,4 @@ input:-moz-placeholder {
 .displayN{
 	display: none!important;
 }
+
