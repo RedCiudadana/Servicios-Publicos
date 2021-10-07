@@ -44,30 +44,32 @@ tags:
   <div class="w-100 bg-white">
     <div class="container py-5">
       <div class="row">
-        <div class="col-12">
 
           {% for item in collections[categoria.nombre] %}
-            <div class="col-12 border">
+            <div class=" col-md-4 col-lg-4 " style="padding:0!important">
               <br>
-              <div>
-                <a href="{{item.url}}">
-                  <h4 class="text-left">
-                    {{item.data.servicio.Nombre}}
-                  </h4>
-                </a>
-                
-                <a href="{{item.url}}">
-                  <p class="text-left text-break">
-                    {{item.data.servicio.Enlace}}
-                  </p>
-                </a>
+              <div class="border" style="margin:1rem;height:80%!important;display:flex;padding:35px 5%">
+                <div style="margin:auto">
+                  <img src="/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SERVICIOS/90 X 90/07.png" style="height:40px">      
+                </div>
+                <div style="margin:auto">  
+                  <a href="{{item.url}}">
+                    <h4 class="text-left">
+                      {{item.data.servicio.Nombre}}
+                    </h4>
+                  </a>
+                  
+                  <a href="{{item.url}}">
+                    <p class="text-left text-break">
+                      {{item.data.servicio.Enlace}}
+                    </p>
+                  </a>
+                </div>
               </div>
               <br>
             </div>
-            <br>
           {% endfor %}
 
-        </div>
       </div>
     </div>
   </div>
