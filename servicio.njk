@@ -33,18 +33,18 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
           <div class="d-flex">
             <a  href="index.html" style="color: #03324e!important;text-decoration: underline!important;"> Inicio</a>
             <p>&nbsp / &nbsp</p>
-            <p>{{servicio.categoria}}</p>
+            <a href="{{item.url}}" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Categoria}}</a>
             <p>&nbsp / &nbsp</p>
-            <a href="#" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.unidad_ejecutora}}</a>
+            <p>{{servicio.Unidad_Ejecutora}}</p>
           </div>
           <br>
 
-          <h1 class="break-word">{{servicio.nombre}}</h1>
+          <h1 class="break-word">{{servicio.Nombre}}</h1>
           <small>
 
           
             Información proporcionada por: <br>
-            {{servicio.unidad_ejecutora}}
+            {{servicio.Unidad_Ejecutora}}
           </small>
           <br>
           <small>
@@ -54,9 +54,9 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
           <br>
           <br>
           <h4 class="text-left">Descripción</h4>
-          <p>{{servicio.nombre}}</p>
+          <p>{{servicio.Descripcion}}</p>
           <br>
-          <a target="_blank" href="{{servicio.enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
+          <a target="_blank" href="{{servicio.Enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
         </div>
 
         <!--Rating-->
