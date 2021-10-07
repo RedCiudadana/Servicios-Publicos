@@ -6,8 +6,8 @@ pagination:
   alias: servicio
 tags:
   - servicio
-  - {{servicio.categoria | slug}}
-permalink: "servicio/{{servicio.categoria | slug}}/{{servicio.unidad_ejecutora | slug}}/{{servicio.nombre | slug}}/index.html"
+  - {{servicio.Categoria | slug}}
+permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Unidad_Ejecutora | slug}}/{{servicio.Nombre | slug}}/index.html"
 ---
 
 {% extends "base.njk" %}

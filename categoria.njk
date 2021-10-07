@@ -4,7 +4,7 @@ pagination:
   size: 1
   alias: categoria
   addAllPagesToCollections: true
-permalink: "categorias/{{categoria.nombre | slug}}/index.html"
+permalink: "categorias/{{categoria.id}}/{{categoria.nombre | slug}}/index.html"
 tags:
   - categoria
 ---
@@ -52,13 +52,13 @@ tags:
               <div>
                 <a href="{{item.url}}">
                   <h4 class="text-left">
-                    {{item.data.servicio.nombre}}
+                    {{item.data.servicio.Nombre}}
                   </h4>
                 </a>
                 
                 <a href="{{item.url}}">
                   <p class="text-left text-break">
-                    {{item.data.servicio.enlace}}
+                    {{item.data.servicio.Enlace}}
                   </p>
                 </a>
               </div>
