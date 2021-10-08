@@ -31,11 +31,14 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
         <div class="bg-white col-lg-7">
           <br>
           <div class="d-flex">
-            <a  href="index.html" style="color: #03324e!important;text-decoration: underline!important;"> Inicio</a>
+            <a  href="/index.html" style="color: #03324e!important;text-decoration: underline!important;"> Inicio</a>
             <p>&nbsp / &nbsp</p>
-            <a href="{{item.url}}" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Categoria}}</a>
+            <a  href="/{{servicio.Ministerios}}/index.html" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Ministerios}}</a>
             <p>&nbsp / &nbsp</p>
-            <p>{{servicio.Unidad_Ejecutora}}</p>
+            <a href="#" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Categoria}}</a>
+            <!--/{{servicio.Categoria}}/index.html-->
+            <p>&nbsp / &nbsp</p>
+            <a href="/{{servicio.Unidad_Ejecutora}}/index.html" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Unidad_Ejecutora}}</a>
           </div>
           <br>
 
