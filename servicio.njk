@@ -144,33 +144,20 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
   <div class="w-100">
     <div class="container py-5">
       <div class="row">
-        
-        <div class="col-md-4 border">
-          <br>
-          <h4 class="text-left" style="color: #03324e">Publicado por Institucion</h4>  
-          <h3>Consulta de tramite</h3>
-          <p><strong>Tramite en linea</strong></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <br>
-        </div>
 
-        <div class="col-md-4 border">
-          <br>
-          <h4 class="text-left" style="color: #03324e">Publicado por Institucion</h4>  
-          <h3>Consulta de tramite</h3>
-          <p><strong>Tramite en linea</strong></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <br>
-        </div>
+        {% for item in collections.servicio%}
+          {% if item.data.servicio.topWanted%}
+            <div class="col-md-4 border">
+              <br>
+              <h4 class="text-left" style="color: #03324e">{{item.data.servicio.Unidad_Ejecutora}}</h4>  
+              <a href="{{item.url}}"><h3>{{item.data.servicio.Nombre}}</h3></a>
+              <p><strong>{{item.data.servicio.Categoria}}</strong></p>
+              <p>{{item.data.servicio.Descripcion}}</p>
+              <br>
+            </div>
+          {% endif %}
+        {% endfor %}
 
-        <div class="col-md-4 border">
-          <br>
-          <h4 class="text-left" style="color: #03324e">Publicado por Institucion</h4>  
-          <h3>Consulta de tramite</h3>
-          <p><strong>Tramite en linea</strong></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <br>
-        </div>
         
       </div>
     </div>
