@@ -243,14 +243,14 @@ return false;
                 <td>${data[0][i].Rating}</td>
                 <td>${data[0][i].Comentario}</td>
             `;
-            
+            //se imprime el mensaje de error
             tabla.appendChild(row);  
           }
           
           
         }
 
-    }) // Aquí mostramos dicha información
+    }) // si hay error no se imprime el error
     .catch(error => console.log('Hubo un error : ' + error.message))
 
   }
