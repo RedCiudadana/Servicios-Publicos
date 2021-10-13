@@ -29,6 +29,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('entidad');
     });
 
+    eleventyConfig.addCollection("unidad", function(collectionApi) {
+        return collectionApi.getFilteredByTag('unidad');
+    });
+
     eleventyConfig.addFilter("search", searchFilter);
     eleventyConfig.addFilter("search2", searchFilterUE);
 }
