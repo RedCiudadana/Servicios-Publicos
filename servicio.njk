@@ -35,7 +35,7 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
             <p>&nbsp / &nbsp</p>
             <a  href="/{{servicio.Ministerios}}/index.html" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Ministerios}}</a>
             <p>&nbsp / &nbsp</p>
-            <a href="#" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Categoria}}</a>
+            <p>{{servicio.Categoria}}</p>
             <!--/{{servicio.Categoria}}/index.html-->
             <p>&nbsp / &nbsp</p>
             <a href="/{{servicio.Unidad_Ejecutora}}/index.html" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Unidad_Ejecutora}}</a>
@@ -56,6 +56,13 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
           <h4 class="text-left">Descripción</h4>
           <p>{{servicio.Descripcion}}</p>
           <br>
+          <h4 class="text-left">Requisitos</h4>
+          <p>{{servicio.Requisitos}}</p>
+          <br>
+          <h4 class="text-left">Pasos</h4>
+          <p>{{servicio.Pasos}}</p>
+          <br>
+
           <a target="_blank" href="{{servicio.Enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
         </div>
 
@@ -63,6 +70,8 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
         <div class="bg-white col-lg-5">
           <div class="container">
             <div class="col-12" style="justify-content: center;">
+
+              <a target="_blank" href="{{servicio.Enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
 
               <h4>Puntea este servicio!</h4>
 
