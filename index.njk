@@ -12,26 +12,21 @@
           <h1 style="color: #fff!important" class="text-center">Encuentra Servicios y Beneficios del Estado</h1>
           <br>
           <br>
+
           <div class="col-md-12" style="justify-content: center;">
             <div class="w-auto mx-auto" style="max-width: 400px; z-index: 1000;">
+
               <div class="field">
+                <label for="searchField" style="display:none">Search</label>
                 <input class="form-control mx-auto" type="search" placeholder="Buscar" id="searchField" style="max-width: 400px;"/>
               </div>
               <div id="searchResultsContainer" class="w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 400px;">
                 <ol id="searchResults" style="z-index: 20;">
                 </ol>
               </div>
+
+
             </div>
-            {# <div class="flexsearch">
-              <div class="flexsearch--wrapper">
-                <form class="flexsearch--form" action="resultados.html" method="post">
-                  <div class="flexsearch--input-wrapper">
-                    <input class="flexsearch--input" type="search" placeholder="Buscar">
-                  </div>
-                  <input class="flexsearch--submit" type="submit" value="&#10140;"/>
-                </form>
-              </div>
-            </div> #}
           </div>
         </div>
       </div>
@@ -72,6 +67,8 @@
   {% endblock %}
 
   {% block body_javascripts %}
+
+    <script src="/assets/js/retainable.js"></script>
     <!--Only 5.7kb GZipped. You may want to bundle this with your application code. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
     <script>
@@ -79,17 +76,15 @@
       "use strict";
 
       const search = e => {
-        //console.log(e);
         const results = window.searchIndex.search(e.target.value);
-        //console.log(e.target.value);
-        //console.log(results);
+
         const ol = document.getElementById("searchResults");
         const searchResultsContainer = document.getElementById("searchResultsContainer");
         ol.innerHTML = "";
         searchResultsContainer.style.position = 'none';
         if (results && results.length > 0) {
           searchResultsContainer.style.position = 'absolute';
-          results.forEach(r => {
+          results.map(r => {
             const { id, nombre, ministerios } = r.doc;
 
             // this is where you'll go wild with your own HTML injection.
@@ -112,4 +107,8 @@
       );
     })(window, document);
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 {% endblock %}

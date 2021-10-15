@@ -14,10 +14,10 @@ module.exports = function (collection) {
     collection.forEach(item => {
         index.addDoc({
             id: item.url,
-            ministerios: item.data.servicio.ministerios,
-            unidad_ejecutora: item.data.servicio.unidad_ejecutora,
-            pagina_web: item.data.servicio.pagina_web,
-            nombre: item.data.servicio.nombre
+            ministerios: item.data.servicio.Ministerios,
+            unidad_ejecutora: item.data.servicio.Unidad_Ejecutora,
+            pagina_web: item.data.servicio.Página_web,
+            nombre: item.data.servicio.Nombre
         });
     });
 

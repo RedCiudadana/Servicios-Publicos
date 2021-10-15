@@ -25,6 +25,11 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addFilter("search", searchFilter);
+    eleventyConfig.addCollection("servicios", function(collectionApi) {
+        return collectionApi.getFilteredByTag('servicio');
+    });
+
     eleventyConfig.addCollection("entidad", function(collectionApi) {
         return collectionApi.getFilteredByTag('entidad');
     });
@@ -33,6 +38,6 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('unidad');
     });
 
-    eleventyConfig.addFilter("search", searchFilter);
+    
     eleventyConfig.addFilter("search2", searchFilterUE);
 }
