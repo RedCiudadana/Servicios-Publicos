@@ -4,7 +4,7 @@ pagination:
   size: 1
   alias: entidad
   addAllPagesToCollections: true
-permalink: "{{entidad.Nombre_de_Institucion}}/index.html"
+permalink: "{{entidad.Nombre_de_Institucion | slug | safe}}/index.html"
 tags:
   - entidad
 ---
