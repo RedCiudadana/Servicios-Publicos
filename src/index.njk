@@ -8,15 +8,19 @@ permalink: index.html
 {% block head %}
   <!--NETLIFY CMS-->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock %}
 
 {% block content %}
-  <!--Buscador-->
+  <!--SLIDER - BUSCADOR-->
   <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-HOME.png');background-size:cover ">
     <div class="container" style="padding:5rem 0">
       <div class="row">
-        <div class="col-12 py-2" style="justify-content: center;">
-          <h1 style="color: #fff!important" class="text-center">Encuentra Servicios y Beneficios del Estado</h1>
+        <div class="col-12 py-2">
+          <div class="col-lg-6 c0l-md-6 col-sm-12">
+            <h1 style="color: #fff!important" >Te damos la bienvenida al <strong>portal de servicios</strong> donde podrás realizar tus trámites de manera rápida, ágil y sencilla.</h1>
+          </div>
+          
           <br>
           <br>
 
@@ -40,21 +44,107 @@ permalink: index.html
     </div>
   </div>
 
+  <!--CATEGORIAS DESTACADAS-->
+  <div class="w-100 " style="background-color:#f3f7f9!important">
+    <div class="container py-5">
+      <div class="row row-eq-height d-flex justify-content-center">
+        <div class="col-lg-10 d-flex justify-content-center">
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <img src="" width="100%" height="100%">
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1 class="h1-blue">Catálogo de trámites y servicios</h1>
+            <br>
+            <hr>
+            <br>
+            <p>Conoce el catálogo de trámites y servicios municipales. 
+            Aquí podrás encontrar información sobre requisitos, tiempos y costos.
+            </p>
+            <br>
+            <h3 class="h3-blue">¿Qué deseas hacer?¿Que categoría deseas explorar?</h3>
+            <br>
+            <div class="d-flex " style="align-items:center"> 
+              <img class=" rounded r-temp" >
+              <p class="pad0001">Categoría de Salud</p>
+            </div>
+            <div class="d-flex pt-2" style="align-items:center"> 
+              <img class=" rounded r-temp" >
+              <p class="pad0001">Categoría de Salud</p>
+            </div>
+            <div class="d-flex pt-2" style="align-items:center"> 
+              <img class=" rounded r-temp">
+              <p class="pad0001">Categoría de Salud</p>
+            </div>
+            <br>
+            <a href="#categorias" class="btnAzulO2">Ver más categorías<i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--SERVICIOS DESTACADOS-->
+  <div class="w-100 " style="background-color:#f3f7f9!important">
+    <div class="container py-5">
+      <div class="row row-eq-height">
+
+        <div class="col-lg-10">
+          <h1 class="h1-blue">Destacados</h1>
+          <br>
+          <hr>
+          <br>
+        </div>
+
+        <div class="col-lg-10 d-flex justify-content-center">
+          
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <!--destacados limit 1-->
+            <
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <!--destacados limit 3 reversed-->
+          </div>
+
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+
+  <!--CATEGORIAS-->
   <div class="w-100 bg-white">
     <div class="container py-5">
       <div class="row row-eq-height">
+        <div class="col-lg-10">
+          <h1 class="h1-blue" id="categorias">Categorías</h1>
+          <br>
+          <hr>
+          <br>
+        </div>
+
         {% for item in collections.categoria %}
-          <div class="col-12 col-md-4 col-lg-3 p-2">
+          <div class="col-sm-6 col-lg-3 col-md-6 p-2">
+
             <div class="w-100 h-100 border rounded row m-0">
-              <div class="col-12 col-lg-4 p-5 p-lg-2 pr-lg-0 m-0 d-flex">
-                <img class="img-fluid w-100 my-auto" src="{{item.data.categoria.img}}">
+            
+              <div class="col-12 col-lg-4 p-lg-2 p-md-2 pr-lg-0 m-0 d-flex" style="align-items:center;justify-content:center;">
+                <img class="img-fluid my-auto" style="height:88px!important" src="{{item.data.categoria.img}}">
               </div>
-              <div class="col-12 col-lg-8 p-4 pl-lg-0 text-center">
-                <a href="{{item.url}}" class="h-100 d-flex">
-                  <h4 class="align-middle my-auto w-100">{{item.data.categoria.nombre}}</h4>
+
+              <div class="col-12 col-lg-8 p-4 pl-lg-0 text-center d-flex" >
+                <a href="{{item.url}}" class="h-100 d-flex my-auto w-100" style="align-items:center;justify-content:center">
+                  {{item.data.categoria.nombre}}
                 </a>
               </div>
+              
             </div>
+
           </div>
         {% endfor %}
       </div>
