@@ -17386,3 +17386,8 @@ input:-moz-placeholder {
 
 }
 
+@media (max-width: 490px){
+	.searchResultsContainer{
+	  max-width:230px!important;
+	}
+}
