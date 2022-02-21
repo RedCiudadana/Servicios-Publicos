@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# publish_mode: editorial_workflow
+media_folder: 'ELEMENTOS/posts' # Media files will be stored in the repo under src/assets/images/posts
+public_folder: '/ELEMENTOS/posts' # The src attribute for uploaded media will begin with assets/images/posts
+
+collections:
+  - name: "servicio" # Used in routes, e.g., /admin/collections/blog
+    label: "Servicio" # Used in the UI
+    folder: "src/servicios" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false # Disable the editor preview and use instead 'preview links'
+    fields: # The fields for each document, usually in front matter
+      - { name: "title", label: "Title" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "seccionA1", label: "SeccionA1", widget: "markdown" }
+      - { name: "seccionA2", label: "SeccionA2", widget: "markdown" }
+      - { name: "seccionB1", label: "SeccionB1", widget: "markdown" }
+      - { name: "seccionB2", label: "SeccionB2", widget: "markdown" }
+      - { label: "Slider", name: "slider", widget: "image" }
+      - { name: "seccionA3", label: "SeccionA3", widget: "markdown" }
+      - { name: "seccionA4", label: "SeccionA4", widget: "markdown" }
+      - { name: "seccionB3", label: "SeccionB3", widget: "markdown" }
+      - { name: "seccionB4", label: "SeccionB4", widget: "markdown" }
+      - { name: "conclusion", label: "Conclusion" }
+
