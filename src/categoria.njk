@@ -13,31 +13,35 @@ tags:
 {% block head %}{% endblock %}
 
 {% block content %}
-  <!-- BUSCADOR-->
-  <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-SERVICIOS_02.png');background-size:cover">
+  <!--SLIDER - BUSCADOR-->
+  <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-SERVICIOS_02.png');background-size:cover ">
     <div class="container" style="padding:5rem 0">
-      <div class="row">
-        <div class="col-12 py-2" style="justify-content: center;">
-          <h1 style="color: #fff!important" class="text-center">{{categoria.nombre}}</h1>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 py-2 d-flex justify-content-start" >
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <h1 style="color: #fff!important; font-size:25px" >{{categoria.nombre}}</h1>
+          </div>
+        </div>  
+        <div class="col-lg-10 py-2 ">
           <br>
           <br>
 
           <div class="col-md-12" style="justify-content: center;">
             <div class="w-auto mx-auto" style="max-width: 400px; z-index: 1000;">
-
-              <div class="field">
-                <label for="searchField" style="display:none">Search</label>
-                <input class="form-control mx-auto" type="search" placeholder="Buscar" id="searchField" style="max-width: 400px;"/>
+              <div class="bg-white p-4">
+                <div><h3 class="h3-blue">¿Qué servicio estás buscando hoy?</h3></div>
+                <div class="field">
+                  <label for="searchField" style="display:none">Search</label>
+                  <input class="form-control mx-auto" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
+                </div>
+                <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 350px;">
+                  <ol id="searchResults" style="z-index: 20;">
+                  </ol>
+                </div>
               </div>
-              <div id="searchResultsContainer" class="w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 400px;">
-                <ol id="searchResults" style="z-index: 20;">
-                </ol>
-              </div>
-
 
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -56,7 +60,7 @@ tags:
               <a href="{{item.url}}">
               <div class="border-rounded d-flex justify-content-center" style="align-items:center;height:100%">
                 <div class="text-center p-2 d-flex" style="height:100%;align-items:center">
-                  <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SERVICIOS/90 X 90/07.png">
+                  <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{categoria.img}}">
                   <div>
                     <h3 class="h3-blue">{{item.data.servicio.Nombre}}</h3>
                     <p>{{item.data.servicio.Ministerios}}</p>
