@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src');
     eleventyConfig.addPassthroughCopy('css');
     eleventyConfig.addPassthroughCopy('js');
-    eleventyConfig.addPassthroughCopy('elementos');
+    eleventyConfig.addPassthroughCopy('ELEMENTOS');
     eleventyConfig.addPassthroughCopy('images');
     eleventyConfig.addPassthroughCopy('admin');
 
