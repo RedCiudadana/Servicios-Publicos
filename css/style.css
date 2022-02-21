@@ -17361,3 +17361,27 @@ input:-moz-placeholder {
     border-radius: 50%!important;
     background: #02ac8b;
 }
+
+.shadow{
+	box-shadow: 6px 6px 10px black;
+}
+
+.tag{
+	background-color: #caeee6;
+	color: #1ABC9C!important;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+
+.border-rounded{
+	border: 2px solid #02324f;
+	border-radius: 20px;
+}
+
+.cuadrado-verde{
+	margin-right: 5px;
+	background: #1ABC9C;
+	height: 20px;
+	width: 20px;
+
+}

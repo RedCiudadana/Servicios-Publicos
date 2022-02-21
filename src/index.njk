@@ -90,7 +90,7 @@ permalink: index.html
   <!--SERVICIOS DESTACADOS-->
   <div class="w-100 " style="background-color:#f3f7f9!important">
     <div class="container py-5">
-      <div class="row row-eq-height">
+      <div class="row row-eq-height  justify-content-center">
 
         <div class="col-lg-10">
           <h1 class="h1-blue">Destacados</h1>
@@ -100,14 +100,75 @@ permalink: index.html
         </div>
 
         <div class="col-lg-10 d-flex justify-content-center">
+          <div class="grid grid-cols-9 gap-4 justify-center text-left py-16">
           
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <!--destacados limit 1-->
-            <
-          </div>
+            <div class="col-span-9 md:col-span-3">
+              <!--destacados limit 1-->
+              <div class="cuadro shadow bg-white my-2">
+                <img>
+                <div class="col-md-12">
+                  <div class="py-2 d-flex justify-content-start">
+                    <a style="pointer-events: none" class="tag" href="">Servicio</a>
+                  </div>
+                  <h3 class="h3-blue">Servicio de Salud</h3>
+                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Lacinia quis vel eros donec. Natoque penatibus et magnis dis parturient montes. </p>
+                  <div class="py-2 d-flex justify-content-end">
+                    <a href="">Conoce más <i class="fa-solid fa-chevron-right"></i></a>
+                  </div>              
+                </div>        
+              </div>
+            </div>
 
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <!--destacados limit 3 reversed-->
+            <div class="col-span-9 md:col-span-6">
+              <!--destacados limitSinPrimero 4 reversed-->
+              <div class="cuadro shadow bg-white d-flex my-2">         
+                <img>
+                <div class="col-md-12">
+                  <div class="py-2 d-flex justify-content-start">
+                    <a style="pointer-events: none" class="tag" href="">Servicio</a>
+                  </div>
+                  <h3 class="h3-blue">Servicio de Salud</h3>
+                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Lacinia quis vel eros donec. Natoque penatibus et magnis dis parturient montes. </p>
+                  <div class="py-2 d-flex justify-content-end">
+                    <a href="">Conoce más <i class="fa-solid fa-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cuadro shadow bg-white d-flex my-2">         
+                <img>
+                <div class="col-md-12">
+                  <div class="py-2 d-flex justify-content-start">
+                    <a style="pointer-events: none" class="tag" href="">Servicio</a>
+                  </div>
+                  <h3 class="h3-blue">Servicio de Salud</h3>
+                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Lacinia quis vel eros donec. Natoque penatibus et magnis dis parturient montes. </p>
+                  <div class="py-2 d-flex justify-content-end">
+                    <a href="">Conoce más <i class="fa-solid fa-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cuadro shadow bg-white d-flex my-2">         
+                <img>
+                <div class="col-md-12">
+                  <div class="py-2 d-flex justify-content-start">
+                    <a style="pointer-events: none" class="tag" href="">Servicio</a>
+                  </div>
+                  <h3 class="h3-blue">Servicio de Salud</h3>
+                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Lacinia quis vel eros donec. Natoque penatibus et magnis dis parturient montes. </p>
+                  <div class="py-2 d-flex justify-content-end">
+                    <a href="">Conoce más <i class="fa-solid fa-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
@@ -120,7 +181,7 @@ permalink: index.html
   <!--CATEGORIAS-->
   <div class="w-100 bg-white">
     <div class="container py-5">
-      <div class="row row-eq-height">
+      <div class="row row-eq-height  justify-content-center">
         <div class="col-lg-10">
           <h1 class="h1-blue" id="categorias">Categorías</h1>
           <br>
@@ -128,25 +189,32 @@ permalink: index.html
           <br>
         </div>
 
-        {% for item in collections.categoria %}
-          <div class="col-sm-6 col-lg-3 col-md-6 p-2">
+        <div class="col-md-10 col-sm-12 col-lg-10 d-flex justify-content-center">
+          <div class="grid grid-cols-9 gap-4 justify-center text-left py-16">
 
-            <div class="w-100 h-100 border rounded row m-0">
-            
-              <div class="col-12 col-lg-4 p-lg-2 p-md-2 pr-lg-0 m-0 d-flex" style="align-items:center;justify-content:center;">
-                <img class="img-fluid my-auto" style="height:88px!important" src="{{item.data.categoria.img}}">
-              </div>
+            {% for item in collections.categoria%}
+            <div class="col-span-9 md:col-span-3"> 
+              <a href="{{item.url}}">
+              <div class="border-rounded d-flex justify-content-center" style="align-items:center">
+                <div class="text-center p-2">
+                  <img class="m-auto" height="100px" width="100px" src="{{item.data.categoria.img}}">
+                  <h3 class="h3-blue">{{item.data.categoria.nombre}}</h3>
+                  <p>{{item.data.categoria.descripcion}}</p>
 
-              <div class="col-12 col-lg-8 p-4 pl-lg-0 text-center d-flex" >
-                <a href="{{item.url}}" class="h-100 d-flex my-auto w-100" style="align-items:center;justify-content:center">
-                  {{item.data.categoria.nombre}}
-                </a>
+                  <div class="d-flex justify-content-center" style="align-items:center">
+                    <div class="cuadrado-verde"></div>
+                    <p> Servicios : {{ collections[item.data.categoria.nombre] | length}}</p>          
+                  </div>
+                  
+                </div>
               </div>
-              
+              </a>
             </div>
-
+            {% endfor %}
+            
           </div>
-        {% endfor %}
+        </div>
+
       </div>
     </div>
 

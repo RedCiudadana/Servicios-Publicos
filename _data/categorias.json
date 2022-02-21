@@ -5,11 +5,6 @@
         "img": "/ELEMENTOS/SERVICIOS/servicio_publicos_generales.jpg"
     },
     {
-        "id": "2",
-        "nombre": "",
-        "img": "/ELEMENTOS/SERVICIOS/orden_publico_seguridad.jpg"
-    },
-    {
         "id": "3",
         "nombre": "Orden público y seguridad",
         "img": "/ELEMENTOS/SERVICIOS/orden_publico_seguridad.jpg"
@@ -35,18 +30,8 @@
         "img": "/ELEMENTOS/SERVICIOS/salud.jpg"
     },
     {
-        "id": "8",
-        "nombre": "",
-        "img": "/ELEMENTOS/SERVICIOS/orden_publico_seguridad.jpg"
-    },
-    {
         "id": "9",
         "nombre": "Educación",
         "img": "/ELEMENTOS/SERVICIOS/educacion.jpg"
-    },
-    {
-        "id": "10",
-        "nombre": "",
-        "img": "/ELEMENTOS/SERVICIOS/orden_publico_seguridad.jpg"
     }
 ]
