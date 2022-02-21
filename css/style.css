@@ -267,6 +267,7 @@ hr{
 	border: 4px solid #02b08f;
 	border-radius: 2px;
 	width: 60px;
+	border-top-width: 0!important;
 }
 
 /*----------- CAJA ----------- */
