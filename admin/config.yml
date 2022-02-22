@@ -15,16 +15,25 @@ collections:
     editor:
       preview: false # Disable the editor preview and use instead 'preview links'
     fields: # The fields for each document, usually in front matter
-      - { name: "title", label: "Title" }
-      - { name: "date", label: "Date", widget: "datetime" }
-      - { name: "seccionA1", label: "SeccionA1", widget: "markdown" }
-      - { name: "seccionA2", label: "SeccionA2", widget: "markdown" }
-      - { name: "seccionB1", label: "SeccionB1", widget: "markdown" }
-      - { name: "seccionB2", label: "SeccionB2", widget: "markdown" }
-      - { label: "Slider", name: "slider", widget: "image" }
-      - { name: "seccionA3", label: "SeccionA3", widget: "markdown" }
-      - { name: "seccionA4", label: "SeccionA4", widget: "markdown" }
-      - { name: "seccionB3", label: "SeccionB3", widget: "markdown" }
-      - { name: "seccionB4", label: "SeccionB4", widget: "markdown" }
-      - { name: "conclusion", label: "Conclusion" }
+      - { name: "nombre", label: "Nombre" }
+      - { name: "ministerio", label: "Ministerio" }
+      - { name: "categoria", label: "Categoria" }
+      - { name: "unidad_ejecutora", label: "Unidad_Ejecutora" }
+      - { name: "descripcion", label: "Descripcion" }
+      - { name: "requisitos", label: "Requisitos" }
+      - { name: "costo", label: "Costo" }
+      - { name: "tiempo_respuesta", label: "Tiempo_Respuesta" }
+      - { name: "quejas", label: "Quejas" }
+      - { name: "categoria", label: "Categoria", widget: "relation", collection: "categoria", searchFields: ["title"], valueField: "title", multiple: true, default: ["posts"] }
+      - { name: "highlight", label: "Highlight", widget: "boolean", default: false, hint: "Display posts in home's highlights" }
+    - name: "categoria"
+    label: "Categoria"
+    folder: "src/categoria"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: "Id", name: "id"}
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Img", name: "img", widget: "image" }
 
