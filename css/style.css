@@ -16809,6 +16809,12 @@ label.checkbox { padding-left: 20px; }
   margin-left: 10px;
 }
 
+.btnVerdeR:hover{
+	color: #eee!important;
+	background-color: #13c996;
+	border-color: #13c996;
+}
+
 .txtVerde{
 	color: #01af8c!important;
 	text-decoration: underline 	#01af8c!important;

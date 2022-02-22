@@ -15,34 +15,15 @@ tags:
 {% block content %}
   <!--SLIDER - BUSCADOR-->
   <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-SERVICIOS_02.png');background-size:cover ">
-    <div class="container" style="padding:5rem 0">
+    <div class="container" style="padding:8rem 0">
       <div class="row justify-content-center">
-        <div class="col-lg-10 py-2 d-flex justify-content-start" >
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <h1 style="color: #fff!important; font-size:25px" >{{categoria.nombre}}</h1>
+
+        <div class="col-lg-10 py-2 d-flex justify-content-center" >
+          <div class="col-lg-10 col-md-10 col-sm-12">
+            <h1 style="color: #fff!important;"  class="h1-blue text-center">{{categoria.nombre}}</h1>
           </div>
         </div>  
-        <div class="col-lg-10 py-2 ">
-          <br>
-          <br>
 
-          <div class="col-md-12" style="justify-content: center;">
-            <div class="w-auto mx-auto" style="max-width: 400px; z-index: 1000;">
-              <div class="bg-white p-4">
-                <div><h3 class="h3-blue">¿Qué servicio estás buscando hoy?</h3></div>
-                <div class="field">
-                  <label for="searchField" style="display:none">Search</label>
-                  <input class="form-control mx-auto" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
-                </div>
-                <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 350px;">
-                  <ol id="searchResults" style="z-index: 20;">
-                  </ol>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -52,29 +33,101 @@ tags:
     <div class="container py-5">
       <div class="row justify-content-center">
 
-        <div class="col-md-10 col-sm-12 col-lg-10 d-flex justify-content-center">
-          <div class="grid grid-cols-9 gap-4 justify-center text-left py-16">
+        <div class="col-lg-10 py-2 ">
 
-            {% for item in collections[categoria.nombre]%}
-            <div class="col-span-9 md:col-span-3"> 
-              <a href="{{item.url}}">
-              <div class="border-rounded d-flex justify-content-center" style="align-items:center;height:100%">
-                <div class="text-center p-2 d-flex" style="height:100%;align-items:center">
-                  <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{categoria.img}}">
-                  <div>
-                    <h3 class="h3-blue">{{item.data.servicio.Nombre}}</h3>
-                    <p>{{item.data.servicio.Ministerios}}</p>
-                    <p>{{item.data.servicio.Descripcion}}</p>
-                  </div>
-
-                  
-                </div>
-              </div>
-              </a>
-            </div>
-            {% endfor %}
-            
+          <div class="d-flex">
+            <div class="justify-content-start"><a href="/index.html">Inicio</a> / <a style="pointer-events: none" href="{{page.url}}">{{categoria.nombre}}</a></div>
+            <div class="justify-content-end"></div>
           </div>
+          <br>
+          <h1 class="h1-blue">Servicios</h1>
+          <br>
+          <hr>
+          <br>
+
+          
+          <div class="w-auto" style="max-width: 400px; z-index: 1000;">
+            <div class="bg-white p-4 border">
+              <div><h3 class="h3-blue">¿Qué servicio estás buscando hoy?</h3></div>
+              <div class="field">
+                <label for="searchField" style="display:none">Search</label>
+                <input class="form-control mx-auto" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
+              </div>
+              <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 350px;">
+                <ol id="searchResults" style="z-index: 20;">
+                </ol>
+              </div>
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="row justify-content-center">        
+        <div class="col-lg-10 py-2 px-0">
+          <div class="col-md-12 col-sm-12 col-lg-12">
+            <br>
+            <h3 id="titulo" class="h3-blue">{{categoria.nombre}}</h3>
+            <br>
+          </div>
+          <div id="iniciales">
+          {% for item in collections[categoria.nombre] | limit(6)%}
+            <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
+            <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
+              <div class="justify-content-start">
+                <a href="{{item.url}}">
+                  <div class="d-flex" style="align-items:center;height:100%">
+                    <div class="p-2 d-flex" style="height:100%;align-items:center">
+                      <h3 class="h3-blue">{{loop.index}}</h3>
+                      <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{categoria.img}}">
+                      <div class="px-2">
+                        <h3 class="h3-blue">{{item.data.servicio.Nombre}}</h3>
+                        <p>{{item.data.servicio.Ministerios}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+
+              </div>
+
+            </div>
+          {% endfor %}
+          </div>
+
+
+          <div id="todo" style="display:none">
+          {% for item in collections[categoria.nombre] %}
+            <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
+            <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
+              <div class="justify-content-start">
+                <a href="{{item.url}}">
+                  <div class="d-flex" style="align-items:center;height:100%">
+                    <div class="p-2 d-flex" style="height:100%;align-items:center">
+                      <h3 class="h3-blue">{{loop.index}}</h3>
+                      <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{categoria.img}}">
+                      <div class="px-2">
+                        <h3 class="h3-blue">{{item.data.servicio.Nombre}}</h3>
+                        <p>{{item.data.servicio.Ministerios}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+
+              </div>
+
+            </div>
+          {% endfor %}
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-lg-12 justify-content-end d-flex">
+            <a href="javascript:ocultar_mostrar();" id="vermas" class="btnVerdeR">Ver más<a>
+          </div>
+            
+          
         </div>
 
       </div>
@@ -94,7 +147,26 @@ tags:
 
 {% block body_javascripts %}
 
-  <script src="/assets/js/retainable.js"></script>
+  <script>
+
+    function ocultar_mostrar(){
+
+      if(document.getElementById('todo').style.display === 'none'){
+        document.getElementById('iniciales').style.display = 'none';
+        document.getElementById('todo').style.display = 'block';
+        document.getElementById('vermas').innerHTML = 'Ver menos';
+        location.href = "#titulo";    
+      }
+      else if(document.getElementById('vermas').innerHTML = 'Ver menos'){
+        document.getElementById('iniciales').style.display = 'block';
+        document.getElementById('todo').style.display = 'none';
+        document.getElementById('vermas').innerHTML = 'Ver más';
+        location.href = "#titulo";
+      }    
+    }
+
+  </script>
+
   <!--Only 5.7kb GZipped. You may want to bundle this with your application code. -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
   <script>
