@@ -25,13 +25,14 @@ permalink: index.html
           <br>
           <br>
 
-          <div class="col-md-10" style="justify-content: center;position:absolute;top:85px">
-            <div class="w-auto mx-auto" style="max-width: 750px; z-index: 1000;">
+          <div class="col-md-9" style="justify-content: center;position:absolute;top:85px">
+            <div class="w-auto" style="max-width: 750px; z-index: 1000; display:contents">
               <div class="bg-white p-4 shadow">
                 <div><h3 class="h3-blue text-center">¿Qué servicio estás buscando hoy?</h3></div>
-                <div class="field">
+                <div class="field d-flex justify-content-center" style="align-items:center">
                   <label for="searchField" style="display:none">Search</label>
-                  <input class="form-control mx-auto" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
+                  <input class="form-control" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
+                  <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
                 </div>
                 <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 350px;">
                   <ol id="searchResults" style="z-index: 20;">

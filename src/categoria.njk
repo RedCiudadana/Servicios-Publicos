@@ -10,7 +10,9 @@ tags:
 ---
 {% extends "base.njk" %}
 
-{% block head %}{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
 
 {% block content %}
   <!--SLIDER - BUSCADOR-->
@@ -46,13 +48,14 @@ tags:
           <br>
 
           
-          <div class="w-auto" style="max-width: 400px; z-index: 1000;">
+          <div class="w-auto" style="max-width: 750px; z-index: 1000;">
             <div class="bg-white p-4 border">
-              <div><h3 class="h3-blue">¿Qué servicio estás buscando hoy?</h3></div>
-              <div class="field">
-                <label for="searchField" style="display:none">Search</label>
-                <input class="form-control mx-auto" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
-              </div>
+              <div><h3 class="h3-blue text-center">¿Qué servicio estás buscando hoy?</h3></div>
+              <div class="field d-flex justify-content-center" style="align-items:center">
+                  <label for="searchField" style="display:none">Search</label>
+                  <input class="form-control" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
+                  <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
+                </div>
               <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 350px;">
                 <ol id="searchResults" style="z-index: 20;">
                 </ol>

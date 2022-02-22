@@ -17398,3 +17398,9 @@ input:-moz-placeholder {
 	  max-width:230px!important;
 	}
 }
+
+.icon-fazul{
+	padding: 10px;
+	background-color: #053D5E;
+	color: #fff;
+}
