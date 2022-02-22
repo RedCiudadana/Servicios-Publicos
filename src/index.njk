@@ -34,7 +34,7 @@ permalink: index.html
                   <input class="form-control" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
                   <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
                 </div>
-                <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 350px;">
+                <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 450px;">
                   <ol id="searchResults" style="z-index: 20;">
                   </ol>
                 </div>
@@ -269,7 +269,7 @@ permalink: index.html
         ol.innerHTML = "";
         searchResultsContainer.style.position = 'none';
         if (results && results.length > 0) {
-          searchResultsContainer.style.position = 'absolute';
+          searchResultsContainer.style.position = 'static';
           results.map(r => {
             const { id, nombre, ministerios } = r.doc;
 
