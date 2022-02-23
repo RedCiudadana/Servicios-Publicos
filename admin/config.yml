@@ -18,7 +18,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { name: "nombre", label: "Nombre" }
       - { name: "ministerio", label: "Ministerio" }
-      - { name: "categoria", label: "Categoria" }
       - { name: "unidadejecutora", label: "Unidad_Ejecutora" }
       - { name: "descripcion", label: "Descripcion" }
       - { name: "requisitos", label: "Requisitos" }
