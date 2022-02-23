@@ -12,6 +12,7 @@ collections:
     folder: "src/servicios" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    identifier_field: nombre
     editor:
       preview: false # Disable the editor preview and use instead 'preview links'
     fields: # The fields for each document, usually in front matter
@@ -31,9 +32,9 @@ collections:
     folder: "src/categoria"
     create: true
     slug: "{{slug}}"
-    identifier_field: title
+    identifier_field: nombre
     fields:
       - { label: "Id", name: "id"}
-      - { label: "Nombre", name: "title", widget: "string" }
+      - { label: "Nombre", name: "nombre", widget: "string" }
       - { label: "Img", name: "img", widget: "image" }
 
