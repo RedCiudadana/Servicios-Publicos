@@ -16,7 +16,7 @@ collections:
     editor:
       preview: false # Disable the editor preview and use instead 'preview links'
     fields: # The fields for each document, usually in front matter
-      - { name: "title", label: "Nombre" }
+      - { name: "nombre", label: "Nombre" }
       - { name: "ministerio", label: "Ministerio" }
       - { name: "categoria", label: "Categoria" }
       - { name: "unidadejecutora", label: "Unidad_Ejecutora" }
@@ -27,14 +27,14 @@ collections:
       - { name: "quejas", label: "Quejas" }
       - { name: "categoria", label: "Categoria", widget: "relation", collection: "categoria", searchFields: ["nombre"], valueField: "nombre", multiple: true, }
       - { name: "highlight", label: "Highlight", widget: "boolean", default: false, hint: "Display posts in home's highlights" }
-#  - name: "categoria"
- #   label: "Categoria"
-  #  folder: "src/categoria"
-   # create: true
-    #slug: "{{slug}}"
-    #identifier_field: nombre
-    #fields:
-     # - { label: "Id", name: "id"}
-      #- { label: "Nombre", name: "nombre", widget: "string" }
-      #- { label: "Img", name: "img", widget: "image" }
+  - name: "categoria"
+    label: "Categoria"
+    folder: "src/categoria"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: nombre
+    fields:
+      - { label: "Id", name: "id"}
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Img", name: "img", widget: "image" }
 
