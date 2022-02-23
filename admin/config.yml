@@ -24,6 +24,7 @@ collections:
       - { name: "costo", label: "Costo" }
       - { name: "tiemporespuesta", label: "Tiempo_Respuesta" }
       - { name: "quejas", label: "Quejas" }
+      - { name: "enlace", label: "Enlace" }
       - { name: "categoria", label: "Categoria", widget: "relation", collection: "categoria", searchFields: ["nombre"], valueField: "nombre", multiple: true, }
       - { name: "highlight", label: "Highlight", widget: "boolean", default: false, hint: "Display posts in home's highlights" }
   - name: "categoria"

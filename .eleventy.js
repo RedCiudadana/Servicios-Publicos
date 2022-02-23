@@ -49,6 +49,12 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('unidad');
     });
 
+    eleventyConfig.addCollection('serviciosHighlighted', (collectionApi) => {
+        return collectionApi.getFilteredByTag('servicios').filter((item) => {
+          return item.data.highlight == true;
+        });
+    });
+
     //FILTROS
     eleventyConfig.addFilter("search", searchFilter);
     eleventyConfig.addFilter("search2", searchFilterUE);

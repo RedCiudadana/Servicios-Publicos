@@ -87,65 +87,116 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
           
         </div>
 
-        <!--Rating-->
-        <div class="bg-white col-lg-5">
-          <div class="container">
-            <div class="col-12" style="justify-content: center;">
+        <div class="col-lg-11"> 
+          <div class="grid grid-cols-9 gap-4 justify-center text-left py-16">
+          
+            <div class="col-span-9 md:col-span-6">
+              <h3 class="h1-blue">¿Qué es?</h3>
+              <br>
+              <hr>
+              <br>
+              <p>{{servicio.Descripcion}}</p>
+              <br>
+              <p>Los pasos a seguir son los siguientes:</p>
+              <br>
+              <p>{{servicio.Pasos}}</p>
+            </div>
 
-              <a target="_blank" href="{{servicio.Enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
+            <div class="col-span-9 md:col-span-3">
+              <!--Rating-->
+              <div class="col-12" style="justify-content: center;">
 
-              <h4>Puntea este servicio!</h4>
+                <a target="_blank" href="{{servicio.Enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
 
-              <div id="containerR" class="containerR">
-                <div class="postR">
-                  <div class="textR">Gracias por el Comentario!</div>
+                <h4>Puntea este servicio!</h4>
+
+                <div id="containerR" class="containerR">
+                  <div class="postR">
+                    <div class="textR">Gracias por el Comentario!</div>
+                  </div>
+                  <div class="star-widget">
+                    <input type="radio" name="rate" id="rate-5">
+                    <label for="rate-5" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-4">
+                    <label for="rate-4" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-3">
+                    <label for="rate-3" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-2">
+                    <label for="rate-2" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-1">
+                    <label for="rate-1" class="fas fa-star"></label>
+                    
+                    <form action="#" onsubmit="return postToGoogle();return ocultar();">
+                      <header></header>
+                      <div class="textarea">
+                        <textarea id="comentario" cols="30" placeholder="Describe la puntuación..."></textarea>
+                      </div>
+                      <div class="btn">
+                        <button type="submit" id="send" onclick="ocultar()">Comentar</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-                <div class="star-widget">
-                  <input type="radio" name="rate" id="rate-5">
-                  <label for="rate-5" class="fas fa-star"></label>
-                  <input type="radio" name="rate" id="rate-4">
-                  <label for="rate-4" class="fas fa-star"></label>
-                  <input type="radio" name="rate" id="rate-3">
-                  <label for="rate-3" class="fas fa-star"></label>
-                  <input type="radio" name="rate" id="rate-2">
-                  <label for="rate-2" class="fas fa-star"></label>
-                  <input type="radio" name="rate" id="rate-1">
-                  <label for="rate-1" class="fas fa-star"></label>
                   
-                  <form action="#" onsubmit="return postToGoogle();return ocultar();">
-                    <header></header>
-                    <div class="textarea">
-                      <textarea id="comentario" cols="30" placeholder="Describe la puntuación..."></textarea>
-                    </div>
-                    <div class="btn">
-                      <button type="submit" id="send" onclick="ocultar()">Comentar</button>
-                    </div>
-                  </form>
+              </div>
+              <h3 id="success-msg" style="text-align: center !important; margin-top:190px !important; display:none; color:#fff"> Se registro su comentario</h3>
+            </div>
+
+              <!--div class="col-12 border" style="background-color: #03324e; border-radius: 20px">
+                <br>
+                <h4 class="text-white">¿Tienes dudas con este servicio?</h4>
+                <h6 class="text-white">Comunicate con nosotros:</h6>
+                <br>
+                <div class="d-flex" style="    justify-content: center;">
+                  <a href="https://www.facebook.com/Redciudadanagt" class="nav-link-social text-white" target="_blank"><i class="fab fa-facebook pad0100 ft30" aria-hidden="true"></i></a>
+                  <a href="https://twitter.com/RedxGuate" class="nav-link-social text-white" target="_blank"><i class="fab fa-twitter pad0100 ft30" aria-hidden="true"></i></a>
+                  <a href="https://www.instagram.com/redxguate" class="nav-link-social text-white" target="_blank"><i class="fab fa-instagram pad0100 ft30" aria-hidden="true" ></i></a>
                 </div>
-              </div>
-                
-            </div>
+                <br>
+              </div-->
 
-            <h3 id="success-msg" style="text-align: center !important; margin-top:190px !important; display:none; color:#fff"> Se registro su comentario</h3>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="col-12 border" style="background-color: #03324e; border-radius: 20px">
-              <br>
-              <h4 class="text-white">¿Tienes dudas con este servicio?</h4>
-              <h6 class="text-white">Comunicate con nosotros:</h6>
-              <br>
-              <div class="d-flex" style="    justify-content: center;">
-                <a href="https://www.facebook.com/Redciudadanagt" class="nav-link-social text-white" target="_blank"><i class="fab fa-facebook pad0100 ft30" aria-hidden="true"></i></a>
-                <a href="https://twitter.com/RedxGuate" class="nav-link-social text-white" target="_blank"><i class="fab fa-twitter pad0100 ft30" aria-hidden="true"></i></a>
-                <a href="https://www.instagram.com/redxguate" class="nav-link-social text-white" target="_blank"><i class="fab fa-instagram pad0100 ft30" aria-hidden="true" ></i></a>
-              </div>
-              <br>
             </div>
-
-          </div>
+          </div>     
         </div>
+
+        <!--SERVICIOS DESTACADOS-->
+        <h3 class="h1-blue">Servicios Destacados</h3>
+        <br>
+        <hr>
+        <br>
+        <div class="w-100">
+          <div class="container py-5">
+            <div class="row">
+              
+              {% if collections.serviciosHighlighted%}
+                {% for item in collections.serviciosHighlighted | limit(4)%}
+                  <div class="col-md-4 border">
+                    <br>
+                    <h4 class="text-left h3-blue" >{{item.data.unidad_ejecutora}}</h4>  
+                    <a href="{{item.url}}"><h3>{{item.data.nombre}}</h3></a>
+                    <p><strong>{{item.data.categoria}}</strong></p>
+                    <p>{{item.data.descripcion}}</p>
+                    <br>
+                  </div>
+                {% endfor %}
+
+              {% else %}
+                {% for item in collections.servicio%}
+                  {% if item.data.servicio.topWanted%}
+                    <div class="col-md-4 border">
+                      <br>
+                      <h4 class="text-left h3-blue" >{{item.data.servicio.Unidad_Ejecutora}}</h4>  
+                      <a href="{{item.url}}"><h3>{{item.data.servicio.Nombre}}</h3></a>
+                      <p><strong>{{item.data.servicio.Categoria}}</strong></p>
+                      <p>{{item.data.servicio.Descripcion}}</p>
+                      <br>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        <div>
 
       </div>
     </div>
@@ -153,10 +204,9 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
 
 
   <!--Comentarios-->
-  <div class="w-100">
+  <!--div class="w-100">
     <div class="container py-5">
       <div class="row col-12">
-        <!---->
         <h4>Comentarios</h4>
         <table class="table" id="comentarios">
 
@@ -165,30 +215,8 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
         </table>
       </div>
     </div>
-  </div>
+  </div-->
 
-  <!--PAGINAS IMPORTANTES-->
-  <div class="w-100">
-    <div class="container py-5">
-      <div class="row">
-
-        {% for item in collections.servicio%}
-          {% if item.data.servicio.topWanted%}
-            <div class="col-md-4 border">
-              <br>
-              <h4 class="text-left" style="color: #03324e">{{item.data.servicio.Unidad_Ejecutora}}</h4>  
-              <a href="{{item.url}}"><h3>{{item.data.servicio.Nombre}}</h3></a>
-              <p><strong>{{item.data.servicio.Categoria}}</strong></p>
-              <p>{{item.data.servicio.Descripcion}}</p>
-              <br>
-            </div>
-          {% endif %}
-        {% endfor %}
-
-        
-      </div>
-    </div>
-  </div>
 {% endblock %}
 
 {% block body_javascripts%}
