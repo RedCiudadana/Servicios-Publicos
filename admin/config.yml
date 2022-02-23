@@ -27,14 +27,14 @@ collections:
       - { name: "quejas", label: "Quejas" }
       - { name: "categoria", label: "Categoria", widget: "relation", collection: "categoria", searchFields: ["nombre"], valueField: "nombre", multiple: true, }
       - { name: "highlight", label: "Highlight", widget: "boolean", default: false, hint: "Display posts in home's highlights" }
-  - name: "categoria"
-    label: "Categoria"
-    folder: "src/categoria"
-    create: true
-    slug: "{{slug}}"
-    identifier_field: nombre
-    fields:
-      - { label: "Id", name: "id"}
-      - { label: "Nombre", name: "nombre", widget: "string" }
-      - { label: "Img", name: "img", widget: "image" }
+#  - name: "categoria"
+ #   label: "Categoria"
+  #  folder: "src/categoria"
+   # create: true
+    #slug: "{{slug}}"
+    #identifier_field: nombre
+    #fields:
+     # - { label: "Id", name: "id"}
+      #- { label: "Nombre", name: "nombre", widget: "string" }
+      #- { label: "Img", name: "img", widget: "image" }
 

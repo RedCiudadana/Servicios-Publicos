@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
         });
     });
 
-    eleventyConfig.addFilter("search", searchFilter);
+    
     eleventyConfig.addCollection("servicios", function(collectionApi) {
         return collectionApi.getFilteredByTag('servicio');
     });
@@ -49,7 +49,8 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('unidad');
     });
 
-    
+    //FILTROS
+    eleventyConfig.addFilter("search", searchFilter);
     eleventyConfig.addFilter("search2", searchFilterUE);
 
     eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
