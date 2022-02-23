@@ -22,48 +22,69 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
 
 {% block content %}
 
+  <!--SLIDER -->
+  <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-SERVICIOS_01.png');background-size:cover ">
+    <div class="container" style="padding:8rem 0">
+      <div class="row justify-content-center">
+
+        <div class="col-lg-10 py-2 d-flex justify-content-center" >
+          <div class="col-lg-10 col-md-10 col-sm-12">
+            <h1 style="color: #fff!important;"  class="h1-blue text-center">{{servicio.Nombre}}</h1>
+          </div>
+        </div>  
+
+      </div>
+    </div>
+  </div>
+
   <!--CONTENIDO-->
 
   <div class="w-100 bg-white">
     <div class="container py-5">
-      <div class="row">
-        
-        <div class="bg-white col-lg-7">
-          <br>
+      <div class="row justify-content-center">
+
+        <div class="col-lg-12 py-2 ">
+
           <div class="d-flex">
-            <a  href="/index.html" style="color: #03324e!important;text-decoration: underline!important;"> Inicio</a>
-            <p>&nbsp / &nbsp</p>
-            <a  href="/{{servicio.Ministerios}}/index.html" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Ministerios}}</a>
-            <p>&nbsp / &nbsp</p>
-            <p>{{servicio.Categoria}}</p>
-            <!--/{{servicio.Categoria}}/index.html-->
-            <p>&nbsp / &nbsp</p>
-            <a href="/{{servicio.Unidad_Ejecutora}}/index.html" style="color: #03324e!important;text-decoration: underline!important;">{{servicio.Unidad_Ejecutora}}</a>
+            <div class="justify-content-start"><a href="/index.html">Inicio</a> / {%for item in collections.categoria %} {%if item.data.categoria.nombre == servicio.Categoria %} <a href="{{item.url}}">{{servicio.Categoria}}</a> {%endif%}{%endfor%} / <a style="pointer-events:none" href="{{page.url}}">{{servicio.Nombre}}</a></div>
+            <div class="justify-content-end"></div>
           </div>
-          <br>
-
-          <h1 class="break-word">{{servicio.Nombre}}</h1>
-          <small>
-
           
-            Información proporcionada por: <br>
-            {{servicio.Unidad_Ejecutora}}
-          </small>
-          <br>
-
-          <br>
-          <br>
-          <h4 class="text-left">Descripción</h4>
-          <p>{{servicio.Descripcion}}</p>
-          <br>
-          <h4 class="text-left">Requisitos</h4>
-          <p>{{servicio.Requisitos}}</p>
-          <br>
-          <h4 class="text-left">Pasos</h4>
-          <p>{{servicio.Pasos}}</p>
-          <br>
-
-          <a target="_blank" href="{{servicio.Enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
+          <div class="container my-5">
+            <div class="row py-16 border">
+              <div class="col-sm text-center">
+                <img style="padding:0.5rem" src="/ELEMENTOS/ICONOS/ICONOS-04.png">
+                <h2 class="h2-blue">Dependencia que autoriza el trámite</h2>
+                <p class="p-blue">{{servicio.Unidad_Ejecutora}}</p>
+              </div>
+              <div class="col-sm border-left  text-center">
+                <img style="padding:1rem" src="/ELEMENTOS/ICONOS/ICONOS-05.png">
+                <h2 class="h2-blue">Tipo de Documento a obtener</h2>
+                <p class="p-blue">{{servicio.requisitos}}</p>
+              </div>
+              <div class="col-sm border-left  text-center">
+                <img style="padding:1rem" src="/ELEMENTOS/ICONOS/ICONOS-06.png">
+                <h2 class="h2-blue">¿Tiene Costo?</h2>
+                <p class="p-blue">{{servicio.costo}}</p>
+              </div>
+              <div class="col-sm border-left  text-center">
+                <img style="padding:1rem" src="/ELEMENTOS/ICONOS/ICONOS-07.png">
+                <h2 class="h2-blue">Tiempo de Respuesta</h2>
+                <p class="p-blue">{{servicio.tiemporespuesta}}</p>
+              </div>
+              <div class="col-sm border-left text-center">
+                <img style="padding:1rem" src="/ELEMENTOS/ICONOS/ICONOS-08.png">
+                <h2 class="h2-blue">Tiempo de Respuesta</h2>
+                <p class="p-blue">{{servicio.tiemporespuesta}}</p>
+              </div>
+              <div class="col-sm border-left text-center">
+                <img style="padding:1rem" src="/ELEMENTOS/ICONOS/ICONOS-09.png">
+                <h2 class="h2-blue">Quejas</h2>
+                <p class="p-blue">{{servicio.quejas}}</p>
+              </div>
+            </div>
+          </div>
+          
         </div>
 
         <!--Rating-->

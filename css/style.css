@@ -17404,3 +17404,20 @@ input:-moz-placeholder {
 	background-color: #053D5E;
 	color: #fff;
 }
+
+.border-left{
+	border-left: 1px solid #ccc;
+}
+
+.h2-blue{
+	color: #02324f!important;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.p-blue{
+	color: #02324f!important;
+	font-size: 12px;
+	margin: 5px 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
