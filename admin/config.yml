@@ -29,7 +29,7 @@ collections:
           name: "categoria",
           label: "Categoria",
           widget: "relation",
-          collection: "categoria",
+          collection: "categorias",
           searchFields: ["nombre"],
           valueField: "nombre",
           multiple: true,
