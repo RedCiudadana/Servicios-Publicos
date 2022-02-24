@@ -41,8 +41,8 @@ collections:
           default: false,
           hint: "Display posts in home's highlights",
         }
-  - name: "categoria"
-    label: "Categoria"
+  - name: "categorias"
+    label: "Categorias"
     folder: "src/categoria"
     create: false
     slug: "{{slug}}"
