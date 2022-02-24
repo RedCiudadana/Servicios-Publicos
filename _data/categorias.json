@@ -20,11 +20,6 @@
         "img": "/ELEMENTOS/SERVICIOS/proteccion_medio_ambiente.jpg"
     },
     {
-        "id": "6",
-        "nombre": "Vivienda y servicios comunitarios",
-        "img": "/ELEMENTOS/SERVICIOS/vivienda_servicios_comunitarios.jpg"
-    },
-    {
         "id": "7",
         "nombre": "Salud",
         "img": "/ELEMENTOS/SERVICIOS/salud.jpg"
