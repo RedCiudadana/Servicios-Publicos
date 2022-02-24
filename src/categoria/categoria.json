@@ -1,4 +1,4 @@
 {
     "permalink": "categoria/{{ page.fileSlug }}/index.html",
-    "tags": "categoria"
+    "tags": "categorias"
   }
