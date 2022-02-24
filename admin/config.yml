@@ -3,8 +3,8 @@ backend:
   branch: main
 
 # publish_mode: editorial_workflow
-media_folder: 'ELEMENTOS/posts' # Media files will be stored in the repo under src/assets/images/posts
-public_folder: '/ELEMENTOS/posts' # The src attribute for uploaded media will begin with assets/images/posts
+media_folder: "ELEMENTOS/posts" # Media files will be stored in the repo under src/assets/images/posts
+public_folder: "/ELEMENTOS/posts" # The src attribute for uploaded media will begin with assets/images/posts
 
 collections:
   - name: "servicio" # Used in routes, e.g., /admin/collections/blog
@@ -25,16 +25,29 @@ collections:
       - { name: "tiemporespuesta", label: "Tiempo_Respuesta" }
       - { name: "quejas", label: "Quejas" }
       - { name: "enlace", label: "Enlace" }
-      - { name: "categoria", label: "Categoria", widget: "relation", collection: "categoria", searchFields: ["nombre"], valueField: "nombre", multiple: true, }
-      - { name: "highlight", label: "Highlight", widget: "boolean", default: false, hint: "Display posts in home's highlights" }
+      - {
+          name: "categoria",
+          label: "Categoria",
+          widget: "relation",
+          collection: "categoria",
+          searchFields: ["nombre"],
+          valueField: "nombre",
+          multiple: true,
+        }
+      - {
+          name: "highlight",
+          label: "Highlight",
+          widget: "boolean",
+          default: false,
+          hint: "Display posts in home's highlights",
+        }
   - name: "categoria"
     label: "Categoria"
     folder: "src/categoria"
-    create: true
+    create: false
     slug: "{{slug}}"
     identifier_field: nombre
     fields:
-      - { label: "Id", name: "id"}
+      - { label: "Id", name: "id" }
       - { label: "Nombre", name: "nombre", widget: "string" }
       - { label: "Img", name: "img", widget: "image" }
-
