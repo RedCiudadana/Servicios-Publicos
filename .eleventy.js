@@ -50,7 +50,7 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addCollection('serviciosHighlighted', (collectionApi) => {
-        return collectionApi.getFilteredByTag('servicios').filter((item) => {
+        return collectionApi.getFilteredByTag('servicio').filter((item) => {
           return item.data.highlight == true;
         });
     });
