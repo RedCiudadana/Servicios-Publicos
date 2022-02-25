@@ -34,13 +34,13 @@ collections:
           searchFields: ["nombre"],
           valueField: "nombre",
           multiple: true,
+          hint: "Seleccione solo uno porfavor",
         }
       - {
           name: "Highlight",
           label: "Highlight",
           widget: "boolean",
           default: false,
-          hint: "Display posts in home's highlights",
         }
   - name: "categorias"
     label: "Categorias"

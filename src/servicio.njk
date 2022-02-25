@@ -292,7 +292,7 @@ return false;
     .then(data => {
         for (var i = 0; i < data[0].length; i++) {
 
-          if(data[0][i].Nombre=="{{servicio.nombre}}"){
+          if(data[0][i].Nombre=="{{servicio.Nombre}}"){
             const row = document.createElement('tr');
             row.innerHTML += `
                 <td>${data[0][i].Rating}</td>
