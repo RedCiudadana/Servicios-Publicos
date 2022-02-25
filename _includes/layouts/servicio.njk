@@ -1,9 +1,4 @@
 ---
-pagination:
-  data: serviciosFull
-  size: 1
-  addAllPagesToCollections: true
-  alias: servicio
 tags:
   - servicio
   - {{servicio.Categoria | slug}}
@@ -29,7 +24,7 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
 
         <div class="col-lg-10 py-2 d-flex justify-content-center" >
           <div class="col-lg-10 col-md-10 col-sm-12">
-            <h1 style="color: #fff!important;"  class="h1-blue text-center">{{servicio.Nombre}}</h1>
+            <h1 style="color: #fff!important;"  class="h1-blue text-center">{{Nombre}}</h1>
           </div>
         </div>  
 
@@ -46,7 +41,7 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
         <div class="col-lg-12 py-2 ">
 
           <div class="d-flex">
-            <div class="justify-content-start"><a href="/index.html">Inicio</a> / {%for item in collections.categoria %} {%if item.data.categoria.nombre == servicio.Categoria %} <a href="{{item.url}}">{{servicio.Categoria}}</a> {%endif%}{%endfor%} / <a style="pointer-events:none" href="{{page.url}}">{{servicio.Nombre}}</a></div>
+            <div class="justify-content-start"><a href="/index.html">Inicio</a> / {%for item in collections.categoria %} {%if item.data.categoria.nombre == Categoria %} <a href="{{item.url}}">{{Categoria}}</a> {%endif%}{%endfor%} / <a style="pointer-events:none" href="{{page.url}}">{{Nombre}}</a></div>
             <div class="justify-content-end"></div>
           </div>
           
@@ -55,32 +50,32 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
               <div class="col-sm text-center">
                 <img style="padding:20px" src="/ELEMENTOS/ICONOS/ICONOS-04.png">
                 <h2 class="h2-blue">Dependencia que autoriza el trámite</h2>
-                <p class="p-blue">{{servicio.Unidad_Ejecutora}}</p>
+                <p class="p-blue">{{Unidad_Ejecutora}}</p>
               </div>
               <div class="col-sm border-left  text-center">
                 <img style="padding:20px" src="/ELEMENTOS/ICONOS/ICONOS-05.png">
                 <h2 class="h2-blue">Tipo de Documento a obtener</h2>
-                <p class="p-blue">{{servicio.Requisitos}}</p>
+                <p class="p-blue">{{Requisitos}}</p>
               </div>
               <div class="col-sm border-left  text-center">
                 <img style="padding:20px" src="/ELEMENTOS/ICONOS/ICONOS-06.png">
                 <h2 class="h2-blue">¿Tiene Costo?</h2>
-                <p class="p-blue">{{servicio.Costo}}</p>
+                <p class="p-blue">{{Costo}}</p>
               </div>
               <div class="col-sm border-left  text-center">
                 <img style="padding:20px" src="/ELEMENTOS/ICONOS/ICONOS-07.png">
                 <h2 class="h2-blue">Tiempo de Respuesta</h2>
-                <p class="p-blue">{{servicio.Tiemporespuesta}}</p>
+                <p class="p-blue">{{Tiemporespuesta}}</p>
               </div>
               <div class="col-sm border-left text-center">
                 <img style="padding:20px" src="/ELEMENTOS/ICONOS/ICONOS-08.png">
                 <h2 class="h2-blue">Tiempo de Respuesta</h2>
-                <p class="p-blue">{{servicio.Tiemporespuesta}}</p>
+                <p class="p-blue">{{Tiemporespuesta}}</p>
               </div>
               <div class="col-sm border-left text-center">
                 <img style="padding:20px" src="/ELEMENTOS/ICONOS/ICONOS-09.png">
                 <h2 class="h2-blue">Quejas</h2>
-                <p class="p-blue">{{servicio.Quejas}}</p>
+                <p class="p-blue">{{Quejas}}</p>
               </div>
             </div>
           </div>
@@ -95,18 +90,18 @@ permalink: "servicio/{{servicio.ID}}/{{servicio.Categoria | slug}}/{{servicio.Un
               <br>
               <hr>
               <br>
-              <p>{{servicio.Descripcion}}</p>
+              <p>{{Descripcion}}</p>
               <br>
               <p>Los pasos a seguir son los siguientes:</p>
               <br>
-              <p>{{servicio.Pasos}}</p>
+              <p>{{Pasos}}</p>
             </div>
 
             <div class="col-span-9 md:col-span-3">
               <!--Rating-->
               <div class="col-12" style="justify-content: center;">
 
-                <a target="_blank" href="{{servicio.Enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
+                <a target="_blank" href="{{Enlace}}" class="btnAzulO centrado5">Ir al trámite en línea</a> <br>
 
                 <h4>Puntea este servicio!</h4>
 

@@ -1,5 +1,4 @@
 {
-
-    "permalink": "servicio/{{ page.fileSlug }}/index.html",
-    "tags": "servicio"
-  }
+  "permalink": "servicio/{{ page.fileSlug }}/index.html",
+  "tags": "servicio"
+}
