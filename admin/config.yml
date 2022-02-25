@@ -12,22 +12,22 @@ collections:
     folder: "src/servicios" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    identifier_field: Nombre
+    identifier_field: nombre
     editor:
       preview: false # Disable the editor preview and use instead 'preview links'
     fields: # The fields for each document, usually in front matter
-      - { name: "Nombre", label: "Nombre" }
-      - { name: "Ministerio", label: "Ministerio" }
-      - { name: "Unidade_Ejecutora", label: "Unidad_Ejecutora" }
-      - { name: "Descripcion", label: "Descripcion" }
-      - { name: "Requisitos", label: "Requisitos" }
-      - { name: "Pasos", label: "Pasos" }
-      - { name: "Costo", label: "Costo" }
-      - { name: "Tiemporespuesta", label: "Tiempo_Respuesta" }
-      - { name: "Quejas", label: "Quejas" }
-      - { name: "Enlace", label: "Enlace" }
+      - { name: "nombre", label: "Nombre" }
+      - { name: "ministerio", label: "Ministerio" }
+      - { name: "unidade_ejecutora", label: "Unidad_Ejecutora" }
+      - { name: "descripcion", label: "Descripcion" }
+      - { name: "requisitos", label: "Requisitos" }
+      - { name: "pasos", label: "Pasos" }
+      - { name: "costo", label: "Costo" }
+      - { name: "tiemporespuesta", label: "Tiempo_Respuesta" }
+      - { name: "quejas", label: "Quejas" }
+      - { name: "enlace", label: "Enlace" }
       - {
-          name: "Categoria",
+          name: "categoria",
           label: "Categoria",
           widget: "relation",
           collection: "categorias",
@@ -37,7 +37,7 @@ collections:
           hint: "Seleccione solo uno porfavor",
         }
       - {
-          name: "Highlight",
+          name: "highlight",
           label: "Highlight",
           widget: "boolean",
           default: false,
