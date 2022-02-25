@@ -21,6 +21,7 @@ collections:
       - { name: "Unidade_Ejecutora", label: "Unidad_Ejecutora" }
       - { name: "Descripcion", label: "Descripcion" }
       - { name: "Requisitos", label: "Requisitos" }
+      - { name: "Pasos", label: "Pasos" }
       - { name: "Costo", label: "Costo" }
       - { name: "Tiemporespuesta", label: "Tiempo_Respuesta" }
       - { name: "Quejas", label: "Quejas" }
