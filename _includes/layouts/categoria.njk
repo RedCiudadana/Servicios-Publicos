@@ -1,0 +1,206 @@
+{% extends "base.njk" %}
+
+{% block head %}
+    <title>{{nombre}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+  <!--SLIDER -->
+  <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-SERVICIOS_02.png');background-size:cover ">
+    <div class="container" style="padding:8rem 0">
+      <div class="row justify-content-center">
+
+        <div class="col-lg-10 py-2 d-flex justify-content-center" >
+          <div class="col-lg-10 col-md-10 col-sm-12">
+            <h1 style="color: #fff!important;"  class="h1-blue text-center">{{nombre}}</h1>
+          </div>
+        </div>  
+
+      </div>
+    </div>
+  </div>
+
+  <!--CONTENIDO-->
+  <div class="w-100 bg-white">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+
+        <div class="col-lg-10 py-2 ">
+
+          <div class="d-flex">
+            <div class="justify-content-start"><a href="/index.html">Inicio</a> / <a style="pointer-events: none" href="{{page.url}}">{{nombre}}</a></div>
+            <div class="justify-content-end"></div>
+          </div>
+          <br>
+          <h1 class="h1-blue">Servicios</h1>
+          <br>
+          <hr>
+          <br>
+
+          
+          <div class="w-auto" style="max-width: 750px; z-index: 1000;">
+            <div class="bg-white p-4 border">
+              <div><h3 class="h3-blue text-center">¿Qué servicio estás buscando hoy?</h3></div>
+              <div class="field d-flex justify-content-center" style="align-items:center">
+                  <label for="searchField" style="display:none">Search</label>
+                  <input class="form-control" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
+                  <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
+                </div>
+              <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 450px;">
+                <ol type="1" id="searchResults" style="z-index: 20;">
+                </ol>
+              </div>
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="row justify-content-center">        
+        <div class="col-lg-10 py-2 px-0">
+          <div class="col-md-12 col-sm-12 col-lg-12">
+            <br>
+            <h3 id="titulo" class="h3-blue">{{nombre}}</h3>
+            <br>
+          </div>
+          <div id="iniciales">
+          {% for item in collections[nombre] | limit(6)%}
+            <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
+            <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
+              <div class="justify-content-start">
+                <a href="{{item.url}}">
+                  <div class="d-flex" style="align-items:center;height:100%">
+                    <div class="p-2 d-flex" style="height:100%;align-items:center">
+                      <h3 class="h3-blue">{{loop.index}}</h3>
+                      <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{img}}">
+                      <div class="px-2">
+                        <h3 class="h3-blue">{{item.data.nombre}}</h3>
+                        <p>{{item.data.ministerios}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+
+              </div>
+
+            </div>
+          {% endfor %}
+          </div>
+
+
+          <div id="todo" style="display:none">
+          {% for item in collections[nombre] %}
+            <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
+            <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
+              <div class="justify-content-start">
+                <a href="{{item.url}}">
+                  <div class="d-flex" style="align-items:center;height:100%">
+                    <div class="p-2 d-flex" style="height:100%;align-items:center">
+                      <h3 class="h3-blue">{{loop.index}}</h3>
+                      <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{img}}">
+                      <div class="px-2">
+                        <h3 class="h3-blue">{{item.datanombre}}</h3>
+                        <p>{{item.data.ministerios}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div>
+
+              </div>
+
+            </div>
+          {% endfor %}
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-lg-12 justify-content-end d-flex">
+            <a href="javascript:ocultar_mostrar();" id="vermas" class="btnVerdeR">Ver más<a>
+          </div>
+            
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #searchResults {
+      max-height: 10rem;
+      overflow: auto;
+      background: white;
+      width: 100%;
+      position: relative;
+    }
+  </style>
+{% endblock %}
+
+{% block body_javascripts %}
+
+  <script>
+
+    function ocultar_mostrar(){
+
+      if(document.getElementById('todo').style.display === 'none'){
+        document.getElementById('iniciales').style.display = 'none';
+        document.getElementById('todo').style.display = 'block';
+        document.getElementById('vermas').innerHTML = 'Ver menos';
+        location.href = "#titulo";    
+      }
+      else if(document.getElementById('vermas').innerHTML = 'Ver menos'){
+        document.getElementById('iniciales').style.display = 'block';
+        document.getElementById('todo').style.display = 'none';
+        document.getElementById('vermas').innerHTML = 'Ver más';
+        location.href = "#titulo";
+      }    
+    }
+
+  </script>
+
+  <!--Only 5.7kb GZipped. You may want to bundle this with your application code. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script>
+    (function(window, document) {
+    "use strict";
+
+    const search = e => {
+      const results = window.searchIndex.search(e.target.value);
+
+      const ol = document.getElementById("searchResults");
+      const searchResultsContainer = document.getElementById("searchResultsContainer");
+      ol.innerHTML = "";
+      searchResultsContainer.style.position = 'none';
+      if (results && results.length > 0) {
+        searchResultsContainer.style.position = 'static';
+        results.map(r => {
+          const { id, nombre, ministerios } = r.doc;
+
+          // this is where you'll go wild with your own HTML injection.
+          const li = document.createElement("li");
+          ol.appendChild(li);
+
+          const a = document.createElement("a");
+          a.setAttribute("href", id);
+          a.textContent = `${nombre}, ${ministerios}`;
+          li.appendChild(a);
+        });
+      }
+    };
+
+    fetch("/search-index.json").then(response =>
+      response.json().then(rawIndex => {
+        window.searchIndex = elasticlunr.Index.load(rawIndex);
+        document.getElementById("searchField").addEventListener("input", search);
+      })
+    );
+  })(window, document);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+{% endblock %}

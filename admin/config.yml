@@ -33,7 +33,7 @@ collections:
           collection: "categorias",
           searchFields: ["nombre"],
           valueField: "nombre",
-          multiple: true,
+          multiple: false,
           hint: "Seleccione solo uno porfavor",
         }
       - {
