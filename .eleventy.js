@@ -1,5 +1,4 @@
 const searchFilter = require('./filters/searchFilter');
-const searchFilterUE = require('./filters/searchFilterUE');
 
 const moment = require("moment");
 const now = new Date();
@@ -41,14 +40,6 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('servicio');
     });
 
-    eleventyConfig.addCollection("entidad", function(collectionApi) {
-        return collectionApi.getFilteredByTag('entidad');
-    });
-
-    eleventyConfig.addCollection("unidad", function(collectionApi) {
-        return collectionApi.getFilteredByTag('unidad');
-    });
-
     eleventyConfig.addCollection('serviciosHighlighted', (collectionApi) => {
         return collectionApi.getFilteredByTag('servicio').filter((item) => {
           return item.data.highlight == true;
@@ -57,7 +48,6 @@ module.exports = function (eleventyConfig) {
 
     //FILTROS
     eleventyConfig.addFilter("search", searchFilter);
-    eleventyConfig.addFilter("search2", searchFilterUE);
 
     eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
         return array.slice(0, limit);
