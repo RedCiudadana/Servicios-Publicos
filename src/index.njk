@@ -213,18 +213,18 @@ permalink: index.html
         <div class="col-md-10 col-sm-12 col-lg-10 d-flex justify-content-center">
           <div class="grid grid-cols-9 gap-4 justify-center text-left py-16">
 
-            {% for item in collections.categoria%}
+            {% for item in collections.categorias%}
             <div class="col-span-9 md:col-span-3"> 
               <a href="{{item.url}}">
               <div class="border-rounded d-flex justify-content-center" style="align-items:center">
                 <div class="text-center p-2">
-                  <img class="m-auto" height="100px" width="100px" src="{{item.data.categoria.img}}">
-                  <h3 class="h3-blue">{{item.data.categoria.nombre}}</h3>
-                  <p>{{item.data.categoria.descripcion}}</p>
+                  <img class="m-auto" height="100px" width="100px" src="{{item.data.img}}">
+                  <h3 class="h3-blue">{{item.data.nombre}}</h3>
+                  <p>{{item.data.descripcion}}</p>
 
                   <div class="d-flex justify-content-center" style="align-items:center">
                     <div class="cuadrado-verde"></div>
-                    <p> Servicios : {{ collections[item.data.categoria.nombre] | length}}</p>          
+                    <p> Servicios : {{ collections[item.data.nombre] | length}}</p>          
                   </div>
                   
                 </div>
