@@ -27,8 +27,8 @@ module.exports = function (eleventyConfig) {
     categorias.forEach((categoria) => {
         eleventyConfig.addCollection(categoria, function (collectionApi) {
             
-            let collection = collectionApi.getFilteredByTags('servicio').filter(function (item) {
-                return item.data.servicio.Categoria === categoria;
+            let collection = collectionApi.getFilteredByTags('servicios').filter(function (item) {
+                return item.data.categoria === categoria;
             });
 
             return collection;
