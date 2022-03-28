@@ -3,9 +3,9 @@ const elasticlunr = require("elasticlunr");
 module.exports = function (collection) {
     // what fields we'd like our index to consist of
     var index = elasticlunr(function () {
-        this.addField("ministerios");
+        this.addField("ministerio");
         this.addField("unidad_ejecutora");
-        this.addField("pagina_web");
+        this.addField("enlace");
         this.addField("nombre");
         this.setRef("id");
     });
@@ -14,10 +14,10 @@ module.exports = function (collection) {
     collection.forEach(item => {
         index.addDoc({
             id: item.url,
-            ministerios: item.data.servicio.Ministerios,
-            unidad_ejecutora: item.data.servicio.Unidad_Ejecutora,
-            pagina_web: item.data.servicio.Página_web,
-            nombre: item.data.servicio.Nombre
+            ministerio: item.data.ministerio,
+            unidad_ejecutora: item.data.unidad_ejecutora,
+            enlace: item.data.enlace,
+            nombre: item.data.nombre
         });
     });
 

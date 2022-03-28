@@ -65,18 +65,21 @@
             <br>
           </div>
           <div id="iniciales">
-          {% for item in collections[nombre] | limit(6)%}
+          {% set numindex = 0 %}
+          {% for servicio in collections.servicios%}
+            {% if nombre == servicio.data.categoria%}
             <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
             <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
               <div class="justify-content-start">
-                <a href="{{item.url}}">
+                <a href="{{servicio.url}}">
                   <div class="d-flex" style="align-items:center;height:100%">
                     <div class="p-2 d-flex" style="height:100%;align-items:center">
-                      <h3 class="h3-blue">{{loop.index}}</h3>
+                      {% set numindex = numindex + 1%}
+                      <h3 class="h3-blue">{{numindex}}</h3>
                       <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{img}}">
                       <div class="px-2">
-                        <h3 class="h3-blue">{{item.data.nombre}}</h3>
-                        <p>{{item.data.ministerios}}</p>
+                        <h3 class="h3-blue">{{servicio.data.nombre}}</h3>
+                        <p>{{servicio.data.ministerio}}</p>
                       </div>
                     </div>
                   </div>
@@ -87,6 +90,7 @@
               </div>
 
             </div>
+            {%endif%}
           {% endfor %}
           </div>
 
