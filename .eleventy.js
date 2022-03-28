@@ -37,7 +37,7 @@ module.exports = function (eleventyConfig) {
 
     
     eleventyConfig.addCollection("servicios", function(collectionApi) {
-        return collectionApi.getFilteredByTag('servicio');
+        return collectionApi.getFilteredByTag('servicios');
     });
 
     eleventyConfig.addCollection('serviciosHighlighted', (collectionApi) => {
