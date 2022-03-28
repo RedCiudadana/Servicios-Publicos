@@ -301,7 +301,7 @@ permalink: index.html
         if (results && results.length > 0) {
           searchResultsContainer.style.position = 'static';
           results.map(r => {
-            const { id, nombre, ministerios } = r.doc;
+            const { id, nombre, ministerio } = r.doc;
 
             // this is where you'll go wild with your own HTML injection.
             const li = document.createElement("li");
@@ -309,7 +309,7 @@ permalink: index.html
 
             const a = document.createElement("a");
             a.setAttribute("href", id);
-            a.textContent = `${nombre}, ${ministerios}`;
+            a.textContent = `${nombre}, ${ministerio}`;
             li.appendChild(a);
           });
         }
