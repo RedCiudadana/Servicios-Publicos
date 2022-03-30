@@ -9,7 +9,6 @@ costo: no tiene costo
 tiemporespuesta: 1 hora
 quejas: comuniquese acá con las quejas
 enlace: www.google.com
-categoria:
-  - Servicios públicos generales
+categoria: Asuntos económicos
 highlight: true
 ---
