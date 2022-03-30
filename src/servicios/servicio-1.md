@@ -9,7 +9,6 @@ costo: Q30
 tiemporespuesta: 2 Horas
 quejas: redciudadana.org/quejas
 enlace: redciudadana.org
-categoria:
-  - Educación
+categoria: Orden público y seguridad
 highlight: false
 ---
