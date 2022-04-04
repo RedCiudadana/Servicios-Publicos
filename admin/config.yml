@@ -17,15 +17,77 @@ collections:
       preview: false # Disable the editor preview and use instead 'preview links'
     fields: # The fields for each document, usually in front matter
       - { name: "nombre", label: "Nombre" }
-      - { name: "ministerio", label: "Ministerio" }
-      - { name: "unidade_ejecutora", label: "Unidad_Ejecutora" }
+      - {
+          name: "ministerio",
+          label: "Ministerio",
+          widget: "relation",
+          collection: "ministerios",
+          searchFields: ["nombre"],
+          valueField: "nombre",
+          multiple: false,
+        }
+      - { name: "direccion", label: "Dirección" }
+      - {
+          name: "categoria",
+          label: "Temática General",
+          widget: "relation",
+          collection: "categorias",
+          searchFields: ["nombre"],
+          valueField: "nombre",
+          multiple: false,
+        }
+      - {
+          name: "categoriaesp",
+          label: "Temática Específica",
+          widget: "relation",
+          collection: "categoriasespecificas",
+          searchFields: ["nombre"],
+          valueField: "nombre",
+          multiple: false,
+        }
       - { name: "descripcion", label: "Descripcion" }
+      - { name: "normativa", label: "Normativa Aplicada a Trámite" }
       - { name: "requisitos", label: "Requisitos" }
+      - { name: "costo", label: "Costos" }
       - { name: "pasos", label: "Pasos" }
-      - { name: "costo", label: "Costo" }
       - { name: "tiemporespuesta", label: "Tiempo_Respuesta" }
-      - { name: "quejas", label: "Quejas" }
-      - { name: "enlace", label: "Enlace" }
+      - { name: "enlace", label: "Enlace Trámite" }
+      - {
+          name: "highlight",
+          label: "Highlight",
+          widget: "boolean",
+          default: false,
+        }
+  - name: "categorias"
+    label: "Categorias Generales"
+    folder: "src/categoria"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: nombre
+    fields:
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - {
+          label: "Descripcion",
+          name: "descripcion",
+          widget: "string",
+          optional: true,
+        }
+      - { label: "Img", name: "img", widget: "image" }
+  - name: "categoriasespecificas"
+    label: "Categorias Específicas"
+    folder: "src/categoriaesp"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: nombre
+    fields:
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - {
+          label: "Descripcion",
+          name: "descripcion",
+          widget: "string",
+          optional: true,
+        }
+      - { label: "Img", name: "img", widget: "image" }
       - {
           name: "categoria",
           label: "Categoria",
@@ -34,21 +96,72 @@ collections:
           searchFields: ["nombre"],
           valueField: "nombre",
           multiple: false,
-          hint: "Seleccione solo uno porfavor",
         }
+  - name: "ministerios"
+    label: "Ministerios"
+    folder: "src/ministerios"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: nombre
+    fields:
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Descripcion", name: "descripcion", widget: "string" }
+      - { label: "Dirección", name: "direccion" }
+      - { label: "Horarios", name: "horarios" }
+      - { label: "Días de Atención", name: "diasatecion" }
+      - { label: "Página Web", name: "paginaweb" }
+      - { label: "Correo Electrónico", name: "correo" }
+      - { label: "Redes - Facebook", name: "redesfb" }
+      - { label: "Redes - Twitter", name: "redestw" }
+  - name: "podcast" # Used in routes, e.g., /admin/collections/podcast
+    label: "Podcast" # Used in the UI
+    folder: "src/podcasts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false # Disable the editor preview and use instead 'preview links'
+    fields: # The fields for each document, usually in front matter
+      - { name: "title", label: "Title" }
+      - { name: "description", label: "Description" }
+      - { name: "link", label: "Enlace de podcast" }
+      - { name: "date", label: "Date", widget: "datetime" }
       - {
           name: "highlight",
           label: "Highlight",
           widget: "boolean",
           default: false,
+          hint: "Display podcast in home's highlights",
         }
-  - name: "categorias"
-    label: "Categorias"
-    folder: "src/categoria"
-    create: false
-    slug: "{{slug}}"
+  - name: "chatbot" # Used in routes, e.g., /admin/collections/podcast
+    label: "ChatBot" # Used in the UI
+    folder: "src/chatbot" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false # Disable the editor preview and use instead 'preview links'
     identifier_field: nombre
-    fields:
-      - { label: "Id", name: "id" }
-      - { label: "Nombre", name: "nombre", widget: "string" }
-      - { label: "Img", name: "img", widget: "image" }
+    fields: # The fields for each document, usually in front matter
+      - { name: "nombre", label: "Nombre" }
+      - { name: "embed", label: "Embed", widget: "Markdown" }
+  - name: "datos" # Used in routes, e.g., /admin/collections/podcast
+    label: "Datos" # Used in the UI
+    folder: "src/datos" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false # Disable the editor preview and use instead 'preview links'
+    identifier_field: nombre
+    fields: # The fields for each document, usually in front matter
+      - { name: "nombre", label: "Nombre" }
+      - { name: "embed", label: "Embed", widget: "Markdown" }
+  - name: "quejas" # Used in routes, e.g., /admin/collections/podcast
+    label: "Quejas" # Used in the UI
+    folder: "src/quejas" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false # Disable the editor preview and use instead 'preview links'
+    identifier_field: nombre
+    fields: # The fields for each document, usually in front matter
+      - { name: "nombre", label: "Nombre" }
+      - { name: "embed", label: "Embed", widget: "Markdown" }
