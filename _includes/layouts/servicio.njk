@@ -39,16 +39,16 @@
           </div>
           
           <div class="container my-5">
-            <div class="row py-16 border">
+            <div class="row py-16 border justify-content-center">
               <div class="col-sm-2 text-center">
                 <img src="/ELEMENTOS/ICONOS/ICONOS-04.png">
                 <h2 class="h2-blue">Dependencia que autoriza el trámite</h2>
-                <p class="p-blue">{{unidade_ejecutora}}</p>
+                <p class="p-blue">{{categoria}}</p>
               </div>
               <div class="col-sm-2 border-left  text-center">
                 <img src="/ELEMENTOS/ICONOS/ICONOS-05.png">
                 <h2 class="h2-blue">Tipo de Documento a obtener</h2>
-                <p class="p-blue">{{requisitos}}</p>
+                <p class="p-blue">{{tipodocumento}}</p>
               </div>
               <div class="col-sm-2 border-left  text-center">
                 <img  src="/ELEMENTOS/ICONOS/ICONOS-06.png">
@@ -57,11 +57,6 @@
               </div>
               <div class="col-sm-2 border-left  text-center">
                 <img src="/ELEMENTOS/ICONOS/ICONOS-07.png">
-                <h2 class="h2-blue">Tiempo de Respuesta</h2>
-                <p class="p-blue">{{tiemporespuesta}}</p>
-              </div>
-              <div class="col-sm-2 border-left text-center">
-                <img src="/ELEMENTOS/ICONOS/ICONOS-08.png">
                 <h2 class="h2-blue">Tiempo de Respuesta</h2>
                 <p class="p-blue">{{tiemporespuesta}}</p>
               </div>
@@ -85,9 +80,24 @@
               <br>
               <p>{{descripcion}}</p>
               <br>
-              <p>Los pasos a seguir son los siguientes:</p>
+              <h3 class="h1-blue">Normativa:</h3>
               <br>
-              <p>{{pasos}}</p>
+              <hr>
+              <br>
+              <p>{{normativa}}</p>
+              <br>
+              <h3 class="h1-blue">Requisitos:</h3>
+              <br>
+              <hr>
+              <br>
+              <p>{{requisitos | rmj | safe}}</p>
+              <br>
+              <h3 class="h1-blue">Los pasos a seguir son los siguientes:</h3>
+              <br>
+              <hr>
+              <br>
+              <p>{{pasos | rmj | safe}}</p>
+              <br>
             </div>
 
             <div class="col-span-9 md:col-span-3">

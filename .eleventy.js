@@ -1,4 +1,5 @@
 const searchFilter = require('./filters/searchFilter');
+const rmj = require('render-markdown-js');
 
 const moment = require("moment");
 const now = new Date();
@@ -35,6 +36,9 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addNunjucksFilter("rmj", function(content) {
+        return rmj(content);
+    });
     
     eleventyConfig.addCollection("servicios", function(collectionApi) {
         return collectionApi.getFilteredByTag('servicios');
