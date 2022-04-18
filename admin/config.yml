@@ -19,14 +19,13 @@ collections:
       - { name: "nombre", label: "Nombre" }
       - {
           name: "ministerio",
-          label: "Ministerio",
+          label: "Dependencia (Ministerio, Secretaria, etc...)",
           widget: "relation",
           collection: "ministerios",
           searchFields: ["nombre"],
           valueField: "nombre",
           multiple: false,
         }
-      - { name: "direccion", label: "Dirección" }
       - {
           name: "categoria",
           label: "Temática General",
@@ -47,10 +46,11 @@ collections:
         }
       - { name: "descripcion", label: "Descripcion" }
       - { name: "normativa", label: "Normativa Aplicada a Trámite" }
-      - { name: "requisitos", label: "Requisitos" }
+      - { name: "pasos", label: "Pasos", widget: "markdown" }
+      - { name: "requisitos", label: "Requisitos", widget: "markdown" }
       - { name: "costo", label: "Costos" }
-      - { name: "pasos", label: "Pasos" }
-      - { name: "tiemporespuesta", label: "Tiempo_Respuesta" }
+      - { name: "tiemporespuesta", label: "Tiempo Respuesta" }
+      - { name: "tipodocumento", label: "Tipo de documento a Obtener" }
       - { name: "enlace", label: "Enlace Trámite" }
       - {
           name: "highlight",
