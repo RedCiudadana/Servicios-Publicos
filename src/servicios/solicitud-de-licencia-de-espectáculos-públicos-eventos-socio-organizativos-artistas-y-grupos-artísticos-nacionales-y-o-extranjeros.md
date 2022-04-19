@@ -96,5 +96,5 @@ tiemporespuesta: 15 dias
 tipodocumento: Licencia de espectáculos públicos
 enlace: https://mcd.gob.gt/
 direccion: 6a. calle entre 6a. y 7a. ave. zona 1 Ciudad de Guatemala
-highlight: false
+highlight: true
 ---
