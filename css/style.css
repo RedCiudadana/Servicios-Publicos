@@ -17444,3 +17444,8 @@ input:-moz-placeholder {
 	margin: 5px 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+ol{
+	list-style: decimal!important;
+	margin-left: 25px!important;
+}
