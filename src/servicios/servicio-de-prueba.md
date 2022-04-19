@@ -6,7 +6,7 @@ descripcion: Este es un servicio con fines de prueba
 requisitos: Estos son los requisitos del servicio
 pasos: Estos son los pasos del servicio
 costo: no tiene costo
-tiemporespuesta: 1 hora
+tiemporespuesta: 2 hora
 quejas: comuniquese acá con las quejas
 enlace: www.google.com
 categoria: Asuntos económicos
