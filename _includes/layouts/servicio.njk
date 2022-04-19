@@ -34,7 +34,7 @@
         <div class="col-lg-12 py-2 ">
 
           <div class="d-flex">
-            <div class="justify-content-start"><a href="/index.html">Inicio</a> / {%for item in collections.categorias %} {%if item.data.nombre == categoria %} <a href="{{item.url}}">{{categoria}}</a> {%endif%}{%endfor%} / <a style="pointer-events:none" href="{{page.url}}">{{nombre}}</a></div>
+            <div class="justify-content-start"><a href="/index.html">Inicio</a> / {%for item in collections.categorias %} {%if item.data.nombre == categoria %} <a href="{{item.url}}">{{categoria}}</a> {%endif%}{%endfor%} / {%for item in collections.categoriaesps %} {%if item.data.nombre == categoriaesp %} <a href="{{item.url}}">{{categoriaesp}}</a> {%endif%}{%endfor%} / <a style="pointer-events:none" href="{{page.url}}">{{nombre}}</a></div>
             <div class="justify-content-end"></div>
           </div>
           
@@ -43,7 +43,7 @@
               <div class="col-sm-2 text-center">
                 <img src="/ELEMENTOS/ICONOS/ICONOS-04.png">
                 <h2 class="h2-blue">Dependencia que autoriza el trámite</h2>
-                <p class="p-blue">{{categoria}}</p>
+                <p class="p-blue">{{ministerio}}</p>
               </div>
               <div class="col-sm-2 border-left  text-center">
                 <img src="/ELEMENTOS/ICONOS/ICONOS-05.png">
@@ -52,8 +52,8 @@
               </div>
               <div class="col-sm-2 border-left  text-center">
                 <img  src="/ELEMENTOS/ICONOS/ICONOS-06.png">
-                <h2 class="h2-blue">¿Tiene Costo?</h2>
-                <p class="p-blue">{{costo}}</p>
+                <h2 class="h2-blue">¿Cuál es el Costo?</h2>
+                <p class="p-blue">Q {{costo}}</p>
               </div>
               <div class="col-sm-2 border-left  text-center">
                 <img src="/ELEMENTOS/ICONOS/ICONOS-07.png">
@@ -63,7 +63,7 @@
               <div class="col-sm-2 border-left text-center">
                 <img style="padding:20px" src="/ELEMENTOS/ICONOS/ICONOS-09.png">
                 <h2 class="h2-blue">Quejas</h2>
-                <p class="p-blue">{{quejas}}</p>
+                <p class="p-blue">¿Tienes problemas con este trámite? Comunícate con nosotros</p>
               </div>
             </div>
           </div>
