@@ -73,6 +73,12 @@ collections:
           optional: true,
         }
       - { label: "Img", name: "img", widget: "image" }
+      - {
+          name: "highlight",
+          label: "Highlight",
+          widget: "boolean",
+          default: false,
+        }
   - name: "categoriasespecificas"
     label: "Categorias Específicas"
     folder: "src/categoriaesp"
@@ -96,6 +102,12 @@ collections:
           searchFields: ["nombre"],
           valueField: "nombre",
           multiple: false,
+        }
+      - {
+          name: "highlight",
+          label: "Highlight",
+          widget: "boolean",
+          default: false,
         }
   - name: "ministerios"
     label: "Ministerios"

@@ -13,77 +13,62 @@ permalink: index.html
 
 {% block content %}
   <!--SLIDER - BUSCADOR-->
-  <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-HOME.png');background-size:cover ">
-    <div class="container" style="padding:5rem 0">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 py-2 d-flex justify-content-start" >
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <h1 style="color: #fff!important; font-size:25px" >Te damos la bienvenida al <strong>portal de servicios</strong> donde podrás ver los trámites de manera rápida, ágil y sencilla.</h1>
-          </div>
-        </div>  
-        <div class="col-lg-10 py-2 d-flex justify-content-center">
-          <br>
-          <br>
-
-          <div class="col-md-9" style="justify-content: center;position:absolute;top:85px">
-            <div class="w-auto" style="max-width: 750px; z-index: 1000; display:contents">
-              <div class="bg-white p-4 shadow">
-                <div><h3 class="h3-blue text-center">¿Qué servicio estás buscando hoy?</h3></div>
-                <div class="field d-flex justify-content-center" style="align-items:center">
-                  <label for="searchField" style="display:none">Search</label>
-                  <input class="form-control" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
-                  <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
-                </div>
-                <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 450px;">
-                  <ol id="searchResults" style="z-index: 20;">
-                  </ol>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+ 
 
   <!--CATEGORIAS DESTACADAS-->
   <div class="w-100 " style="background-color:#f3f7f9!important">
-    <div class="container py-5">
+    <div class="container py-2">
       <div class="max-w-screen-lg mx-auto " style="margin:3rem auto; padding:0 2rem">
-        <div class="grid grid-cols-6 justify-center text-left py-16" style="gap:4rem">
 
-          <div class="col-span-6 md:col-span-3">
-            <img src="/ELEMENTOS/WEB SERVICIOS-24.png" width="100%" height="100%">
+        <div class="row">
+          
+          <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS/04_SLIDER/SLIDER_02.png');background-size:cover;    border-radius: 15px ">
+            <div class="container" style="padding:6rem 0">
+              <div class="row justify-content-center">
+
+                <div class="col-lg-10 py-2 d-flex justify-content-center" >
+                  <div class="col-lg-10 col-md-10 col-sm-12">
+                    <h3 style="color: #fff!important; font-weight: 600; font-size: 20px; line-height: normal;"  class=" text-center">Te damos la bienvenida al catálogo de servicios donde podrás conocer como realizar tus trámites de manera rápida, ágil y sencilla.</h3>
+                  </div>
+                </div>  
+
+              </div>
+            </div>
           </div>
+          
+        </div>
 
-          <div class="col-span-6 md:col-span-3">
-            <h1 class="h1-blue">Catálogo de trámites y servicios</h1>
-            <br>
-            <hr>
-            <br>
-            <p>Conoce el catálogo de trámites y servicios municipales. 
-            Aquí podrás encontrar información sobre requisitos, tiempos y costos.
-            </p>
-            <br>
-            <h3 class="h3-blue">¿Qué deseas hacer?¿Que categoría deseas explorar?</h3>
-            <br>
-            <div class="d-flex " style="align-items:center"> 
-              <img class=" rounded r-temp" >
-              <p class="pad0001">Categoría de Salud</p>
+        <div class="row">
+          
+          <div class="w-100" >
+            <div class="container" style="padding:3rem 0">
+              <div class="row">
+                {% for categoria in collections.categoriaesps %}
+                <div class="col-lg-4 col-sm-12" >
+                  <a href="{{categoria.url}}">
+
+                    <div class="border-rounded d-flex justify-content-center" style=" height:100%">
+                      <img class="" style="height:50px; width:50px; margin:10px 0 0 5px" src="{{categoria.data.img}}">
+                      <div class=" p-2">
+                        
+                        <h3 class="h3-blue" style="font-size:13px">{{categoria.data.nombre}}</h3>
+                        <p style="font-size:10px">{{categoria.data.descripcion}}</p>
+
+                        <!--div class="d-flex justify-content-center" style="align-items:center">
+                          <div class="cuadrado-verde"></div>
+                          <p> Servicios : {{ collections[categoria.data.nombre] | length}}</p>          
+                        </div-->
+                        
+                      </div>
+                    </div>
+
+                  </a>
+                </div>  
+                {% endfor %}
+              </div>
             </div>
-            <div class="d-flex pt-2" style="align-items:center"> 
-              <img class=" rounded r-temp" >
-              <p class="pad0001">Categoría de Salud</p>
-            </div>
-            <div class="d-flex pt-2" style="align-items:center"> 
-              <img class=" rounded r-temp">
-              <p class="pad0001">Categoría de Salud</p>
-            </div>
-            <br>
-            <a href="#categorias" class="btnAzulO2">Ver más categorías<i class="fa-solid fa-chevron-right"></i></a>
           </div>
-
+          
         </div>
 
       </div>
@@ -91,193 +76,95 @@ permalink: index.html
   </div>
 
   <!--SERVICIOS DESTACADOS-->
-  <div class="w-100 " style="background-color:#f3f7f9!important">
-    <div class="container py-5">
-      <div class="row row-eq-height  justify-content-center">
+  <div class="w-100 " style="background-color:#fff!important">
+    <div class="container py-2">
+      <div class="max-w-screen-lg mx-auto " style="margin:3rem auto; padding:0 2rem">
+      
+        <div class="row row-eq-height ">
 
-        <div class="col-lg-10">
-          <h1 class="h1-blue">Destacados</h1>
-          <br>
-          <hr>
-          <br>
-        </div>
-
-        <div class="col-lg-10 d-flex justify-content-center">
-          <div class="grid grid-cols-9 gap-4 justify-center text-left py-16">
-          
-            <div class="col-span-9 md:col-span-3">
-              <!--destacados limit 1-->
-              <div class="cuadro shadow bg-white my-2">
-                <img src="/ELEMENTOS/WEB SERVICIOS-24.png">
-                <div class="col-md-12">
-                  <div class="py-2 d-flex justify-content-start">
-                    <a style="pointer-events: none" class="tag" href="">Servicio</a>
-                  </div>
-                  <h3 class="h3-blue">Servicio de Salud</h3>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                  Lacinia quis vel eros donec. Natoque penatibus et magnis dis parturient montes. </p>
-                  <div class="py-2 d-flex justify-content-end">
-                    <a href="">Conoce más <i class="fa-solid fa-chevron-right"></i></a>
-                  </div>              
-                </div>        
-              </div>
-            </div>
-
-            <div class="col-span-9 md:col-span-6">
-              <!--destacados limitSinPrimero 4 reversed-->
-              <div class="cuadro shadow bg-white d-flex my-2">  
-                <div class="grid grid-cols-9 gap-4 justify-center text-left"> 
-                  <div class="col-span-9 md:col-span-3">      
-                    <img src="/ELEMENTOS/WEB SERVICIOS-24.png">
-                  </div>
-                  <div class="col-span-9 md:col-span-6 d-flex" style="align-items:center" >
-                    <div class="col-md-12">
-                      <div class="py-2 d-flex justify-content-start">
-                        <a style="pointer-events: none" class="tag" href="">Servicio</a>
-                      </div>
-                      <h3 class="h3-blue">Servicio de Salud</h3>
-                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                      Lacinia quis vel eros donec. Natoque penatibus et magnis dis parturient montes. </p>
-                      <div class="py-2 d-flex justify-content-end">
-                        <a href="">Conoce más <i class="fa-solid fa-chevron-right"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cuadro shadow bg-white d-flex my-2">  
-                <div class="grid grid-cols-9 gap-4 justify-center text-left"> 
-                  <div class="col-span-9 md:col-span-3">      
-                    <img src="/ELEMENTOS/WEB SERVICIOS-24.png">
-                  </div>
-                  <div class="col-span-9 md:col-span-6 d-flex" style="align-items:center">
-                    <div class="col-md-12">
-                      <div class="py-2 d-flex justify-content-start">
-                        <a style="pointer-events: none" class="tag" href="">Servicio</a>
-                      </div>
-                      <h3 class="h3-blue">Servicio de Salud</h3>
-                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                      Lacinia quis vel eros donec. Natoque penatibus et magnis dis parturient montes. </p>
-                      <div class="py-2 d-flex justify-content-end">
-                        <a href="">Conoce más <i class="fa-solid fa-chevron-right"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cuadro shadow bg-white d-flex my-2">  
-                <div class="grid grid-cols-9 gap-4 justify-center text-left"> 
-                  <div class="col-span-9 md:col-span-3">      
-                    <img src="/ELEMENTOS/WEB SERVICIOS-24.png">
-                  </div>
-                  <div class="col-span-9 md:col-span-6 d-flex" style="align-items:center">
-                    <div class="col-md-12">
-                      <div class="py-2 d-flex justify-content-start">
-                        <a style="pointer-events: none" class="tag" href="">Servicio</a>
-                      </div>
-                      <h3 class="h3-blue">Servicio de Salud</h3>
-                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                      Lacinia quis vel eros donec. Natoque penatibus et magnis dis parturient montes. </p>
-                      <div class="py-2 d-flex justify-content-end">
-                        <a href="">Conoce más <i class="fa-solid fa-chevron-right"></i></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
+          <div class="col-lg-10">
+            <h1 class="h1-blue">¿Qué información necesitas?</h1>
+            <br>
+            <hr>
+            <br>
           </div>
+          
 
         </div>
-        
+      
+        <div class="row">
+            
+          <div class="w-100" >
+            <div class="container">
+              <div class="row">
+                {% for categoria in collections.categoriaesps %}
+                <div class="col-lg-4 col-sm-12" >
+                  <a href="{{categoria.url}}">
+
+                    <div class="border-rounded d-flex justify-content-center" style=" height:100%">
+                      <img class="" style="height:50px; width:50px; margin:10px 0 0 5px" src="{{categoria.data.img}}">
+                      <div class=" p-2">
+                        
+                        <h3 class="h3-blue" style="font-size:13px">{{categoria.data.nombre}}</h3>
+                        <p style="font-size:10px">{{categoria.data.descripcion}}</p>
+
+                        <!--div class="d-flex justify-content-center" style="align-items:center">
+                          <div class="cuadrado-verde"></div>
+                          <p> Servicios : {{ collections[categoria.data.nombre] | length}}</p>          
+                        </div-->
+                        
+                      </div>
+                    </div>
+
+                  </a>
+                </div>  
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          
+        </div>
 
       </div>
     </div>
   </div>
 
   <!--CATEGORIAS-->
-  <div class="w-100 bg-white">
+  <div class="w-100 " style="background-color:#f3f7f9!important">
     <div class="container py-5">
-      <div class="row row-eq-height  justify-content-center">
-        <div class="col-lg-10">
-          <h1 class="h1-blue" id="categorias">Categorías</h1>
-          <br>
-          <hr>
-          <br>
-        </div>
+      <div class="max-w-screen-lg mx-auto " style="margin:3rem auto; padding:0 2rem">
+        <div class="row row-eq-height  ">
 
-        <div class="col-md-10 col-sm-12 col-lg-10 d-flex justify-content-center">
-          <div class="grid grid-cols-9 gap-4 justify-center text-left py-16">
+          <div class="col-lg-6 col-sm-12">
 
-            {% for servicio in collections.servicios%}
-              {% for categoria in collections.categorias%}
-                {% if servicio.data.categoria === categoria.data.nombre%}
-                  <div class="col-span-9 md:col-span-3"> 
-                    <a href="{{categoria.url}}">
-                    <div class="border-rounded d-flex justify-content-center" style="align-items:center">
-                      <div class="text-center p-2">
-                        <img class="m-auto" height="100px" width="100px" src="{{categoria.data.img}}">
-                        <h3 class="h3-blue">{{categoria.data.nombre}}</h3>
-                        <p>{{categoria.data.descripcion}}</p>
+            <p>Podcast</p>
+            <h1 class="h1-blue">Lorem ipsum dolor</h1>
+            <a class="button-aqua button">Suscribirse</a>
 
-                        <div class="d-flex justify-content-center" style="align-items:center">
-                          <div class="cuadrado-verde"></div>
-                          <p> Servicios : {{ collections[categoria.data.nombre] | length}}</p>          
-                        </div>
-                        
-                      </div>
-                    </div>
-                    </a>
-                  </div>
-                {% endif %}
-              {% endfor %}
-            {% endfor %}
-
-            {% for categoria in collections.categorias%}
-
-              <div class="col-span-9 md:col-span-3"> 
-                <a href="{{categoria.url}}">
-
-                <div class="border-rounded d-flex justify-content-center" style="align-items:center; height:100%">
-                  <div class="text-center p-2">
-                    <img class="m-auto" height="100px" width="100px" src="{{categoria.data.img}}">
-                    <h3 class="h3-blue">{{categoria.data.nombre}}</h3>
-                    <p>{{categoria.data.descripcion}}</p>
-
-                    <!--div class="d-flex justify-content-center" style="align-items:center">
-                      <div class="cuadrado-verde"></div>
-                      <p> Servicios : {{ collections[categoria.data.nombre] | length}}</p>          
-                    </div-->
-                    
-                  </div>
-                </div>
-
-                </a>
-              </div>
- 
-            {% endfor %}
-            
           </div>
-        </div>
 
+          <div class="col-lg-6 col-sm-12">
+            {% for podcast in collections.podcastHighlighted%}
+            <embed src="{{podcast.data.link}}" style="height:200px;width:100%" title="description"/>
+            {% endfor %}
+          </div>
+
+        </div>
       </div>
     </div>
+  </div>
 
     
 
-    <style>
-      #searchResults {
-        max-height: 10rem;
-        overflow: auto;
-        background: white;
-        width: 100%;
-        position: relative;
-      }
-    </style>
+  <style>
+    #searchResults {
+      max-height: 10rem;
+      overflow: auto;
+      background: white;
+      width: 100%;
+      position: relative;
+    }
+  </style>
   {% endblock %}
 
   {% block body_javascripts %}

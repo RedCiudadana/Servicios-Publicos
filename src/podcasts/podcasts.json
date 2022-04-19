@@ -1,0 +1,4 @@
+{
+    "permalink": "podcast/{{ page.fileSlug }}/index.html",
+    "tags": "podcast_cms"
+}

@@ -1,18 +1,7 @@
 const searchFilter = require('./filters/searchFilter');
 const rmj = require('render-markdown-js');
-
 const moment = require("moment");
 const now = new Date();
-
-const categorias = [
-    "Servicios públicos generales",
-    "Orden público y seguridad",
-    "Asuntos económicos",
-    "Protección del medio ambiente",
-    "Vivienda y servicios comunitarios",
-    "Salud",
-    "Educación"
-];
 
 module.exports = function (eleventyConfig) {
     
@@ -25,16 +14,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('images');
     eleventyConfig.addPassthroughCopy('admin');
 
-    categorias.forEach((categoria) => {
-        eleventyConfig.addCollection(categoria, function (collectionApi) {
-            
-            let collection = collectionApi.getFilteredByTags('servicios').filter(function (item) {
-                return item.data.categoria === categoria;
-            });
-
-            return collection;
-        });
-    });
 
     eleventyConfig.addNunjucksFilter("rmj", function(content) {
         return rmj(content);
@@ -48,6 +27,20 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('categoriaesp').filter((item) => {
           return item.data.highlight == true;
         });
+    });
+
+    eleventyConfig.addCollection("categoriaesps", function(collectionApi) {
+        return collectionApi.getFilteredByTag('categoriaesp');
+    });
+
+    eleventyConfig.addCollection('podcastHighlighted', (collectionApi) => {
+        return collectionApi.getFilteredByTag('podcast_cms').filter((item) => {
+          return item.data.highlight == true;
+        });
+    });
+
+    eleventyConfig.addCollection("podcasts", function(collectionApi) {
+        return collectionApi.getFilteredByTag('podcast_cms');
     });
 
     //FILTROS

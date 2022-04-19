@@ -64,7 +64,7 @@
 <body>
 
     <!--HEADER-->
-    <div class="w-100 pad0101" style="background-color: #02b08f">
+    <!--div class="w-100 pad0101" style="background-color: #02b08f">
       <div class="container">
         <div class="row">
           <div class="col-12 mb-2 col-md-9 d-flex" style="align-items:center">          
@@ -79,30 +79,53 @@
           </div>
         </div>
       </div>
-    </div>
+    </div-->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
-        <a class="navbar-brand" href="/index.html">
-            <img src="/ELEMENTOS/LOGOTIPO-GOBIERNO-DIGITAL.png" alt="Bandera de Guatemala" style="height:55px!important" width="auto">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>            
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ml-auto ">
-            <a target="_blank" class="nav-item nav-link" href="https://docs.google.com/spreadsheets/d/1jXOfZ2NbdmGKj4ykWkw3CfKh3hiSBes1jVOn8NBcU68/edit#gid=0">
-                Ver Datos
-            </a>
+          <a class="navbar-brand" href="/index.html">
+              <img src="/ELEMENTOS/ELEMENTOS/02_LOGOTIPOS/GOBIERNO.png" alt="Bandera de Guatemala" style="height:55px!important" width="auto">
+          </a>
+          <a class="navbar-brand" href="/index.html">
+              <img src="/ELEMENTOS/ELEMENTOS/02_LOGOTIPOS/RED.png" alt="Bandera de Guatemala" style="height:55px!important" width="auto">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>            
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto" style="display:block; width:90%">
+              
+              <div class="field d-flex justify-content-center" style="align-items:center">
+                <label for="searchField" style="display:none">Search</label>
+                <input class="form-control" type="search" placeholder="Buscar trámites, servicios o áreas" id="searchField" style="max-width: 400px;"/>
+                <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
+              </div>
+              <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 450px;">
+                <ol id="searchResults" style="z-index: 20;">
+                </ol>
+              </div>
+
             </div>
-        </div>
+          </div>
+          <a href="https://www.facebook.com/Redciudadanagt" class="nav-link-social icono-link" target="_blank"><i class="fab fa-facebook-f " style="padding-right:1rem" aria-hidden="true" ></i></a>              
+          <a href="https://twitter.com/RedxGuate" class="nav-link-social icono-link" target="_blank"><i class="fab fa-twitter " style="padding-right:1rem" aria-hidden="true" ></i></a>
+          <a href="https://www.instagram.com/RedxGuate" class="nav-link-social icono-link" target="_blank"><i class="fab fa-instagram " style="padding-right:1rem" aria-hidden="true" ></i></a>
         </div>
     </nav>
 
     <main>
         {% block content %}
         {% endblock %}  
+        <style>
+        #searchResults {
+          max-height: 10rem;
+          overflow: auto;
+          background: white;
+          width: 100%;
+          position: relative;
+        }
+      </style>
     </main>
   
     <!--FOOTER-->
@@ -182,6 +205,50 @@
 
     {% block body_javascripts %}
     {% endblock %}
+
+    <script src="/assets/js/retainable.js"></script>
+    <!--Only 5.7kb GZipped. You may want to bundle this with your application code. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+    <script>
+      (function(window, document) {
+      "use strict";
+
+      const search = e => {
+        const results = window.searchIndex.search(e.target.value);
+
+        const ol = document.getElementById("searchResults");
+        const searchResultsContainer = document.getElementById("searchResultsContainer");
+        ol.innerHTML = "";
+        searchResultsContainer.style.position = 'none';
+        if (results && results.length > 0) {
+          searchResultsContainer.style.position = 'static';
+          results.map(r => {
+            const { id, nombre, ministerio } = r.doc;
+
+            // this is where you'll go wild with your own HTML injection.
+            const li = document.createElement("li");
+            ol.appendChild(li);
+
+            const a = document.createElement("a");
+            a.setAttribute("href", id);
+            a.textContent = `${nombre}, ${ministerio}`;
+            li.appendChild(a);
+          });
+        }
+      };
+
+      fetch("/search-index.json").then(response =>
+        response.json().then(rawIndex => {
+          window.searchIndex = elasticlunr.Index.load(rawIndex);
+          document.getElementById("searchField").addEventListener("input", search);
+        })
+      );
+    })(window, document);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     
     <script>
       if (window.netlifyIdentity) {
