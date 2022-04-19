@@ -14,7 +14,7 @@ normativa: Ley de Espectáculos Públicos, Decreto 574, Ley de Derechos de Autor
   de Cultura y Deportes 1106-2015 y 544-2016
 pasos: >-
   1. Llenar el formulario habilitado para dicho efecto por la Dirección de
-  Espectáculos Públicos. (disponible para descarga en http://mcd.gob.gt) 
+  Espectáculos Públicos. **(disponible para descarga en http://mcd.gob.gt)** 
 
   2. Fotocopia simple y legible del Documento Personal de Identificación o pasaporte del solicitante. 
 
