@@ -111,11 +111,17 @@ permalink: index.html
                         
                         <h3 class="h3-blue" style="font-size:13px">{{categoria.data.nombre}}</h3>
                         <p style="font-size:10px">{{categoria.data.descripcion}}</p>
-
-                        <!--div class="d-flex justify-content-center" style="align-items:center">
-                          <div class="cuadrado-verde"></div>
-                          <p> Servicios : {{ collections[categoria.data.nombre] | length}}</p>          
-                        </div-->
+                        {% set contador=0%}
+                        {% for servicio in collections.servicios%}
+                          {% if servicio.data.categoriaesp === categoria.data.nombre%}
+                            <div class="d-flex " style="align-items:center">
+                              <div class="cuadrado-verde"></div>
+                              <p style="font-size:10px"> Servicios: {{loop.revindex}}</p>          
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                        
+                        
                         
                       </div>
                     </div>
