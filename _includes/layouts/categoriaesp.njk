@@ -7,138 +7,141 @@
 
 {% block content %}
   <!--SLIDER -->
-  <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-SERVICIOS_02.png');background-size:cover ">
-    <div class="container" style="padding:8rem 0">
-      <div class="row justify-content-center">
+  <div>
+    <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-SERVICIOS_02.png');background-size:cover ">
+      <div class="container" style="padding:8rem 0">
+        <div class="row justify-content-center">
 
-        <div class="col-lg-10 py-2 d-flex justify-content-center" >
-          <div class="col-lg-10 col-md-10 col-sm-12">
-            <h1 style="color: #fff!important;"  class="h1-blue text-center">{{nombre}}</h1>
-          </div>
-        </div>  
-
-      </div>
-    </div>
-  </div>
-
-  <!--CONTENIDO-->
-  <div class="w-100 bg-white">
-    <div class="container py-5">
-      <div class="row justify-content-center">
-
-        <div class="col-lg-10 py-2 ">
-
-          <div class="d-flex">
-            <div class="justify-content-start"><a href="/index.html">Inicio</a> / <a style="pointer-events: none" href="{{page.url}}">{{nombre}}</a></div>
-            <div class="justify-content-end"></div>
-          </div>
-          <br>
-          <h1 class="h1-blue">{{nombre}}</h1>
-          <br>
-          <br>
-
-          
-          <div class="w-auto" style="max-width: 750px; z-index: 1000;">
-            <div class="bg-white p-4 border">
-              <div><h3 class="h3-blue text-center">¿Qué servicio estás buscando hoy?</h3></div>
-              <div class="field d-flex justify-content-center" style="align-items:center">
-                  <label for="searchField" style="display:none">Search</label>
-                  <input class="form-control" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
-                  <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
-                </div>
-              <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 450px;">
-                <ol type="1" id="searchResults" style="z-index: 20;">
-                </ol>
-              </div>
+          <div class="col-lg-10 py-2 d-flex justify-content-center" >
+            <div class="col-lg-10 col-md-10 col-sm-12">
+              <h1 style="color: #fff!important;"  class="h1-blue text-center">{{nombre}}</h1>
             </div>
+          </div>  
 
-          </div>
-          
         </div>
       </div>
-      <div class="row justify-content-center">        
-        <div class="col-lg-10 py-2 px-0">
-          <div class="col-md-12 col-sm-12 col-lg-12">
-            <br>
-            <h3 id="titulo" class="h3-blue">Servicios</h3>
-            <br>
-          </div>
-          <div id="iniciales">
-          {% set numindex = 0 %}
-          {% for servicio in collections.servicios%}
-            {% if nombre == servicio.data.categoriaesp%}
-            <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important; margin-bottom:20px"></div>
-            <div class="col-md-4 col-sm-6 col-lg-4 d-flex ">
-              <div class="justify-content-start">
-                <a href="{{servicio.url}}">
-                  
-                  <div class="border-rounded d-flex justify-content-center" style=" height:100%">
-                      <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="{{img}}">
-                      <div class=" p-2">
-                        
-                        <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.nombre}}</h3>
-                        <p style="font-size:10px">{{servicio.data.descripcion}}</p>
-                
-                      </div>
-                  </div>
-                </a>
+    </div>
+
+    <!--CONTENIDO-->
+    <div class="w-100 bg-white">
+      <div style="margin:0 5%;padding:0 5%">
+        <div class="container py-5">
+          <div class="row justify-content-center">
+
+            <div class="col-lg-10 py-2 ">
+
+              <div class="d-flex">
+                <div class="justify-content-start"><a href="/index.html">Inicio</a> / <a style="pointer-events: none" href="{{page.url}}">{{nombre}}</a></div>
+                <div class="justify-content-end"></div>
               </div>
-              <div>
+              <br>
+              <h1 class="h1-blue">{{nombre}}</h1>
+              <br>
+              <br>
 
-              </div>
-
-            </div>
-            {%endif%}
-          {% endfor %}
-          </div>
-
-
-          <div id="todo" style="display:none">
-          {% for item in collections[nombre] %}
-            <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
-            <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
-              <div class="justify-content-start">
-                <a href="{{item.url}}">
-                  <div class="d-flex" style="align-items:center;height:100%">
-                    <div class="p-2 d-flex" style="height:100%;align-items:center">
-                      <h3 class="h3-blue">{{loop.index}}</h3>
-                      <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{img}}">
-                      <div class="px-2">
-                        <h3 class="h3-blue">{{item.data.nombre}}</h3>
-                        <p>{{item.data.ministerios}}</p>
-                      </div>
+              
+              <div class="w-auto" style="max-width: 750px; z-index: 1000;">
+                <div class="bg-white p-4 border">
+                  <div><h3 class="h3-blue text-center">¿Qué servicio estás buscando hoy?</h3></div>
+                  <div class="field d-flex justify-content-center" style="align-items:center">
+                      <label for="searchField" style="display:none">Search</label>
+                      <input class="form-control" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
+                      <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
                     </div>
+                  <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 450px;">
+                    <ol type="1" id="searchResults" style="z-index: 20;">
+                    </ol>
                   </div>
-                </a>
-              </div>
-              <div>
+                </div>
 
               </div>
-
+              
             </div>
-          {% endfor %}
           </div>
+          <div class="row justify-content-center">        
+            <div class="col-lg-10 py-2 px-0">
+              <div class="col-md-12 col-sm-12 col-lg-12">
+                <br>
+                <h3 id="titulo" class="h3-blue">Servicios</h3>
+                <br>
+              </div>
+              <div id="iniciales">
+              {% set numindex = 0 %}
+              {% for servicio in collections.servicios%}
+                {% if nombre == servicio.data.categoriaesp%}
+                <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important; margin-bottom:20px"></div>
+                <div class="col-md-4 col-sm-6 col-lg-4 d-flex ">
+                  <div class="justify-content-start">
+                    <a href="{{servicio.url}}">
+                      
+                      <div class="border-rounded d-flex justify-content-center" style=" height:100%">
+                          <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="{{img}}">
+                          <div class=" p-2">
+                            
+                            <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.nombre}}</h3>
+                            <p style="font-size:10px">{{servicio.data.descripcion}}</p>
+                    
+                          </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div>
 
-          <div class="col-md-12 col-sm-12 col-lg-12 justify-content-end d-flex">
-            <a href="javascript:ocultar_mostrar();" id="vermas" class="btnVerdeR">Ver más<a>
+                  </div>
+
+                </div>
+                {%endif%}
+              {% endfor %}
+              </div>
+
+
+              <div id="todo" style="display:none">
+              {% for item in collections[nombre] %}
+                <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
+                <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
+                  <div class="justify-content-start">
+                    <a href="{{item.url}}">
+                      <div class="d-flex" style="align-items:center;height:100%">
+                        <div class="p-2 d-flex" style="height:100%;align-items:center">
+                          <h3 class="h3-blue">{{loop.index}}</h3>
+                          <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{img}}">
+                          <div class="px-2">
+                            <h3 class="h3-blue">{{item.data.nombre}}</h3>
+                            <p>{{item.data.ministerios}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div>
+
+                  </div>
+
+                </div>
+              {% endfor %}
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-lg-12 justify-content-end d-flex">
+                <a href="javascript:ocultar_mostrar();" id="vermas" class="btnVerdeR">Ver más<a>
+              </div>
+                
+              
+            </div>
+
           </div>
-            
-          
         </div>
-
       </div>
     </div>
-  </div>
-
-  <style>
-    #searchResults {
-      max-height: 10rem;
-      overflow: auto;
-      background: white;
-      width: 100%;
-      position: relative;
-    }
-  </style>
+  
+    <style>
+      #searchResults {
+        max-height: 10rem;
+        overflow: auto;
+        background: white;
+        width: 100%;
+        position: relative;
+      }
+    </style>
 {% endblock %}
 
 {% block body_javascripts %}
