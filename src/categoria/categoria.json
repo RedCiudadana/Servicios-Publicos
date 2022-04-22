@@ -1,5 +1,5 @@
 {
     "permalink": "categoria/{{ page.fileSlug }}/index.html",
-    "tags": "categorias",
+    "tags": "categorias_cms",
     "layout": "/layouts/categoria.njk"
   }

@@ -33,6 +33,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('categoriaesp');
     });
 
+    eleventyConfig.addCollection("categorias", function(collectionApi) {
+        return collectionApi.getFilteredByTag('categorias_cms');
+    });
+
     eleventyConfig.addCollection('podcastHighlighted', (collectionApi) => {
         return collectionApi.getFilteredByTag('podcast_cms').filter((item) => {
           return item.data.highlight == true;

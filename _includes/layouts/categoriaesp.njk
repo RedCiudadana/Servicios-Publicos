@@ -31,7 +31,7 @@
             <div class="col-lg-10 py-2 ">
 
               <div class="d-flex">
-                <div class="justify-content-start"><a href="/index.html">Inicio</a> / <a style="pointer-events: none" href="{{page.url}}">{{nombre}}</a></div>
+                <div class="justify-content-start"><a href="/index.html">Inicio</a> / {% for categoria_cms in categorias%}{% if categoria_cms.data.nombre == categoria%}<a href="{{categoria_cms.url}}">{{categoria}}</a>{%endif%}{% endfor%}/<a style="pointer-events: none" href="{{page.url}}">{{nombre}}</a></div>
                 <div class="justify-content-end"></div>
               </div>
               <br>
