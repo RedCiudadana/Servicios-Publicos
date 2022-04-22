@@ -16,26 +16,26 @@ permalink: index.html
  
 
   <!--CATEGORIAS DESTACADAS-->
-  <div class="w-100 " style="background-color:#f3f7f9!important">
+  <div class="w-100 " style="background-color:#E3EBF5!important">
     <div class="container py-2">
       <div class="max-w-screen-lg mx-auto " style="margin:3rem auto; padding:0 2rem">
 
         <div class="row">
-          
-          <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS/04_SLIDER/SLIDER_02.png');background-size:cover;    border-radius: 15px ">
-            <div class="container" style="padding:6rem 0">
-              <div class="row justify-content-center">
+          <div class="container">
+            <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS/04_SLIDER/SLIDER_02.png');background-size:cover;    border-radius: 15px ">
+              <div class="container" style="padding:6rem 0">
+                <div class="row justify-content-center">
 
-                <div class="col-lg-10 py-2 d-flex justify-content-center" >
-                  <div class="col-lg-10 col-md-10 col-sm-12">
-                    <h3 style="color: #fff!important; font-weight: 600; font-size: 20px; line-height: normal;"  class=" text-center">Te damos la bienvenida al catálogo de servicios donde podrás conocer como realizar tus trámites de manera rápida, ágil y sencilla.</h3>
-                  </div>
-                </div>  
+                  <div class="col-lg-10 py-2 d-flex justify-content-center" >
+                    <div class="col-lg-10 col-md-10 col-sm-12">
+                      <h3 style="color: #fff!important; font-weight: 600; font-size: 20px; line-height: normal;"  class=" text-center">Te damos la bienvenida al catálogo de servicios donde podrás conocer como realizar tus trámites de manera rápida, ágil y sencilla.</h3>
+                    </div>
+                  </div>  
 
+                </div>
               </div>
             </div>
           </div>
-          
         </div>
 
         <div class="row">
@@ -54,7 +54,7 @@ permalink: index.html
                           <img class="m-auto" style="height:50px; width:50px; margin:10px 0 0 5px" src="{{categoria.data.img}}">  
                         </div>
                         <div class="p-2 " style="background:#fff; border-radius: 0 0 15px 15px;">
-                          <h3 class="h3-blue " style="font-size:13px">{{categoria.data.nombre}}</h3>
+                          <h3 class="h3-blue " style="font-size:14px; font-weight:700">{{categoria.data.nombre}}</h3>
                           <p style="font-size:10px">{{categoria.data.descripcion}}</p>
                         </div>
 
@@ -89,7 +89,6 @@ permalink: index.html
           <div class="col-lg-10">
             <h1 class="h1-blue">¿Qué información necesitas?</h1>
             <br>
-            <hr>
             <br>
           </div>
           
@@ -109,20 +108,9 @@ permalink: index.html
                       <img class="" style="height:50px; width:50px; margin:10px 0 0 5px" src="{{categoria.data.img}}">
                       <div class=" p-2">
                         
-                        <h3 class="h3-blue" style="font-size:13px">{{categoria.data.nombre}}</h3>
+                        <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{categoria.data.nombre}}</h3>
                         <p style="font-size:10px">{{categoria.data.descripcion}}</p>
-                        {% set contador=0%}
-                        {% for servicio in collections.servicios%}
-                          {% if servicio.data.categoriaesp === categoria.data.nombre%}
-                            <div class="d-flex " style="align-items:center">
-                              <div class="cuadrado-verde"></div>
-                              <p style="font-size:10px"> Servicios: {{loop.revindex}}</p>          
-                            </div>
-                          {% endif %}
-                        {% endfor %}
-                        
-                        
-                        
+                
                       </div>
                     </div>
 
@@ -140,7 +128,7 @@ permalink: index.html
   </div>
 
   <!--CATEGORIAS-->
-  <div class="w-100 " style="background-color:#f3f7f9!important">
+  <div class="w-100 " style="background-color:#E3EBF5!important">
     <div class="container py-5">
       <div class="max-w-screen-lg mx-auto " style="margin:3rem auto; padding:0 2rem">
         <div class="row row-eq-height  ">
