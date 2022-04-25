@@ -7,7 +7,7 @@ requisitos: Estos son los requisitos del servicio
 pasos: Estos son los pasos del servicio
 costo: no tiene costo
 tiemporespuesta: 2 hora
-quejas: comuniquese acá con las quejas
+quejas: comuniquese acá con las quejas 2
 enlace: www.google.com
 categoria: Asuntos económicos
 highlight: true
