@@ -39,28 +39,28 @@
           </div>
           
           <div class="container my-5">
-            <div class="row py-16 border justify-content-center">
+            <div class="row py-4 border justify-content-center" style="border-color:#02324f!important; border-radius:10px">
               <div class="col-sm-2 text-center">
                 <img src="/ELEMENTOS/ICONOS/ICONOS-04.png">
                 <h2 class="h2-blue">Dependencia que autoriza el trámite</h2>
                 <p class="p-blue">{{ministerio}}</p>
               </div>
-              <div class="col-sm-2 border-left  text-center">
+              <div class="col-sm-2 border-left  text-center" style="border-color:#02324f!important;">
                 <img src="/ELEMENTOS/ICONOS/ICONOS-05.png">
                 <h2 class="h2-blue">Tipo de Documento a obtener</h2>
                 <p class="p-blue">{{tipodocumento}}</p>
               </div>
-              <div class="col-sm-2 border-left  text-center">
+              <div class="col-sm-2 border-left  text-center" style="border-color:#02324f!important;">
                 <img  src="/ELEMENTOS/ICONOS/ICONOS-06.png">
                 <h2 class="h2-blue">¿Cuál es el Costo?</h2>
                 <p class="p-blue">Q {{costo}}</p>
               </div>
-              <div class="col-sm-2 border-left  text-center">
+              <div class="col-sm-2 border-left  text-center" style="border-color:#02324f!important;">
                 <img src="/ELEMENTOS/ICONOS/ICONOS-07.png">
                 <h2 class="h2-blue">Tiempo de Respuesta</h2>
                 <p class="p-blue">{{tiemporespuesta}}</p>
               </div>
-              <div class="col-sm-2 border-left text-center">
+              <div class="col-sm-2 border-left text-center" style="border-color:#02324f!important;">
                 <img style="padding:20px" src="/ELEMENTOS/ICONOS/ICONOS-09.png">
                 <h2 class="h2-blue">Quejas</h2>
                 <p class="p-blue">¿Tienes problemas con este trámite? Comunícate con nosotros</p>
@@ -74,19 +74,19 @@
           <div class="grid grid-cols-9 gap-4 justify-center text-left py-16">
           
             <div class="col-span-9 md:col-span-6">
-              <h3 class="h1-blue">¿Qué es?</h3>
+              <h3 class="h1-blue d-flex align-items-center"><img style="height:30px;width:30px; margin-right:20px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/14.png"/>¿Qué es?</h3>
               <br>
               <br>
               <p>{{descripcion}}</p>
               <br>
               <div class="linea" style="margin: 10px 0"></div>
-              <h3 class="h1-blue">Normativa:</h3>
+              <h3 class="h1-blue d-flex align-items-center"><img style="height:30px;width:30px; margin-right:20px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/15.png"/>Normativa:</h3>
               <br>
               <br>
               <p>{{normativa}}</p>
               <br>
               <div class="linea" style="margin: 10px 0"></div>
-              <h3 class="h1-blue">Requisitos:</h3>
+              <h3 class="h1-blue d-flex align-items-center"><img style="height:30px;width:30px; margin-right:20px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/16.png"/>Requisitos:</h3>
               <br>
               <br>
               <p>{{requisitos | rmj | safe}}</p>
@@ -163,16 +163,21 @@
         <div class="w-100">
           <div class="container py-5">
             <div class="row">
-              
+              <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important; margin-bottom:20px"></div>
+              <div class="row">
               {% if collections.serviciosHighlighted%}
                 {% for servicio in collections.serviciosHighlighted | limit(3)%}
-                <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important; margin-bottom:20px"></div>
+                
                 <div class="col-md-4 col-sm-6 col-lg-4 d-flex ">
                   <div class="justify-content-start">
                     <a href="{{servicio.url}}">
                       
                       <div class="border-rounded d-flex justify-content-center" style=" height:100%">
-                          <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="{{img}}">
+                          {% for categoria in collections.categoriaesps%}
+                          {% if categoria.data.nombre == categoriaesp%}
+                          <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="{{categoria.data.img}}">
+                          {% endif %}
+                          {% endfor %}
                           <div class=" p-2">
                             
                             <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.nombre}}</h3>
@@ -189,6 +194,7 @@
                 </div>
                 {% endfor %}
               {% endif %}
+              </div>
 
             </div>
           </div>

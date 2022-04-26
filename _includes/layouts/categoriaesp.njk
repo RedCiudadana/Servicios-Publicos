@@ -130,12 +130,13 @@
               <br>
               <h1 class="h1-blue">Te puede interesar</h1>
               <br>
-
+              
+              <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important; margin-bottom:20px"></div>
             </div>
             <div class="col-lg-10 py-2 px-0">
+              <div class="row">
               {% if collections.serviciosHighlighted%}
                 {% for servicio in collections.serviciosHighlighted | limit(3)%}
-                  <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important; margin-bottom:20px"></div>
                   <div class="col-md-4 col-sm-6 col-lg-4 d-flex ">
                     <div class="justify-content-start">
                       <a href="{{servicio.url}}">
@@ -158,7 +159,7 @@
                   </div>
                 {% endfor %}
               {% endif %}
-
+              </div>
             </div>
           </div>
 
