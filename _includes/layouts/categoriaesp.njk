@@ -31,11 +31,11 @@
             <div class="col-lg-10 py-2 ">
 
               <div class="d-flex">
-                <div class="justify-content-start"><a href="/index.html">Inicio</a> / {% for categoria_cms in categorias%}{% if categoria_cms.data.nombre == categoria%}<a href="{{categoria_cms.url}}">{{categoria}}</a>{%endif%}{% endfor%}/<a style="pointer-events: none" href="{{page.url}}">{{nombre}}</a></div>
+                <div class="justify-content-start"><a href="/index.html">Inicio</a> / <a style="pointer-events:none">{{categoria}}</a> / <a style="pointer-events: none" href="{{page.url}}">{{nombre}}</a></div>
                 <div class="justify-content-end"></div>
               </div>
               <br>
-              <h1 class="h1-blue">{{nombre}}</h1>
+              <h1 class="h1-blue">Servicios</h1>
               <br>
               <br>
 
@@ -60,11 +60,6 @@
           </div>
           <div class="row justify-content-center">        
             <div class="col-lg-10 py-2 px-0">
-              <div class="col-md-12 col-sm-12 col-lg-12">
-                <br>
-                <h3 id="titulo" class="h3-blue">Servicios</h3>
-                <br>
-              </div>
               <div id="iniciales">
               {% set numindex = 0 %}
               {% for servicio in collections.servicios%}
@@ -95,7 +90,7 @@
               </div>
 
 
-              <div id="todo" style="display:none">
+              <!--div id="todo" style="display:none">
               {% for item in collections[nombre] %}
                 <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
                 <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
@@ -123,12 +118,50 @@
 
               <div class="col-md-12 col-sm-12 col-lg-12 justify-content-end d-flex">
                 <a href="javascript:ocultar_mostrar();" id="vermas" class="btnVerdeR">Ver más<a>
-              </div>
+              </div-->
                 
               
             </div>
 
           </div>
+
+          <div class="row justify-content-center">        
+            <div class="col-lg-10 py-2 px-0">
+              <br>
+              <h1 class="h1-blue">Te puede interesar</h1>
+              <br>
+
+            </div>
+            <div class="col-lg-10 py-2 px-0">
+              {% if collections.serviciosHighlighted%}
+                {% for servicio in collections.serviciosHighlighted | limit(3)%}
+                  <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important; margin-bottom:20px"></div>
+                  <div class="col-md-4 col-sm-6 col-lg-4 d-flex ">
+                    <div class="justify-content-start">
+                      <a href="{{servicio.url}}">
+                        
+                        <div class="border-rounded d-flex justify-content-center" style=" height:100%">
+                            <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="{{img}}">
+                            <div class=" p-2">
+                              
+                              <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.nombre}}</h3>
+                              <p style="font-size:10px">{{servicio.data.descripcion}}</p>
+                      
+                            </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div>
+
+                    </div>
+
+                  </div>
+                {% endfor %}
+              {% endif %}
+
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

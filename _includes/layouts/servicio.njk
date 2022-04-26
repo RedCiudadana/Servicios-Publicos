@@ -165,15 +165,28 @@
             <div class="row">
               
               {% if collections.serviciosHighlighted%}
-                {% for item in collections.serviciosHighlighted | limit(4)%}
-                  <div class="col-md-4 border">
-                    <br>
-                    <h4 class="text-left h3-blue" >{{item.data.unidad_ejecutora}}</h4>  
-                    <a href="{{item.url}}"><h3>{{item.data.nombre}}</h3></a>
-                    <p><strong>{{item.data.categoria}}</strong></p>
-                    <p>{{item.data.descripcion}}</p>
-                    <br>
+                {% for servicio in collections.serviciosHighlighted | limit(3)%}
+                <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important; margin-bottom:20px"></div>
+                <div class="col-md-4 col-sm-6 col-lg-4 d-flex ">
+                  <div class="justify-content-start">
+                    <a href="{{servicio.url}}">
+                      
+                      <div class="border-rounded d-flex justify-content-center" style=" height:100%">
+                          <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="{{img}}">
+                          <div class=" p-2">
+                            
+                            <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.nombre}}</h3>
+                            <p style="font-size:10px">{{servicio.data.descripcion}}</p>
+                    
+                          </div>
+                      </div>
+                    </a>
                   </div>
+                  <div>
+
+                  </div>
+
+                </div>
                 {% endfor %}
               {% endif %}
 

@@ -23,6 +23,12 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('servicios');
     });
 
+    eleventyConfig.addCollection('serviciosHighlighted', (collectionApi) => {
+        return collectionApi.getFilteredByTag('servicios').filter((item) => {
+          return item.data.highlight == true;
+        });
+    });
+
     eleventyConfig.addCollection('categoriasespecificasHighlighted', (collectionApi) => {
         return collectionApi.getFilteredByTag('categoriaesp').filter((item) => {
           return item.data.highlight == true;
@@ -33,8 +39,8 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('categoriaesp');
     });
 
-    eleventyConfig.addCollection("categorias", function(collectionApi) {
-        return collectionApi.getFilteredByTag('categorias_cms');
+    eleventyConfig.addCollection("categoriascms", function(collectionApi) {
+        return collectionApi.getFilteredByTag('categoriascms');
     });
 
     eleventyConfig.addCollection('podcastHighlighted', (collectionApi) => {
