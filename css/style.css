@@ -17450,7 +17450,7 @@ ol{
 	margin-left: 25px!important;
 }
 
-.cuadros-esp{
+.cuadros-esp:first-child{
 	border-bottom: 3px solid #1a86bc;	
 }
 
@@ -17458,6 +17458,6 @@ ol{
 	border-bottom: 3px solid #01a7aa;	
 }
 
-.cuadros-esp:nth-child(3){
+.cuadros-esp:last-child{
 	border-bottom: 3px solid #9bc3dc;	
 }
