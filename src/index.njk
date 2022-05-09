@@ -43,11 +43,11 @@ permalink: index.html
           <div class="w-100" >
             <div class="container" style="padding:3rem 0">
               <div class="row">
-                {% for categoria in collections.categoriaesps %}
+                {% for categoria in collections.categoriaesps | limit(3) %}
                 <div class="col-lg-4 col-sm-12" >
                   <a href="{{categoria.url}}">
 
-                    <div class=" d-flex justify-content-center" style=" height:100%">
+                    <div class="cuadros-esp d-flex justify-content-center" style=" height:100%">
                       
                       <div class="text-center">
                         <div class="p-2 " style="background:#c7dde8; border-radius: 15px 15px 0 0;">
