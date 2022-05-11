@@ -17450,14 +17450,14 @@ ol{
 	margin-left: 25px!important;
 }
 
-.cuadros-esp:first-child{
+.cuadros-esp:nth-child(0n+1){
 	border-bottom: 3px solid #1a86bc;	
 }
 
-.cuadros-esp:nth-child(2){
+.cuadros-esp:nth-child(0n+2){
 	border-bottom: 3px solid #01a7aa;	
 }
 
-.cuadros-esp:last-child{
+.cuadros-esp:nth-child(0n+3){
 	border-bottom: 3px solid #9bc3dc;	
 }
