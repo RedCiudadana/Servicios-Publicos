@@ -1,6 +1,0 @@
-{
-  "permalink": "categoriaesp/{{ page.fileSlug }}/index.html",
-  "tags": "categoriaesp",
-  "layout": "/layouts/categoriaesp.njk"
-}
-  
