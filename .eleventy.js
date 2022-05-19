@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
     });
     
     eleventyConfig.addCollection("servicios", function(collectionApi) {
-        return collectionApi.getFilteredByTag('servicios');
+        return collectionApi.getFilteredByTag('servicio');
     });
 
     eleventyConfig.addCollection('serviciosHighlighted', (collectionApi) => {
@@ -35,12 +35,12 @@ module.exports = function (eleventyConfig) {
         });
     });
 
-    eleventyConfig.addCollection("categoriaesps", function(collectionApi) {
-        return collectionApi.getFilteredByTag('categoriaesp');
+    eleventyConfig.addCollection("categorias", function(collectionApi) {
+        return collectionApi.getFilteredByTag('categorias');
     });
 
-    eleventyConfig.addCollection("categoriascms", function(collectionApi) {
-        return collectionApi.getFilteredByTag('categoriascms');
+    eleventyConfig.addCollection("categoriaesp", function(collectionApi) {
+        return collectionApi.getFilteredByTag('categoriaesp');
     });
 
     eleventyConfig.addCollection('podcastHighlighted', (collectionApi) => {
@@ -67,5 +67,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("dateFormat", function(date, format) {
         return moment(date).format(format);
     });
+
+    eleventyConfig.addFilter('log', value => {
+        console.log(value)
+    })
 
 }

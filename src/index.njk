@@ -43,26 +43,20 @@ permalink: index.html
           <div class="w-100" >
             <div class="container" style="padding:3rem 0">
               <div class="row">
-                {% for categoria in collections.categoriaesps | limit(3) %}
+                {% for item in collections.categoriaesp | limit(3) %}
                 <div class="col-lg-4 col-sm-12" >
-                  <a href="{{categoria.url}}">
-
-                    <div class=" d-flex justify-content-center" style=" height:100%">
+                  <a href="{{item.url}}">
+                    <div class=" d-flex justify-content-center" style="width:100%; height:100%">
                       
-                      <div class="text-center">
+                      <div class="text-center w-100">
                         <div class="p-2 " style="background:#c7dde8; border-radius: 15px 15px 0 0;">
-                          <img class="m-auto" style="height:50px; width:50px; margin:10px 0 0 5px" src="{{categoria.data.img}}">  
+                          <img class="m-auto" style="height:50px; width:50px; margin:10px 0 0 5px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-32.png">  
                         </div>
                         <div class="cuadros-esp"></div>
                         <div class="p-2 " style="background:#fff; border-radius: 0 0 15px 15px;">
-                          <h3 class="h3-blue " style="font-size:14px; font-weight:700">{{categoria.data.nombre}}</h3>
-                          <p style="font-size:10px">{{categoria.data.descripcion}}</p>
+                          <h3 class="h3-blue " style="font-size:14px; font-weight:700">{{item.data.categoriaesp.name}}</h3>
+                          <p style="font-size:10px">{{item.data.categoriaesp.description}}</p>
                         </div>
-
-                        <!--div class="d-flex justify-content-center" style="align-items:center">
-                          <div class="cuadrado-verde"></div>
-                          <p> Servicios : {{ collections[categoria.data.nombre] | length}}</p>          
-                        </div-->
                         
                       </div>
                     </div>
@@ -70,57 +64,6 @@ permalink: index.html
                   </a>
                 </div>  
                 {% endfor %}
-
-                <div class="col-lg-4 col-sm-12" >
-                  <a href="{{categoria.url}}">
-
-                    <div class=" d-flex justify-content-center" style=" height:100%">
-                      
-                      <div class="text-center">
-                        <div class="p-2 " style="background:#c7dde8; border-radius: 15px 15px 0 0;">
-                          <img class="m-auto" style="height:50px; width:50px; margin:10px 0 0 5px" src="{{categoria.data.img}}">  
-                        </div>
-                        <div class="cuadros-esp"></div>
-                        <div class="p-2 " style="background:#fff; border-radius: 0 0 15px 15px;">
-                          <h3 class="h3-blue " style="font-size:14px; font-weight:700">{{categoria.data.nombre}}</h3>
-                          <p style="font-size:10px">{{categoria.data.descripcion}}</p>
-                        </div>
-
-                        <!--div class="d-flex justify-content-center" style="align-items:center">
-                          <div class="cuadrado-verde"></div>
-                          <p> Servicios : {{ collections[categoria.data.nombre] | length}}</p>          
-                        </div-->
-                        
-                      </div>
-                    </div>
-
-                  </a>
-                </div>
-                <div class="col-lg-4 col-sm-12" >
-                  <a href="{{categoria.url}}">
-
-                    <div class=" d-flex justify-content-center" style=" height:100%">
-                      
-                      <div class="text-center">
-                        <div class="p-2 " style="background:#c7dde8; border-radius: 15px 15px 0 0;">
-                          <img class="m-auto" style="height:50px; width:50px; margin:10px 0 0 5px" src="{{categoria.data.img}}">  
-                        </div>
-                        <div class="cuadros-esp"></div>
-                        <div class="p-2 " style="background:#fff; border-radius: 0 0 15px 15px;">
-                          <h3 class="h3-blue " style="font-size:14px; font-weight:700">{{categoria.data.nombre}}</h3>
-                          <p style="font-size:10px">{{categoria.data.descripcion}}</p>
-                        </div>
-
-                        <!--div class="d-flex justify-content-center" style="align-items:center">
-                          <div class="cuadrado-verde"></div>
-                          <p> Servicios : {{ collections[categoria.data.nombre] | length}}</p>          
-                        </div-->
-                        
-                      </div>
-                    </div>
-
-                  </a>
-                </div>
 
                 
               </div>
@@ -154,16 +97,15 @@ permalink: index.html
           <div class="w-100" >
             <div class="container">
               <div class="row">
-                {% for categoria in collections.categoriaesps %}
+                {% for item in collections.categoriaesp %}
                 <div class="col-lg-4 col-sm-12" >
-                  <a href="{{categoria.url}}">
+                  <a href="{{item.url}}">
 
-                    <div class="border-rounded d-flex justify-content-center" style=" height:100%">
-                      <img class="" style="height:50px; width:50px; margin:10px 0 0 5px" src="{{categoria.data.img}}">
-                      <div class=" p-2">
-                        
-                        <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{categoria.data.nombre}}</h3>
-                        <p style="font-size:10px">{{categoria.data.descripcion}}</p>
+                    <div class="border-rounded d-flex justify-content-center w-100" style=" height:100%">
+                      <img class="" style="height:50px; width:50px; margin:10px 0 0 5px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-32.png">
+                      <div class=" p-4">                
+                        <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{item.data.categoriaesp.name}}</h3>
+                        <p style="font-size:10px">{{item.data.categoriaesp.description}}</p>
                 
                       </div>
                     </div>
@@ -171,6 +113,8 @@ permalink: index.html
                   </a>
                 </div>  
                 {% endfor %}
+
+
               </div>
             </div>
           </div>
