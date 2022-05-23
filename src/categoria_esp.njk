@@ -41,7 +41,7 @@ tags:
             <div class="col-lg-10 py-2 ">
 
               <div class="d-flex">
-                <div class="justify-content-start"><a href="/index.html">Inicio</a> / <a style="pointer-events:none;text-transform:capitalize;">{{categoriaesp.category}}</a> / <a style="pointer-events: none;text-transform:capitalize" href="{{page.url}}">{{categoriaesp.name}}</a></div>
+                <div class="justify-content-start"><a href="/index.html">Inicio</a> / {% for category in collections.categorias%}{%if category.data.categoria.id == categoriaesp.category | last %}<a style="text-transform:capitalize;" href={{category.url}}> {{category.data.categoria.name}}   </a>{%endif%}{%endfor%} / <a style="pointer-events: none;text-transform:capitalize" href="{{page.url}}">{{categoriaesp.name}}</a></div>
                 <div class="justify-content-end"></div>
               </div>
               <br>
