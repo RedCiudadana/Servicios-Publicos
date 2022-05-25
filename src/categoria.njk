@@ -70,13 +70,13 @@ tags:
         <div class="col-lg-10 py-2 px-0">
           <div class="col-md-12 col-sm-12 col-lg-12">
             <br>
-            <h3 id="titulo" class="h3-blue">{{nombre}}</h3>
+            <h3 id="titulo" class="h3-blue" style="text-transform:capitalize">{{categoria.name}}</h3>
             <br>
           </div>
           <div id="iniciales">
           {% set numindex = 0 %}
-          {% for servicio in collections.servicios%}
-            {% if nombre == servicio.data.categoria%}
+          {% for item in collections.categoriaesp %}
+            {% if categoria.id == item.data.categoriaesp.category | last %}
             <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
             <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
               <div class="justify-content-start">
@@ -85,10 +85,10 @@ tags:
                     <div class="p-2 d-flex" style="height:100%;align-items:center">
                       {% set numindex = numindex + 1%}
                       <h3 class="h3-blue">{{numindex}}</h3>
-                      <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-33.png">
+                      <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-32.png">
                       <div class="px-2">
-                        <h3 class="h3-blue">{{servicio.data.nombre}}</h3>
-                        <p>{{servicio.data.ministerio}}</p>
+                        <h3 class="h3-blue">{{item.data.categoriaesp.name}}</h3>
+                        <p>{{item.data.categoriaesp.description}}</p>
                       </div>
                     </div>
                   </div>
