@@ -71,12 +71,14 @@ tags:
           <div class="row justify-content-center">        
             <div class="col-lg-10 py-2 px-0">
               <div id="iniciales">
-              {% set numindex = 0 %}
-              {% for servicio in collections.servicios%}
-
-                {% if categoriaesp.name == servicio.data.servicio.subcategory.name%}
                 <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important; margin-bottom:20px"></div>
-                <div class="col-md-4 col-sm-6 col-lg-4 d-flex ">
+                <div class="row">
+                {% set numindex = 0 %}
+                {% for servicio in collections.servicios%}
+
+                  {% if categoriaesp.name == servicio.data.servicio.subcategory.name%}
+                
+                <div class="col-md-4 col-sm-6 col-lg-4 d-flex my-2 w-100">
                   <div class="justify-content-start">
                     <a href="{{servicio.url}}">
                       
@@ -84,7 +86,7 @@ tags:
                           <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-33.png">
                           <div class=" p-2">
                             
-                            <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.servicio.description}}</h3>
+                            <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.servicio.name}}</h3>
                             <p style="font-size:10px">{{servicio.data.servicio.description}}</p>
                     
                           </div>
@@ -96,8 +98,9 @@ tags:
                   </div>
 
                 </div>
-                {%endif%}
-              {% endfor %}
+                  {%endif%}
+                {% endfor %}
+                </div>
               </div>
 
 

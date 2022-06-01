@@ -4,7 +4,7 @@ pagination:
   size: 1
   alias: servicio
   addAllPagesToCollections: true
-permalink: "servicio/{{servicio.id}}/{{servicio.description | slug}}/index.html"
+permalink: "servicio/{{servicio.id}}/index.html"
 tags:
   - servicio
 ---
@@ -12,7 +12,7 @@ tags:
 
 
 {% block head %}
-    <title>Servicios Públicos | {{servicio.description}}</title>
+    <title>Servicios Públicos | {{servicio.name}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--LINK DE REFERENCIA PARA RATING https://www.youtube.com/watch?v=KdO9P8FnVN4&t=0s-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -28,7 +28,7 @@ tags:
 
         <div class="col-lg-10 py-2 d-flex justify-content-center" >
           <div class="col-lg-10 col-md-10 col-sm-12">
-            <h1 style="color: #fff!important;"  class="h1-blue text-center">{{servicio.description}}</h1>
+            <h1 style="color: #fff!important;"  class="h1-blue text-center">{{servicio.name}}</h1>
           </div>
         </div>  
 
@@ -45,7 +45,7 @@ tags:
         <div class="col-lg-12 py-2 ">
 
           <div class="d-flex">
-            <div class="justify-content-start"><a href="/index.html">Inicio</a> / <a style="pointer-events:none" href="{{item.url}}">{{servicio.institution.name}}</a> / {%for item in collections.categoriaesp %}{% if item.data.categoriaesp.name == servicio.subcategory.name %} <a href="{{item.url}}">{{servicio.subcategory.name}}</a> {%endif%}{%endfor%}/ <a style="pointer-events:none" href="{{page.url}}">{{servicio.description}}</a></div>
+            <div class="justify-content-start"><a href="/index.html">Inicio</a> / {%for item in collections.categoriaesp %}{% if item.data.categoriaesp.name == servicio.subcategory.name %} <a href="{{item.url}}">{{servicio.subcategory.name}}</a> {%endif%}{%endfor%}/ <a style="pointer-events:none" href="{{page.url}}">{{servicio.name}}</a></div>
             <div class="justify-content-end"></div>
           </div>
           

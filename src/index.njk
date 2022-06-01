@@ -43,7 +43,7 @@ permalink: index.html
           <div class="w-100" >
             <div class="container" style="padding:3rem 0">
               <div class="row">
-                {% for item in collections.categoriaesp | limit(3) %}
+                {% for item in collections.categoriasespecificasHighlighted | limit(3) %}
                 <div class="col-lg-4 col-sm-12 my-2" >
                   <a href="{{item.url}}">
                     <div class=" d-flex justify-content-center" style="width:100%; height:100%">
@@ -113,6 +113,8 @@ permalink: index.html
                   </a>
                 </div>  
                 {% endfor %}
+
+                
 
 
               </div>

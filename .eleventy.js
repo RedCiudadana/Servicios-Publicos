@@ -31,7 +31,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addCollection('categoriasespecificasHighlighted', (collectionApi) => {
         return collectionApi.getFilteredByTag('categoriaesp').filter((item) => {
-          return item.data.highlight == true;
+          return item.data.categoriaesp.highlight == false;
         });
     });
 

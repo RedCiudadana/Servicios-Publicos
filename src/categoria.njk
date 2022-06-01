@@ -74,33 +74,36 @@ tags:
             <br>
           </div>
           <div id="iniciales">
-          {% set numindex = 0 %}
-          {% for item in collections.categoriaesp %}
-            {% if categoria.id == item.data.categoriaesp.category | last %}
             <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
-            <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
-              <div class="justify-content-start">
-                <a href="{{servicio.url}}">
-                  <div class="d-flex" style="align-items:center;height:100%">
-                    <div class="p-2 d-flex" style="height:100%;align-items:center">
-                      {% set numindex = numindex + 1%}
-                      <h3 class="h3-blue">{{numindex}}</h3>
-                      <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-32.png">
-                      <div class="px-2">
-                        <h3 class="h3-blue">{{item.data.categoriaesp.name}}</h3>
-                        <p>{{item.data.categoriaesp.description}}</p>
+            <div class="row">
+              {% set numindex = 0 %}
+              {% for item in collections.categoriaesp %}
+                {% if categoria.id == item.data.categoriaesp.category | last %}
+                
+                <div class="col-md-12 col-sm-12 col-lg-12 d-flex my-2">
+                  <div class="justify-content-start">
+                    <a href="{{item.url}}">
+                      <div class="d-flex" style="align-items:center;height:100%">
+                        <div class="p-2 d-flex" style="height:100%;align-items:center">
+                          {% set numindex = numindex + 1%}
+                          <h3 class="h3-blue">{{numindex}}</h3>
+                          <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-32.png">
+                          <div class="px-2">
+                            <h3 class="h3-blue">{{item.data.categoriaesp.name}}</h3>
+                            <p>{{item.data.categoriaesp.description}}</p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
-                </a>
-              </div>
-              <div>
+                  <div>
 
-              </div>
+                  </div>
 
+                </div>
+                {%endif%}
+              {% endfor %}
             </div>
-            {%endif%}
-          {% endfor %}
           </div>
 
 
