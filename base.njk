@@ -247,7 +247,6 @@
     {% block body_javascripts %}
     {% endblock %}
 
-    <script src="/assets/js/retainable.js"></script>
     <!--Only 5.7kb GZipped. You may want to bundle this with your application code. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
     <script>
@@ -264,7 +263,7 @@
         if (results && results.length > 0) {
           searchResultsContainer.style.position = 'static';
           results.map(r => {
-            const { id, nombre, ministerio } = r.doc;
+            const { id, name, institution } = r.doc;
 
             // this is where you'll go wild with your own HTML injection.
             const li = document.createElement("li");
@@ -272,7 +271,7 @@
 
             const a = document.createElement("a");
             a.setAttribute("href", id);
-            a.textContent = `${nombre}, ${ministerio}`;
+            a.textContent = `${name}, ${institution}`;
             li.appendChild(a);
           });
         }

@@ -13,11 +13,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('ELEMENTOS');
     eleventyConfig.addPassthroughCopy('images');
     eleventyConfig.addPassthroughCopy('admin');
-
-
-    eleventyConfig.addNunjucksFilter("rmj", function(content) {
-        return rmj(content);
-    });
     
     eleventyConfig.addCollection("servicios", function(collectionApi) {
         return collectionApi.getFilteredByTag('servicio');
@@ -25,7 +20,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addCollection('serviciosHighlighted', (collectionApi) => {
         return collectionApi.getFilteredByTag('servicios').filter((item) => {
-          return item.data.highlight == true;
+          return item.data.servicio.highlight == true;
         });
     });
 
@@ -55,6 +50,10 @@ module.exports = function (eleventyConfig) {
 
     //FILTROS
     eleventyConfig.addFilter("search", searchFilter);
+
+    eleventyConfig.addNunjucksFilter("rmj", function(content) {
+        return rmj(content);
+    });
 
     eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
         return array.slice(0, limit);

@@ -55,11 +55,11 @@ tags:
                   <div><h3 class="h3-blue text-center">¿Qué servicio estás buscando hoy?</h3></div>
                   <div class="field d-flex justify-content-center" style="align-items:center">
                       <label for="searchField" style="display:none">Search</label>
-                      <input class="form-control" type="search" placeholder="" id="searchField" style="max-width: 400px;"/>
+                      <input class="form-control" type="search" placeholder="" id="searchField2" style="max-width: 400px;"/>
                       <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
                     </div>
-                  <div id="searchResultsContainer" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 450px;">
-                    <ol type="1" id="searchResults" style="z-index: 20;">
+                  <div id="searchResultsContainer2" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 450px;">
+                    <ol type="1" id="searchResults2" style="z-index: 20;">
                     </ol>
                   </div>
                 </div>
@@ -223,14 +223,14 @@ tags:
     const search = e => {
       const results = window.searchIndex.search(e.target.value);
 
-      const ol = document.getElementById("searchResults");
-      const searchResultsContainer = document.getElementById("searchResultsContainer");
+      const ol = document.getElementById("searchResults2");
+      const searchResultsContainer = document.getElementById("searchResultsContainer2");
       ol.innerHTML = "";
       searchResultsContainer.style.position = 'none';
       if (results && results.length > 0) {
         searchResultsContainer.style.position = 'static';
         results.map(r => {
-          const { id, nombre, ministerio } = r.doc;
+          const { id, name, institution } = r.doc;
 
           // this is where you'll go wild with your own HTML injection.
           const li = document.createElement("li");
@@ -238,7 +238,7 @@ tags:
 
           const a = document.createElement("a");
           a.setAttribute("href", id);
-          a.textContent = `${nombre}, ${ministerio}`;
+          a.textContent = `${name}, ${institution}`;
           li.appendChild(a);
         });
       }
@@ -247,7 +247,7 @@ tags:
     fetch("/search-index.json").then(response =>
       response.json().then(rawIndex => {
         window.searchIndex = elasticlunr.Index.load(rawIndex);
-        document.getElementById("searchField").addEventListener("input", search);
+        document.getElementById("searchField2").addEventListener("input", search);
       })
     );
   })(window, document);
