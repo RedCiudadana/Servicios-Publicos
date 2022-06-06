@@ -81,10 +81,10 @@ tags:
           
         </div>
 
-        <div class="col-lg-11"> 
-          <div class="grid grid-cols-9 gap-4 justify-center text-left py-16">
+        <div class="col-lg-12"> 
+          <div class="row justify-center text-left py-16">
           
-            <div class="col-span-9 md:col-span-6">
+            <div class="col-lg-8 col-md-12 col-sm-12">
               <h3 class="h1-blue d-flex align-items-center"><img style="height:30px;width:30px; margin-right:20px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/14.png"/>¿Qué es?</h3>
               <br>
               <br>
@@ -110,7 +110,7 @@ tags:
               <br>
             </div>
 
-            <div class="col-span-9 md:col-span-3">
+            <div class="col-lg-4 col-md-12 col-sm-12">
               <!--Rating-->
               <div class="col-12" style="justify-content: center;">
 
@@ -166,7 +166,13 @@ tags:
             </div>
           </div>           
         </div>
-        <div class="w-100 " style="background-color:#E3EBF5!important">
+      </div>
+    </div>
+  </div>
+  <div class="w-100 " style="background-color:#E3EBF5!important">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="w-100 " >
           <div class="container py-2">
             <div class="max-w-screen-lg mx-auto " style="margin:3rem auto; padding:0 2rem">
               <div class="row justify-content-center">
@@ -186,51 +192,58 @@ tags:
             </div>
           </div>
         </div>
-        <div class="linea" style="margin: 10px 0"></div>
-        <!--SERVICIOS DESTACADOS-->
-        <h3 class="h1-blue">Servicios Destacados</h3>
-        <br>
-        <br>
-        <div class="w-100">
-          <div class="container py-5">
-            <div class="row">
-              
-              {% if collections.serviciosHighlighted%}
-                {% for servicio in collections.serviciosHighlighted | limit(3)%}
-                  {% if servicio.data.nombre !== nombre%}
-                  <div class="col-md-4 col-sm-6 col-lg-4 d-flex ">
-                    <div class="justify-content-start">
-                      <a href="{{servicio.url}}">
+      </div>
+    </div>
+  </div>
+  <div class="w-100 bg-white">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="linea" style="margin: 10px 0"></div>
+          <!--SERVICIOS DESTACADOS-->
+          <h3 class="h1-blue">Servicios Destacados</h3>
+          <br>
+          <br>
+          <div class="w-100">
+            <div class="container py-5">
+              <div class="row">
+                
+                {% if collections.serviciosHighlighted%}
+                  {% for servicio in collections.serviciosHighlighted | limit(3)%}
+                    {% if servicio.data.nombre !== nombre%}
+                    <div class="col-md-4 col-sm-6 col-lg-4 d-flex ">
+                      <div class="justify-content-start">
+                        <a href="{{servicio.url}}">
+                          
+                          <div class="border-rounded d-flex justify-content-center" style=" height:100%">
+                              {% for categoria in collections.categoriaesps%}
+                              {% if categoria.data.nombre == categoriaesp%}
+                              <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="{{categoria.data.img}}">
+                              {% endif %}
+                              {% endfor %}
+                              <div class=" p-2">
+                                
+                                <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.nombre}}</h3>
+                                <p style="font-size:10px">{{servicio.data.descripcion}}</p>
                         
-                        <div class="border-rounded d-flex justify-content-center" style=" height:100%">
-                            {% for categoria in collections.categoriaesps%}
-                            {% if categoria.data.nombre == categoriaesp%}
-                            <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="{{categoria.data.img}}">
-                            {% endif %}
-                            {% endfor %}
-                            <div class=" p-2">
-                              
-                              <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.nombre}}</h3>
-                              <p style="font-size:10px">{{servicio.data.descripcion}}</p>
-                      
-                            </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div>
+                              </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div>
+
+                      </div>
 
                     </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+                
 
-                  </div>
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-              
-
+              </div>
             </div>
-          </div>
-        <div>
-
+          <div>
+        </div>
       </div>
     </div>
   </div>
