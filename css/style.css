@@ -17461,3 +17461,7 @@ ol{
 .cuadros-esp:nth-child(0n+3){
 	border-bottom: 3px solid #9bc3dc;	
 }
+
+.list-unstyled li{
+	margin: 10px 0;
+}
