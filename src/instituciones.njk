@@ -11,7 +11,7 @@ tags:
 {% extends "base.njk" %}
 
 {% block head %}
-    <title>Servicios Públicos | {{instituciones.name}}</title>
+    <title>Catálogo de Trámites | {{instituciones.name}}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock %}
 
@@ -79,10 +79,10 @@ tags:
                   {% if instituciones.name == servicio.data.servicio.institution.name%}
                 
                 <div class="col-md-4 col-sm-6 col-lg-4 d-flex my-2 w-100">
-                  <div class="justify-content-start">
+                  <div class="justify-content-start w-100">
                     <a href="{{servicio.url}}">
                       
-                      <div class="border-rounded d-flex justify-content-center" style=" height:100%">
+                      <div class="border-rounded d-flex justify-content-center w-100" style=" height:100%">
                           <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-33.png">
                           <div class=" p-2">
                             
@@ -156,11 +156,11 @@ tags:
                       <a href="{{servicio.url}}">
                         
                         <div class="border-rounded d-flex justify-content-center" style=" height:100%">
-                            <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="{{img}}">
+                            <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-33.png">
                             <div class=" p-2">
                               
-                              <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.nombre}}</h3>
-                              <p style="font-size:10px">{{servicio.data.descripcion}}</p>
+                              <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.servicio.name}}</h3>
+                              <p style="font-size:10px">{{servicio.data.servicio.description}}</p>
                       
                             </div>
                         </div>

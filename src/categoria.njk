@@ -11,7 +11,7 @@ tags:
 {% extends "base.njk" %}
 
 {% block head %}
-  <title>Servicios Públicos | {{categoria.name}}</title>
+  <title>Catálogo de Trámites | {{categoria.name}}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock %}
 
@@ -33,7 +33,7 @@ tags:
 
   <!--CONTENIDO-->
   <div class="w-100 bg-white">
-    <div class="container py-5">
+    <div class=" py-5">
       <div class="row justify-content-center">
 
         <div class="col-lg-10 py-2 ">
@@ -81,7 +81,7 @@ tags:
                 {% if categoria.id == item.data.categoriaesp.category | last %}
                 
                 <div class="col-md-12 col-sm-12 col-lg-12 d-flex my-2">
-                  <div class="justify-content-start">
+                  <div class="justify-content-start ">
                     <a href="{{item.url}}">
                       <div class="d-flex" style="align-items:center;height:100%">
                         <div class="p-2 d-flex" style="height:100%;align-items:center">
@@ -133,9 +133,9 @@ tags:
           {% endfor %}
           </div>
 
-          <div class="col-md-12 col-sm-12 col-lg-12 justify-content-end d-flex">
+          <!--div class="col-md-12 col-sm-12 col-lg-12 justify-content-end d-flex">
             <a href="javascript:ocultar_mostrar();" id="vermas" class="btnVerdeR">Ver más<a>
-          </div>
+          </div-->
             
           
         </div>
