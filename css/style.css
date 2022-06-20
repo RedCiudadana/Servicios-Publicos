@@ -17465,3 +17465,7 @@ ol{
 .list-unstyled li{
 	margin: 10px 0;
 }
+
+body{
+	overflow-x: hidden;
+}
