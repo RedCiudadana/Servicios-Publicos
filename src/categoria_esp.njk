@@ -47,23 +47,6 @@ tags:
             <h1 class="h1-blue">Servicios</h1>
             <br>
             <br>
-
-            
-            <div class="w-auto" style="max-width: 750px; z-index: 1000;">
-              <div class="bg-white p-4 border">
-                <div><h3 class="h3-blue text-center">¿Qué servicio estás buscando hoy?</h3></div>
-                <div class="field d-flex justify-content-center" style="align-items:center">
-                    <label for="searchField" style="display:none">Search</label>
-                    <input class="form-control" type="search" placeholder="" id="searchField2" style="max-width: 400px;"/>
-                    <i class="fa-solid fa-magnifying-glass icon-fazul"></i>
-                  </div>
-                <div id="searchResultsContainer2" class="searchResultsContainer w-100 rounded bg-white shadow-sm mx-auto" style="max-width: 450px;">
-                  <ol type="1" id="searchResults2" style="z-index: 20;">
-                  </ol>
-                </div>
-              </div>
-
-            </div>
             
           </div>
         </div>
@@ -81,15 +64,18 @@ tags:
                 <div class="justify-content-start w-100">
                   <a href="{{servicio.url}}">
                     
-                    <div class="border-rounded d-flex justify-content-center w-100" style=" height:100%">
+                    <div class="border-rounded d-flex justify-content-start w-100" style=" height:150px">
                         <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-33.png">
                         <div class=" p-2">
                           
                           <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.servicio.name}}</h3>
-                          <p style="font-size:10px">{{servicio.data.servicio.description}}</p>
-                  
+                          <div class="overflow-hidden" style="height:90px">
+                            <p style="font-size:10px">{{servicio.data.servicio.description}}</p>
+                          </div>
+
                         </div>
                     </div>
+
                   </a>
                 </div>
                 <div>
@@ -153,15 +139,18 @@ tags:
                   <div class="justify-content-start">
                     <a href="{{servicio.url}}">
                       
-                      <div class="border-rounded d-flex justify-content-center" style=" height:100%">
-                          <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-33.png">
-                          <div class=" p-2">
-                            
-                            <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.servicio.name}}</h3>
+                      <div class="border-rounded d-flex justify-content-start w-100" style=" height:150px">
+                        <img class="" style="height:40px; width:40px; margin:10px 0 0 5px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-33.png">
+                        <div class=" p-2">
+                          
+                          <h3 class="h3-blue" style="font-size:14px; font-weight:700">{{servicio.data.servicio.name}}</h3>
+                          <div class="overflow-hidden" style="height:90px">
                             <p style="font-size:10px">{{servicio.data.servicio.description}}</p>
-                    
                           </div>
+
+                        </div>
                       </div>
+                      
                     </a>
                   </div>
                   <div>
