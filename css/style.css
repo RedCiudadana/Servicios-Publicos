@@ -17285,7 +17285,27 @@ input:-moz-placeholder {
 	padding: 10px;
 	float: right;
 	transition: all 0.2s ease;
+	flex-direction: row-reverse;
   }
+
+  @media only screen and (max-width: 1200px) {
+	.star-widget label {
+		padding: 5px;
+	}
+  }
+
+  @media only screen and (max-width: 990px) {
+	.star-widget label {
+		padding: 10px;
+	}
+  }
+
+  @media only screen and (max-width: 560px) {
+	.star-widget label {
+		padding: 5px;
+	}
+  }
+
   input:not(:checked) ~ label:hover,
   input:not(:checked) ~ label:hover ~ label{
 	color: #02ac8b;
