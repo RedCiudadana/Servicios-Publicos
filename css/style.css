@@ -17245,7 +17245,7 @@ input:-moz-placeholder {
 /*Estilo rating*/
 .containerR{
 	position: relative;
-	width: 400px;
+	width: 100%;
 	background: rgb(3, 50, 78);
 	padding: 20px 30px;
 	border: 1px solid #444;
