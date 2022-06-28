@@ -3692,7 +3692,7 @@ table .product-thumbnail img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: url(../imgs/page/home-6-bg.jpg) no-repeat center center;
+  background: url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-SERVICIOS_02.png') no-repeat center center;
   background-size: cover;
   height: 330px;
 }
@@ -8337,7 +8337,7 @@ h6.post-title {
 }
 
 .header-style-1 .search-style-2 form {
-  border: 2px solid #053D5E;
+  border: 2px solid rgb(5, 61, 94,0.5);
   border-radius: 4px;
   max-width: 700px;
   background-color: #fff;

@@ -1,0 +1,73 @@
+---
+pagination:
+  data: categorias_especificas
+  size: 1
+  alias: categoriaesp2
+  addAllPagesToCollections: true
+permalink: "categorias_especificas/2/{{categoriaesp2.id}}/{{categoriaesp2.name | slug}}/index.html"
+tags:
+  - categoriaesp2
+---
+{% extends "src/base.njk" %}
+
+{% block content %}
+        <section class="hero-3 position-relative align-items">
+            <h2 class="mb-30 text-center text-white">{{categoriaesp2.name}}</h2>
+        </section>
+        <div class="page-content pt-50">
+            <div class="container">
+                <div class="row vendor-grid">
+
+                    {% for servicio in collections.servicios%}
+                    {% if categoriaesp2.name == servicio.data.servicio.subcategory.name%}
+
+                    <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="vendor-wrap style-2 mb-40">
+                            <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="hot">Trámite</span>
+                            </div>
+                            <div class="vendor-img-action-wrap">
+                                <div class="vendor-img">
+                                    <a href="vendor-details-1.html">
+                                        <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-33.png" alt="" />
+                                    </a>
+                                </div>
+                                <!--div class="mt-10">
+                                    <span class="font-small total-product">380 products</span>
+                                </div-->
+                            </div>
+                            <div class="vendor-content-wrap">
+                                <div class="mb-30">
+                                    <!--div class="product-category">
+                                        <span class="text-muted">Since 2012</span>
+                                    </div-->
+                                    <div class="overflow-hidden" style="height:60px">
+                                        <h4 class="mb-5"><a href="vendor-details-1.html">{{servicio.data.servicio.name}}</a></h4>
+                                    </div>
+                                    <!--div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div-->
+                                    <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                        <ul class="contact-infor text-muted">
+                                            <div class="overflow-hidden" style="height:45px">
+                                                <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" />{{servicio.data.servicio.description}}</li>
+                                            </div>
+                                            <!--li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) - 540-025-124553</span></li-->
+                                        </ul>
+                                        <a href="{{servicio.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end vendor card-->
+
+                    {%endif%}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}
