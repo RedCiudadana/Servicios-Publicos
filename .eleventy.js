@@ -35,6 +35,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('categoria');
     });
 
+    eleventyConfig.addCollection("categorias2", function(collectionApi) {
+        return collectionApi.getFilteredByTag('categoria2');
+    });
+
     eleventyConfig.addCollection("categoriaesp", function(collectionApi) {
         return collectionApi.getFilteredByTag('categoriaesp');
     });

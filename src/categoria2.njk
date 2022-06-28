@@ -1,0 +1,78 @@
+---
+pagination:
+  data: categorias
+  size: 1
+  alias: categoria2
+  addAllPagesToCollections: true
+permalink: "categorias/2/{{categoria2.id}}/{{categoria2.name | slug}}/index.html"
+tags:
+  - categoria2
+---
+{% extends "src/base.njk" %}
+
+{% block head %}
+  <title>Catálogo de Trámites | {{categoria2.name}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/index2.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+                    <span></span> {{categoria2.name}}
+                </div>
+            </div>
+        </div>
+        <div class="container mb-80 mt-50">
+            <div class="row">
+                <div class="col-lg-8 mb-40">
+                    <h1 class="heading-2 mb-10">{{categoria2.name}}</h1>
+                    <div class="d-flex justify-content-between">
+                        <h6 class="text-body">Categorías Específicas</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive shopping-summery">
+                        <table class="table table-wishlist">
+                            <thead>
+                                <tr class="main-heading">
+                                    <th class="start pl-30" scope="col" colspan="2">Categoría Específica</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col" class="end">Ver más</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for catesp in collections.categoriaesp2 %}
+                                <a href="{{catesp.url}}">
+                                <tr class="pt-30">
+                                    <td class="image product-thumbnail pt-40"><img src="/assets/imgs/shop/product-1-1.jpg" alt="#"></td>
+                                    <td class="product-des product-name">
+                                        <h6 class="mb-5"><a class="product-name mb-10 text-heading" href="shop-product-right.html">{{catesp.data.categoriaesp2.name}}</a></h6>
+                                        <!--div class="product-rate-cover">
+                                            <div class="product-rate d-inline-block">
+                                                <div class="product-rating" style="width:90%">
+                                                </div>
+                                            </div>
+                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                        </div-->
+                                    </td>
+                                    <td class="price" data-title="Price">
+                                        <p class="text-body">{{catesp.data.categoriaesp2.description}}</p>
+                                    </td>
+                                    <td class="price" data-title="Price">
+                                        <a href="{{catesp.url}}" class="btn"><i class="fi-rs-arrow-right"></i></a>
+                                    </td>
+                                </tr>
+                                </a>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
