@@ -46,6 +46,7 @@ tags:
                             </thead>
                             <tbody>
                                 {% for catesp in collections.categoriaesp2 %}
+                                {% if categoria2.id == catesp.data.categoriaesp2.category | last %}
                                 <a href="{{catesp.url}}">
                                 <tr class="pt-30">
                                     <td class="image product-thumbnail pt-40"><img src="/assets/imgs/shop/product-1-1.jpg" alt="#"></td>
@@ -67,6 +68,7 @@ tags:
                                     </td>
                                 </tr>
                                 </a>
+                                {% endif %}
                                 {% endfor %}
                             </tbody>
                         </table>
