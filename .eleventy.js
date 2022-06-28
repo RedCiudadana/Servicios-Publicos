@@ -13,6 +13,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('ELEMENTOS');
     eleventyConfig.addPassthroughCopy('images');
     eleventyConfig.addPassthroughCopy('admin');
+    eleventyConfig.addPassthroughCopy('assets');
     
     eleventyConfig.addCollection("servicios", function(collectionApi) {
         return collectionApi.getFilteredByTag('servicio');
