@@ -2,7 +2,7 @@
 permalink: quejas.html
 ---
 
-{% extends "base.njk" %}
+{% extends "src/base.njk" %}
 
 
 {% block head %}
@@ -14,52 +14,52 @@ permalink: quejas.html
 
 {% block content %}
 
-    <div class="w-100 " style="background-color:#E3EBF5!important">
-        <div class="container py-2">
-            <div class="max-w-screen-lg mx-auto " style="margin:3rem auto; padding:0 2rem">
-                <div class="row my-4">
-                    <div class="col-lg-4 col-sm-12 my-2" >
-                        <a href="/preguntas.html">
+        <section class="featured section-padding">
+            <div class="container">
+                <div class="row mb-20 mt-40">
 
-                            <div class="border-rounded d-flex justify-content-center w-100" style=" height:100%;background:#fff">
-                                <div class=" p-4 d-flex align-items-center">  
-                                    <img width="35px" height="auto" style="padding:5px" src="/ELEMENTOS/ELEMENTOS/centro3.png">              
-                                    <h3 class="h3-blue" style="font-size:14px; font-weight:700">Preguntas Frecuentes</h3>                            
-                                </div>
+                    <div class="col-lg-4 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
+                        <a href="/preguntas.html"><div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp justify-content-center" data-wow-delay="0">
+                            <div class="banner-icon">
+                                <img src="/ELEMENTOS/ELEMENTOS/centro3.png" alt="" />
                             </div>
-
-                        </a>
-                    </div> 
-                    <div class="col-lg-4 col-sm-12 my-2" >
-                        <a href="/tutoriales.html">
-
-                            <div class="border-rounded d-flex justify-content-center w-100" style=" height:100%;background:#fff">
-                                <div class=" p-4 d-flex align-items-center">                
-                                    <img width="35px" height="auto" style="padding:5px" src="/ELEMENTOS/ELEMENTOS/centro1.png">   
-                                    <h3 class="h3-blue" style="font-size:14px; font-weight:700">Tutoriales</h3>                            
-                                </div>
+                            <div class="banner-text">
+                                <h3 class="icon-box-title">Preguntas Frecuentes</h3>
                             </div>
+                        </div></a>
+                    </div>
 
-                        </a>
-                    </div> 
-                    <div class="col-lg-4 col-sm-12 my-2" >
-                        <a href="/quejas.html">
-
-                            <div class="border-rounded d-flex justify-content-center w-100" style=" height:100%;background:#fff">
-                                <div class=" p-4 d-flex align-items-center">                
-                                    <img width="35px" height="auto" style="padding:5px" src="/ELEMENTOS/ELEMENTOS/centro2.png"> 
-                                    <h3 class="h3-blue" style="font-size:14px; font-weight:700">Quejas</h3>                            
-                                </div>
+                    <div class="col-lg-4 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
+                        <a href="/tutoriales.html"><div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp justify-content-center" data-wow-delay="0">
+                            <div class="banner-icon">
+                                <img src="/ELEMENTOS/ELEMENTOS/centro1.png" alt="" />
                             </div>
+                            <div class="banner-text">
+                                <h3 class="icon-box-title">Tutoriales</h3>
+                            </div>
+                        </div></a>
+                    </div>
 
-                        </a>
-                    </div>  
+                    <div class="col-lg-4 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
+                        <a href="/quejas.html"><div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp justify-content-center" data-wow-delay="0">
+                            <div class="banner-icon">
+                                <img src="/ELEMENTOS/ELEMENTOS/centro2.png" alt="" />
+                            </div>
+                            <div class="banner-text">
+                                <h3 class="icon-box-title">Quejas</h3>
+                            </div>
+                        </div></a>
+                    </div>
+
                 </div>
-                <div class="row my-4">
+            </div>
+        </section>
+
+        <section class="featured section-padding">
+            <div class="container">
+                <div class="row mb-20 mt-40">
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe9A2Zv-gr2gY-7nlEKpVV1N62uwR7bbc0q5FN7p1BYohdk8w/viewform?embedded=true" width="640" height="537" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
                 </div>
             </div>
-        </div>
-    </div>
-
+        </section>
 {% endblock %}

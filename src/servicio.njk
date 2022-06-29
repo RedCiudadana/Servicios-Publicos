@@ -34,7 +34,66 @@ tags:
         <div class="container">
             <div class="row">
                 <div class="col-xl-11 col-lg-12 m-auto">
-                    <div class="row flex-row-reverse">
+                    <div class="row">
+                        <div class="col-lg-3 primary-sidebar sticky-sidebar pt-50">
+                            <div class="widget-area">
+                                <div class="sidebar-widget widget-category-2 mb-50">
+                                    <h5 class="section-title style-1 mb-30">Especificaciones</h5>
+                                    <ul>
+                                        <li>
+                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-04.png" alt="" />{{servicio.institution.name}}</a>
+                                        </li>
+                                        <li>
+                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-05.png" alt="" />Resultado: {{servicio.typeOfDocumentObtainable}}</a>
+                                        </li>
+                                        <li>
+                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-06.png" alt="" />Costo: Q {{servicio.cost}} </a>
+                                        </li>
+                                        <li>
+                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-07.png" alt="" />Tiempo de Respuesta: {{servicio.timeResponse}}</a>
+                                        </li>
+                                        <li>
+                                            <a href="/quejas.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-09.png" alt="" />¿Tienes problemas con este trámite? Comunícate con nosotros</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Product sidebar Widget -->
+                                <div class="sidebar-widget widget-category-2 mb-50">
+                                    <h5 class="section-title style-1 mb-30">Servicios Populares</h5>
+                                    <ul>
+                                        {% for servicio in collections.serviciosHighlighted | limit(3) %}
+                                        {% if servicio.url !== page.url%}
+                                        <li>
+                                            <a href="{{servicio.url}}"> {{servicio.data.servicio.name}}</a>
+                                        </li>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <!--Tags-->
+                                <div class="sidebar-widget widget-category-2 mb-50">
+                                    <h5 class="section-title style-1 mb-30">Tags</h5>
+                                    <ul>
+                                        <li>
+                                            <a style="pointer-events:none" href="shop-grid-right.html"> Trámite</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--POSIBLES ANUNCIOS-->
+                                <!--div class="banner-img wow fadeIn mb-50 animated d-lg-block d-none">
+                                    <img src="/assets/imgs/banner/banner-11.png" alt="" />
+                                    <div class="banner-text">
+                                        <span>Oganic</span>
+                                        <h4>
+                                            Save 17% <br />
+                                            on <span class="text-brand">Oganic</span><br />
+                                            Juice
+                                        </h4>
+                                    </div>
+                                </div-->
+                            </div>
+                        </div>
+                        
                         <div class="col-lg-9">
                             <div class="single-page pt-50 pl-30">
                                 <div class="single-header style-2">
@@ -122,64 +181,7 @@ tags:
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 primary-sidebar sticky-sidebar pt-50">
-                            <div class="widget-area">
-                                <div class="sidebar-widget widget-category-2 mb-50">
-                                    <h5 class="section-title style-1 mb-30">Especificaciones</h5>
-                                    <ul>
-                                        <li>
-                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-04.png" alt="" />{{servicio.institution.name}}</a>
-                                        </li>
-                                        <li>
-                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-05.png" alt="" />Resultado: {{servicio.typeOfDocumentObtainable}}</a>
-                                        </li>
-                                        <li>
-                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-06.png" alt="" />Costo: Q {{servicio.cost}} </a>
-                                        </li>
-                                        <li>
-                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-07.png" alt="" />Tiempo de Respuesta: {{servicio.timeResponse}}</a>
-                                        </li>
-                                        <li>
-                                            <a href="/quejas.html"> <img src="/ELEMENTOS/ICONOS/ICONOS-09.png" alt="" />¿Tienes problemas con este trámite? Comunícate con nosotros</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- Product sidebar Widget -->
-                                <div class="sidebar-widget widget-category-2 mb-50">
-                                    <h5 class="section-title style-1 mb-30">Servicios Populares</h5>
-                                    <ul>
-                                        {% for servicio in collections.serviciosHighlighted | limit(3) %}
-                                        {% if servicio.url !== page.url%}
-                                        <li>
-                                            <a href="{{servicio.url}}"> {{servicio.data.servicio.name}}</a>
-                                        </li>
-                                        {% endif %}
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                                <!--Tags-->
-                                <div class="sidebar-widget widget-category-2 mb-50">
-                                    <h5 class="section-title style-1 mb-30">Tags</h5>
-                                    <ul>
-                                        <li>
-                                            <a style="pointer-events:none" href="shop-grid-right.html"> Trámite</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!--POSIBLES ANUNCIOS-->
-                                <!--div class="banner-img wow fadeIn mb-50 animated d-lg-block d-none">
-                                    <img src="/assets/imgs/banner/banner-11.png" alt="" />
-                                    <div class="banner-text">
-                                        <span>Oganic</span>
-                                        <h4>
-                                            Save 17% <br />
-                                            on <span class="text-brand">Oganic</span><br />
-                                            Juice
-                                        </h4>
-                                    </div>
-                                </div-->
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
