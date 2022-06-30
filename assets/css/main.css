@@ -12943,13 +12943,21 @@ footer .hotline img {
   width: 100%;
   background: white;
   top: 108%;
-  border: 2px solid rgb(5, 61, 94, 0.5);
   border-radius: 2px;
   z-index: 1000;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.search-border{
+  border: 2px solid rgb(5, 61, 94, 0.5);
 }
 
 .search-container li{
   border-bottom: 0.1px solid rgb(5, 61, 94, 0.2);
+  padding: 5px 10px;
+  margin: 5px;
 }
 
 .search-container li:last-child{

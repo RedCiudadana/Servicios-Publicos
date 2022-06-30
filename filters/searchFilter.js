@@ -5,7 +5,7 @@ module.exports = function (collection) {
     var index = elasticlunr(function () {
         this.addField("institucion");
         this.addField("url");
-        this.addField("name");
+        this.addField("nombre");
         this.setRef("id");
     });
 
