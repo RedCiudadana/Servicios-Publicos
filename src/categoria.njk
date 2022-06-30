@@ -2,165 +2,71 @@
 pagination:
   data: categorias
   size: 1
-  alias: categoria
+  alias: categoria2
   addAllPagesToCollections: true
-permalink: "categorias/{{categoria.id}}/{{categoria.name | slug}}/index.html"
+permalink: "categorias/{{categoria2.id}}/{{categoria2.name | slug}}/index.html"
 tags:
-  - categoria
+  - categoria2
 ---
-{% extends "base.njk" %}
+{% extends "src/base.njk" %}
 
 {% block head %}
-  <title>Catálogo de Trámites | {{categoria.name}}</title>
+  <title>Catálogo de Trámites | {{categoria2.name}}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock %}
 
 {% block content %}
-  <!--SLIDER -->
-  <div class="w-100" style="background-image:url('/ELEMENTOS/ELEMENTOS_WEB SERVICIOS/SLIDER/SLIDER-SERVICIOS_02.png');background-size:cover ">
-    <div class="container" style="padding:8rem 0">
-      <div class="row justify-content-center">
-
-        <div class="col-lg-10 py-2 d-flex justify-content-center" >
-          <div class="col-lg-10 col-md-10 col-sm-12">
-            <h1 style="color: #fff!important; text-transform:capitalize;"  class="h1-blue text-center">{{categoria.name}}</h1>
-          </div>
-        </div>  
-
-      </div>
-    </div>
-  </div>
-
-  <!--CONTENIDO-->
-  <div class="w-100 bg-white">
-    <div class=" py-5">
-      <div class="row justify-content-center">
-
-        <div class="col-lg-10 py-2 ">
-
-          <div class="d-flex">
-            <div class="justify-content-start"><a href="/index.html">Inicio</a> / <a style="pointer-events: none;text-transform:capitalize;" href="{{page.url}}">{{categoria.name}}</a></div>
-            <div class="justify-content-end"></div>
-          </div>
-          <br>
-          <h1 class="h1-blue">Categorías Específicas</h1>
-          <br>
-          <br>
-          
-        </div>
-      </div>
-      <div class="row justify-content-center">        
-        <div class="col-lg-10 py-2 px-0">
-          <div class="col-md-12 col-sm-12 col-lg-12">
-            <br>
-            <h3 id="titulo" class="h3-blue" style="text-transform:capitalize">{{categoria.name}}</h3>
-            <br>
-          </div>
-          <div id="iniciales">
-            <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
-            <div class="row">
-              {% set numindex = 0 %}
-              {% for item in collections.categoriaesp %}
-                {% if categoria.id == item.data.categoriaesp.category | last %}
-                
-                <div class="col-md-12 col-sm-12 col-lg-12 d-flex my-2">
-                  <div class="justify-content-start ">
-                    <a href="{{item.url}}">
-                      <div class="d-flex" style="align-items:center;height:100%">
-                        <div class="p-2 d-flex" style="height:100%;align-items:center">
-                          {% set numindex = numindex + 1%}
-                          <h3 class="h3-blue">{{numindex}}</h3>
-                          <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-32.png">
-                          <div class="px-2">
-                            <h3 class="h3-blue">{{item.data.categoriaesp.name}}</h3>
-                            <p>{{item.data.categoriaesp.description}}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div>
-
-                  </div>
-
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/index2.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+                    <span></span> {{categoria2.name}}
                 </div>
-                {%endif%}
-              {% endfor %}
             </div>
-          </div>
-
-
-          <div id="todo" style="display:none">
-          {% for item in collections[nombre] %}
-            <div class="col-md-12 col-sm-12 col-lg-12 linea" style="border-color:#ccc!important"></div>
-            <div class="col-md-12 col-sm-12 col-lg-12 d-flex ">
-              <div class="justify-content-start">
-                <a href="{{item.url}}">
-                  <div class="d-flex" style="align-items:center;height:100%">
-                    <div class="p-2 d-flex" style="height:100%;align-items:center">
-                      <h3 class="h3-blue">{{loop.index}}</h3>
-                      <img style="padding:0.5rem" class="m-auto" height="100px" width="100px" src="{{img}}">
-                      <div class="px-2">
-                        <h3 class="h3-blue">{{item.data.nombre}}</h3>
-                        <p>{{item.data.ministerios}}</p>
-                      </div>
+        </div>
+        <div class="page-content pt-50">
+            <div class="container">
+                <div class="archive-header-2 text-center">
+                    <h1 class="heading-2 mb-10">{{categoria2.name}}</h1>
+                    <h6 class="text-body">Categorías Específicas</h6>
+                </div>
+                <div class="row vendor-grid mt-40">
+                {% for catesp in collections.categoriaesp2 %}
+                {% if categoria2.id == catesp.data.categoriaesp2.category | last %}
+                
+                    <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                        <div class="vendor-wrap mb-40">
+                            <div class="vendor-img-action-wrap">
+                                <div class="vendor-img">
+                                    <a href="{{servicio.url}}">
+                                        <img class="default-img" src="/assets/imgs/ICONOSpng-15.png" alt="" />
+                                    </a>
+                                </div>
+                                <div class="product-badges product-badges-position product-badges-mrg">
+                                    <span class="hot">Categoría Específica</span>
+                                </div>
+                            </div>
+                            <div class="vendor-content-wrap">
+                                <div class="d-flex justify-content-between align-items-end mb-30">
+                                    <div class="overflow-hidden" style="height:60px">
+                                        <h4 class="mb-5"><a href="{{catesp.url}}">{{catesp.data.categoriaesp2.name}}</a></h4>
+                                    </div>
+                                </div>
+                                <div class="vendor-info mb-30">
+                                    <ul class="contact-infor text-muted overflow-hidden" style="height:70px">
+                                        <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><span >{{catesp.data.categoriaesp2.description}}</span></li>
+                                    </ul>
+                                </div>
+                                <a href="{{catesp.url}}" class="btn btn-xs">Ver Categoría Específica <i class="fi-rs-arrow-small-right"></i></a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </a>
-              </div>
-              <div>
-
-              </div>
-
+                    <!--end vendor card-->
+                
+                {% endif %}
+                {% endfor %}
+                </div>
             </div>
-          {% endfor %}
-          </div>
-
-          <!--div class="col-md-12 col-sm-12 col-lg-12 justify-content-end d-flex">
-            <a href="javascript:ocultar_mostrar();" id="vermas" class="btnVerdeR">Ver más<a>
-          </div-->
-            
-          
         </div>
 
-      </div>
-    </div>
-  </div>
-
-  <style>
-    #searchResults {
-      max-height: 10rem;
-      overflow: auto;
-      background: white;
-      width: 100%;
-      position: relative;
-    }
-  </style>
-{% endblock %}
-
-{% block body_javascripts %}
-
-  <script>
-
-    function ocultar_mostrar(){
-
-      if(document.getElementById('todo').style.display === 'none'){
-        document.getElementById('iniciales').style.display = 'none';
-        document.getElementById('todo').style.display = 'block';
-        document.getElementById('vermas').innerHTML = 'Ver menos';
-        location.href = "#titulo";    
-      }
-      else if(document.getElementById('vermas').innerHTML = 'Ver menos'){
-        document.getElementById('iniciales').style.display = 'block';
-        document.getElementById('todo').style.display = 'none';
-        document.getElementById('vermas').innerHTML = 'Ver más';
-        location.href = "#titulo";
-      }    
-    }
-
-  </script>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 {% endblock %}
