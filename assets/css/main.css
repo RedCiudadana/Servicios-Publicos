@@ -12963,3 +12963,13 @@ footer .hotline img {
 .search-container li:last-child{
   border-bottom: none;
 }
+
+.d-flex-responsive{
+  display: flex;
+}
+
+@media only screen and (max-width: 996px) {
+  .d-flex-responsive{
+    display: block;
+  }
+}
