@@ -1168,17 +1168,17 @@ button[type='submit'] {
   color: #ffffff;
   border: none;
   background-color: #053D5E;
-  border: 1px solid #29A56C;
+  border: 1px solid #1B86BD;
   border-radius: 10px;
 }
 
 button.submit:hover,
 button[type='submit']:hover {
-  background-color: #29A56C !important;
+  background-color: #1B86BD !important;
 }
 
 .btn-brand:hover {
-  background-color: #29A56C !important;
+  background-color: #1B86BD !important;
 }
 
 .btn-login {
@@ -1224,7 +1224,7 @@ button[type='submit']:hover {
 
 .btn:hover,
 .button:hover {
-  background-color: #FDC040;
+  background-color: #1B86BD;
 }
 
 .btn.btn-sm,
@@ -5203,7 +5203,7 @@ table .product-thumbnail img {
 }
 
 .detail-qty>a:hover {
-  color: #29A56C;
+  color: #1B86BD;
 }
 
 .detail-qty>a.qty-up {
@@ -6531,7 +6531,7 @@ h6.post-title {
 }
 
 .invoice-content .btn-download:after {
-  background: #29A56C;
+  background: #1B86BD;
 }
 
 .invoice-content .btn-print {
@@ -7008,7 +7008,7 @@ h6.post-title {
 }
 
 .vendor-wrap .product-badges.product-badges-position span.hot {
-  background-color: #f74b81;
+  background-color: #1B86BD;
 }
 
 .vendor-wrap .product-badges.product-badges-position span.new {
@@ -8560,7 +8560,7 @@ h6.post-title {
 }
 
 .header-style-1 .main-categori-wrap>a:hover {
-  background-color: #29A56C;
+  background-color: #1B86BD;
 }
 
 .header-style-1 .main-menu.main-menu-light-white>nav>ul>li>a {
@@ -9873,7 +9873,7 @@ footer .hotline img {
 }
 
 .footer-bottom {
-  border-top: 1px solid #BCE3C9;
+  border-top: 1px solid #1B86BD;
 }
 
 #scrollUp {
@@ -12930,7 +12930,7 @@ footer .hotline img {
 
 .rating:not(:hover) label input:checked~.icon,
 .rating:hover label:hover input~.icon {
-  color: yellow;
+  color: #9AC2DC;
 }
 
 .rating label input:focus:not(:checked)~.icon:last-child {
@@ -12972,4 +12972,8 @@ footer .hotline img {
   .d-flex-responsive{
     display: block;
   }
+}
+
+.filter-blue{
+  filter: invert(40%) sepia(100%) saturate(393%) hue-rotate(155deg) brightness(93%) contrast(97%);
 }
