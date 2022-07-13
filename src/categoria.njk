@@ -32,13 +32,13 @@ tags:
                 </div>
                 <div class="row vendor-grid mt-40">
                 {% for catesp in collections.categoriaesp2 %}
-                {% if categoria2.id == catesp.data.categoriaesp2.category | last %}
+                {% if categoria2.id == catesp.data.categoriaesp2.category | lastSlash %}
                 
                     <div class="col-lg-3 col-md-6 col-12 col-sm-6">
                         <div class="vendor-wrap mb-40">
                             <div class="vendor-img-action-wrap">
                                 <div class="vendor-img">
-                                    <a href="{{servicio.url}}">
+                                    <a href="{{catesp.url}}">
                                         <img class="default-img" src="/assets/imgs/ICONOSpng-15.png" alt="" />
                                     </a>
                                 </div>

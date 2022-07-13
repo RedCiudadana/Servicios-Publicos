@@ -3,6 +3,12 @@ permalink: "categorias/index.html"
 ---
 {% extends "src/base.njk" %}
 
+{% block head %}
+
+    <title>Categorías</title>
+
+{% endblock %}
+
 {% block content %}
         <section class="hero-3 position-relative align-items">
             <h2 class="mb-30 text-center text-white">Categorías</h2>
@@ -10,8 +16,7 @@ permalink: "categorias/index.html"
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="/index2.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
-                    <span></span> {{categoria2.name}}
+                    <a href="/index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
                 </div>
             </div>
         </div>

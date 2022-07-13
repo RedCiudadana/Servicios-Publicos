@@ -76,6 +76,12 @@ module.exports = function (eleventyConfig) {
         return moment(date).format(format);
     });
 
+    eleventyConfig.addFilter("lastSlash", function(string) {
+        var n = string.lastIndexOf('/');
+        var result = string.substring(n + 1);
+        return result;
+    });
+
     eleventyConfig.addFilter('log', value => {
         console.log(value)
     })
