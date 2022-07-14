@@ -166,14 +166,14 @@
                                             </li>
                                             <li class="sub-mega-menu sub-mega-menu-width-33">
                                                 <ul>
-                                                    {% for institucion in collections.instituciones | limitPart(6,10)%}
+                                                    {% for institucion in collections.instituciones | limitPart(6,11)%}
                                                     <li><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></li>
                                                     {% endfor%}
                                                 </ul>
                                             </li>
                                             <li class="sub-mega-menu sub-mega-menu-width-34">
                                                 <ul>
-                                                    {% for institucion in collections.instituciones | limitPart(11,15)%}
+                                                    {% for institucion in collections.instituciones | limitPart(11,16)%}
                                                     <li><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></li>
                                                     {% endfor%}
                                                 </ul>
@@ -182,7 +182,7 @@
                                     </li>
                                     <li><a href="/estadisticas/index.html">Estadísticas</a></li>
                                     <li><a href="/quejas.html">Centro de Ayuda</a></li>
-                                    <li><a href="/quejas.html">Contacto</a></li>
+                                    <li><a href="/contacto/index.html">Contacto</a></li>
                                 </ul>
                             </nav>
                         </div>
