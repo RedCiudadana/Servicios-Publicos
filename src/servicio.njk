@@ -44,7 +44,8 @@ tags:
                                     <h5 class="section-title style-1 mb-30">Especificaciones</h5>
                                     <ul>
                                         <li>
-                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS 2-21.png" alt="" />{{servicio.institution.name}}</a>
+                                            
+                                            <a href="{% for institucion in collections.instituciones %}{% if institucion.data.instituciones.name === servicio.institution.name%}{{institucion.url}}{%endif%}{%endfor%}"> <img src="/ELEMENTOS/ICONOS/ICONOS 2-21.png" alt="" />{{servicio.institution.name}}</a>
                                         </li>
                                         <li>
                                             <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS 2-10.png" alt="" />Resultado: {{servicio.typeOfDocumentObtainable}}</a>
@@ -150,7 +151,7 @@ tags:
                                             <p>{{servicio.instructions | rmj |safe}}</p>
                                             <h4>Ir al trámite en línea</h4>
                                             <a class="btn mb-20" href="{{servicio.url}}" target="_blank">Ver Trámite</a>
-                                            <p>Información proporcionada por: {{servicio.institution.name}}</p>
+                                            <p>Información proporcionada por: <a href="{% for institucion in collections.instituciones %}{% if institucion.data.instituciones.name === servicio.institution.name%}{{institucion.url}}{%endif%}{%endfor%}">{{servicio.institution.name}}</a></p>
                                             <!--Comment form-->
                                             <div class="comment-form ">
                                                 <!--h3 >Disqus</h3-->
