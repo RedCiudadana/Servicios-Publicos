@@ -12977,3 +12977,30 @@ footer .hotline img {
 .filter-blue{
   filter: invert(40%) sepia(100%) saturate(393%) hue-rotate(155deg) brightness(93%) contrast(97%);
 }
+
+.sidebar {
+  height: 200px;
+  width: 150px;
+  position: -webkit-sticky; /* for Safari users */
+  position: sticky;
+  top: 100px;
+  float: right;
+  margin-top: 100px;
+  padding-top: 40px;
+  writing-mode: vertical-rl; 
+}
+  
+.sidebar div {
+  padding: 8px;
+  font-size: 24px;
+  display: block;
+}
+
+.sidebar div a{
+  padding: 10px!important;
+}
+  
+.body-text {
+  margin-right: 150px;
+  font-size: 18px;
+}
