@@ -13010,3 +13010,7 @@ footer .hotline img {
   margin-right: 150px;
   font-size: 18px;
 }
+
+.hover-cat:hover .categories-dropdown-wrap{
+  display: block;
+}
