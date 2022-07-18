@@ -6,6 +6,7 @@ module.exports = function (collection) {
         this.addField("institucion");
         this.addField("url");
         this.addField("nombre");
+        this.addField("obtenible");
         this.setRef("id");
     });
 
@@ -16,6 +17,7 @@ module.exports = function (collection) {
             institucion: item.data.servicio.institution.name,
             url: item.data.servicio.url,
             nombre: item.data.servicio.name,
+            obtenible: item.data.servicio.typeOfDocumentObtainable
         });
     });
 
