@@ -22,6 +22,27 @@ permalink: "instituciones/index.html"
         </div>
         <div class="page-content pt-50">
             <div class="container">
+                <div class="row mb-40">
+                    <div class="search-style-2">
+                        <form action="#">
+                            <!--select class="select-active">
+                                <option>All categories</option>
+                                <option>Milks and Dairies</option>
+                                <option>Wines & Alcohol</option>
+                                <option>Clothing & Beauty</option>
+                                <option>Pet Foods & Toy</option>
+                                <option>Fast food</option>
+                                <option>Baking material</option>
+                                <option>Vegetables</option>
+                                <option>Fresh Seafood</option>
+                                <option>Noodles & Rice</option>
+                                <option>Ice cream</option>
+                            </select-->
+                            <input id="searchField" type="search" placeholder="Busca alguna Institución..." />
+                            <ol id="searchResults" class="search-container" style="display:none"/>
+                        </form>
+                    </div>
+                </div>
                 <div class="row vendor-grid">
 
                     {% for institucion in collections.instituciones%}
