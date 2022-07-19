@@ -121,7 +121,7 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="/index.html"><img src="/ELEMENTOS/ELEMENTOS/02_LOGOTIPOS/GOBIERNO.png" alt="logo" /></a>
+                        <a href="/index.html"><img height="70px!important" src="/ELEMENTOS/ELEMENTOS/02_LOGOTIPOS/GOBIERNO.png" alt="logo" /></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block">
@@ -235,7 +235,7 @@
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
-                    <a href="/index.html"><img src="/ELEMENTOS/ELEMENTOS/02_LOGOTIPOS/GOBIERNO.png" alt="logo" /></a>
+                    <a href="/index.html"><img style="height:70px!important" src="/ELEMENTOS/ELEMENTOS/02_LOGOTIPOS/GOBIERNO.png" alt="logo" /></a>
                 </div>
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
@@ -251,14 +251,8 @@
                         <ul class="mobile-menu font-heading">
                             <li><a href="/index.html">Inicio</a></li>
                             <li><a href="/queescatalogo/index.html">¿Qué es el Catálogo de Tramites?</a></li>
-                            <li class="menu-item-has-children">
-                                <a href="index.html">Instituciones</a>
-                                <ul class="dropdown">
-                                    {% for institucion in collections.instituciones %}
-                                    <li><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></li>
-                                    {% endfor%}
-                                </ul>
-                            </li>
+                            <li><a href="/categorias/index.html">Categorías</a></li>
+                            <li><a href="/instituciones/index.html">Instituciones</a></li>
                             <li><a href="/estadisticas/index.html">Estadísticas</a></li>
                             <li><a href="/quejas.html">Centro de Ayuda</a></li>
                             <li><a href="/quejas.html">Contacto</a></li>
@@ -278,7 +272,7 @@
                     </div>
                 </div-->
                 <div class="mobile-social-icon mb-50">
-                    <h6>Síguenos</h6>
+                    <h6 class="mb-20">Síguenos</h6>
                     <a target="_blank" href="https://www.facebook.com/comisiongaeoficial/"><img src="/assets/imgs/theme/icons/icon-facebook-white.svg" alt="" /></a>
                     <a target="_blank" href="https://twitter.com/ComisionGAE"><img src="/assets/imgs/theme/icons/icon-twitter-white.svg" alt="" /></a>
                     <a target="_blank" href="https://www.instagram.com/comisiongaeoficial/"><img src="/assets/imgs/theme/icons/icon-instagram-white.svg" alt="" /></a>

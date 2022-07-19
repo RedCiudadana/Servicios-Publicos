@@ -1,4 +1,5 @@
 const searchFilter = require('./filters/searchFilter');
+const searchFilterI = require('./filters/searchFilterI');
 const rmj = require('render-markdown-js');
 const moment = require("moment");
 const now = new Date();
@@ -55,6 +56,7 @@ module.exports = function (eleventyConfig) {
 
     //FILTROS
     eleventyConfig.addFilter("search", searchFilter);
+    eleventyConfig.addFilter("searchI", searchFilterI);
 
     eleventyConfig.addNunjucksFilter("rmj", function(content) {
         return rmj(content);
