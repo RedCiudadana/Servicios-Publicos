@@ -24,8 +24,8 @@
     {% endblock %}
 </head>
 
-<body class="px-4">
-    <header class="header-area header-style-1 header-height-2">
+<body >
+    <header class="header-area header-style-1 header-height-2 px-4">
         <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
             <div class="container">
                 <div class="header-wrap">
@@ -282,28 +282,32 @@
         </div>
     </div>
     <!--End header-->
-    <main class="main">
+    <main class="main px-4">
         {% block content %}
         {% endblock %} 
     </main>
     <footer class="main">
-        <section class="section-padding footer-mid">
+        <section class="section-padding footer-mid px-4" style="background:#0b2a4a!important">
             <div class="container pt-15 pb-20">
-                <div class="row">
-                    <div class="col">
+                <div class="row " style="justify-content:space-between">
+                    <div class="col-lg-4 col-sm-12 mb-40">
                         <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0 wow animate__animated animate__fadeInUp" data-wow-delay="0">
                             <div class="logo mb-30">
-                                <p class="font-lg text-heading">Comisión Presidencial de Gobierno Abierto Electrónico</p>
+                                <img src="/assets/imgs/logoblanco_Mesa-de-trabajo-1.png">
                             </div>
-                            <ul class="contact-infor">
-                                <li><img class="filter-blue" src="/assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Dirección: </strong> <span> 4ta Calle 6-17 Zona 1 Guatemala, Guatemala</span></li>
-                                <li><img class="filter-blue" src="/assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Llamános:</strong><span> Teléfono: 2220 5383</span></li>
-                                <li><img class="filter-blue" src="/assets/imgs/theme/icons/icon-email-2.svg" alt="" /><strong>Correo:</strong><span> info@transparencia.gob.gt</span></li>
-                                <li><img class="filter-blue" src="/assets/imgs/theme/icons/icon-clock.svg" alt="" /><strong>Horas:</strong><span> 8:00 a 16:00 horas, Lunes a Viernes</span></li>
-                            </ul>
+                            <!--div class="d-flex">
+                                <a target="_blank" href="https://www.facebook.com/comisiongaeoficial/"><img class="filter-white" src="/assets/imgs/theme/icons/icon-facebook-white.svg" alt="" /></a>
+                                <a target="_blank" href="https://twitter.com/ComisionGAE"><img class="filter-white" src="/assets/imgs/theme/icons/icon-twitter-white.svg" alt="" /></a>
+                                <a target="_blank" href="https://www.instagram.com/comisiongaeoficial/"><img class="filter-white" src="/assets/imgs/theme/icons/icon-instagram-white.svg" alt="" /></a>
+                            </div-->
+                            <!--ul class="contact-infor">
+                                <li><img class="filter-white" src="/assets/imgs/theme/icons/icon-location.svg" alt="" /><strong>Dirección: </strong> <span> 4ta Calle 6-17 Zona 1 Guatemala, Guatemala</span></li>
+                                <li><img class="filter-white" src="/assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Llamános:</strong><span> Teléfono: 2220 5383</span></li>
+                                <li><img class="filter-white" src="/assets/imgs/theme/icons/icon-email-2.svg" alt="" /><strong>Correo:</strong><span> info@transparencia.gob.gt</span></li>
+                            </ul-->
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+                    <!--div class="d-flex justify-content-center footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
                         <div class="">
                             <h4 class=" widget-title">Centro de Ayuda</h4>
                             <ul class="footer-list mb-sm-5 mb-md-0">
@@ -312,19 +316,39 @@
                                 <li><a href="/quejas.html">Quejas</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="footer-link-widget col wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
-                        <h4 class="widget-title">Enlaces de Interés</h4>
+                    </div-->
+                    <div class="footer-link-widget col-lg-4 col-sm-12 wow animate__animated animate__fadeInUp mb-40" data-wow-delay=".2s">
+                        <!--h4 class="widget-title">Enlaces de Interés</h4>
                         <ul class="footer-list mb-sm-5 mb-md-0">
                             <li><a target="_blank" href="https://transparencia.gob.gt/">Comisión de Gobierno Abierto y Electrónico (GAE)</a></li>
                             <li><a target="_blank" href="https://gobiernoabierto.transparencia.gob.gt/">Alianza para Gobierno Abierto Guatemala</a></li>
                             <li><a target="_blank" href="https://www.albakeneth.gob.gt/">Alerta Alba Keneth</a></li>
                             <li><a target="_blank" href="https://cpcc.gob.gt/formulario-alertas-de-corrupcion/">Comisión Presidencial contra la Corrupción</a></li>
+                        </ul-->
+                        <ul class="contact-infor">
+                            <li class="text-white mb-20"><img class="filter-white" src="/assets/imgs/theme/icons/icon-email-2.svg" alt="" /><span> info@transparencia.gob.gt</span></li>
+                            <li class="text-white mb-20"><img class="filter-white" src="/assets/imgs/theme/icons/icon-location.svg" alt="" /><span> 4ta Calle 6-17 Zona 1 Guatemala, Guatemala</span></li>
+                            <li class="text-white mb-20"><img class="filter-white" src="/assets/imgs/theme/icons/icon-contact.svg" alt="" /><span> +5022220 5383</span></li>
                         </ul>
                     </div>
                 </div>
+                <div class="row" style="justify-content:space-between;align-items:center">
+                    <div class="col-lg-3 text-center mb-40">
+                        <a href="https://creativecommons.org/licenses/by/4.0/"><img style="height:30px" src="/assets/imgs/thumbnail_image001.png"></a>
+                        <p>Esta obra está bajo una</p>
+                        <a class="link-foot" href="https://creativecommons.org/licenses/by/4.0/">Licencia Creative Commons Atribución 4.0 </a>
+                    </div>
+                    <div class="col-lg-3 text-center mb-40">
+                        <h3 class="text-white">GAE</h3>
+                        <p class="text-white">Diseño 2022 por Comisión Presidencial de Gobierno Abierto y Electrónico – GAE –</p>
+                    </div>
+                    <div class="col-lg-3 text-center mb-40">
+                        <a href="https://prensa.gob.gt/comision-presidencial-de-gobierno-abierto-y-electronico-gae"><img style="height:60px" src="/assets/imgs/sala-de-prensa-30.png"></a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <div class="container pb-30 wow animate__animated animate__fadeInUp" data-wow-delay="0">
+        <div class="container pb-30 wow animate__animated animate__fadeInUp px-4" data-wow-delay="0">
             <div class="row align-items-center">
                 <div class="col-12 mb-30">
                     <div class="footer-bottom"></div>

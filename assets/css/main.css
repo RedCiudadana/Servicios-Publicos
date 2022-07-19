@@ -9798,7 +9798,7 @@ footer .hotline img {
 }
 
 .contact-infor {
-  font-size: 15px;
+  font-size: 20px;
   color: #253D4E;
 }
 
@@ -12978,6 +12978,10 @@ footer .hotline img {
   filter: invert(40%) sepia(100%) saturate(393%) hue-rotate(155deg) brightness(93%) contrast(97%);
 }
 
+.filter-white{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7498%) hue-rotate(61deg) brightness(103%) contrast(103%);
+}
+
 .sidebar {
   height: 200px;
   width: 150px;
@@ -13039,4 +13043,12 @@ footer .hotline img {
 
 .hover-cat:hover .categories-dropdown-wrap{
   display: block;
+}
+
+.link-foot{
+  color:#1488c2!important
+}
+
+.link-foot:hover{
+  color: white!important;
 }
