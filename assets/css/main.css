@@ -13052,3 +13052,26 @@ footer .hotline img {
 .link-foot:hover{
   color: white!important;
 }
+
+.item-drop{
+  display: flex!important;
+  align-items: center!important;
+  padding: 10px 45px 10px 0;
+  border: 1px solid #F2F3F4;
+  border-radius: 6px;
+}
+
+.item-drop img{
+  margin: 0!important;
+}
+
+.item-drop a{
+  padding: 0!important;
+}
+
+.item-drop:hover{
+  border: 1px solid #BCE3C9;
+  box-shadow: 5px 5px 15px rgb(0 0 0 / 5%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
