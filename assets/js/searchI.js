@@ -2,7 +2,7 @@
 "use strict";
     
     const search = (e) => {
-        const cuadro = document.getElementById('searchResults')  
+        const cuadro = document.getElementById('searchResults2')  
         const results = window.searchIndex.search(e.target.value, {
         bool: "OR",
         expand: true,
@@ -36,7 +36,7 @@
 
     };
 
-    fetch("/search-index.json").then((response) =>
+    fetch("/search-indexI.json").then((response) =>
         response.json().then((rawIndex) => {
             window.searchIndex = elasticlunr.Index.load(rawIndex);
             document.getElementById("searchField").addEventListener("input", search );
