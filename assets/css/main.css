@@ -12213,7 +12213,6 @@ footer .hotline img {
 
   .hero-slider-1 .single-hero-slider .display-2 {
     font-size: 46px;
-    margin-bottom: 25px !important;
   }
 
   .hero-slider-1 .single-hero-slider .slider-content p {
@@ -13077,4 +13076,24 @@ footer .hotline img {
   box-shadow: 5px 5px 15px rgb(0 0 0 / 5%);
   -webkit-transition: .3s;
   transition: .3s;
+}
+
+
+.slider-img{
+  background-image: url(/assets/imgs/SLIDER02.png);
+  background-size:cover;
+  width:100%
+} 
+
+@media only screen and (max-width: 376px){
+  .slider-img{
+    background-image: url(/assets/imgs/SLIDER_MOVIL.png);
+  }
+  .slider-content p{
+    display: none!important;
+  }
+
+  .slider-content h1{
+    margin-bottom: 100px!important;
+  }
 }
