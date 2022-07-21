@@ -13024,16 +13024,14 @@ footer .hotline img {
 }
 
 @media only screen and (max-width: 560px){
-
-  .slider-content{
-    padding-right: 200px!important;
+  .slider-img{
+    background-image: url(/assets/imgs/SLIDER_MOVIL.png)!important;
   }
-}
-
-@media only screen and (max-width: 376px){
-
-  .slider-content{
-    padding-right: 115px!important;
+  .slider-content p{
+    display: none!important;
+  }
+  .slider-content h1{
+    margin-bottom: 100px!important;
   }
 }
   

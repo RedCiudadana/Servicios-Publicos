@@ -20,6 +20,10 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('servicio');
     });
 
+    eleventyConfig.addCollection("instituciones_comp", function(collectionApi) {
+        return collectionApi.getFilteredByTag('instituciones');
+    });
+
     eleventyConfig.addCollection('serviciosHighlighted', (collectionApi) => {
         return collectionApi.getFilteredByTag('servicio').filter((item) => {
           return item.data.servicio.highlight == true;
