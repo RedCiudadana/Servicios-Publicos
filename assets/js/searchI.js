@@ -8,7 +8,7 @@
         expand: true,
         });
 
-        const resEl = document.getElementById("searchResults");
+        const resEl = document.getElementById("searchResults2");
 
 
         resEl.innerHTML = "";
@@ -39,7 +39,7 @@
     fetch("/search-indexI.json").then((response) =>
         response.json().then((rawIndex) => {
             window.searchIndex = elasticlunr.Index.load(rawIndex);
-            document.getElementById("searchField").addEventListener("input", search );
+            document.getElementById("searchField2").addEventListener("input", search );
             document.getElementById("keypress", function(event) {
                 if (event.key === "Enter") {
                 alert(event.key  + " " + event.which);
