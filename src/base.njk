@@ -48,7 +48,7 @@
                                     <option>Noodles & Rice</option>
                                     <option>Ice cream</option>
                                 </select-->
-                                <input id="searchField" type="search" placeholder="Busca algún Trámite..." />
+                                <input autocomplete="off" id="searchField" type="search" placeholder="Busca algún Trámite..." />
                                 <ol id="searchResults" class="search-container" style="display:none"/>
                             </form>
                         </div>
@@ -250,8 +250,9 @@
             <div class="mobile-header-content-area">
                 <div class="mobile-search search-style-3 mobile-header-border">
                     <form action="#">
-                        <input  type="text" placeholder="Busca algún Trámite..." />
-                        <button type="submit"><i class="fi-rs-search"></i></button>
+                        <input autocomplete="off" id="searchinputMov"  type="text" placeholder="Busca algún Trámite..." />
+                        <!--button type="submit"><i class="fi-rs-search"></i></button-->
+                        <ol id="searchResultsMov" class="search-container" style="display:none"/>
                     </form>
                 </div>
                 <div class="mobile-menu-wrap mobile-header-border">
@@ -427,7 +428,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
 
     <script src="/assets/js/search.js"></script>
-
+    <script src="/assets/js/searchMov.js"></script>
+    {% block javascripts %}
+    {% endblock %} 
 </body>
 
 </html>

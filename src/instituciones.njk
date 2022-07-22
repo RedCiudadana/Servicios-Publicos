@@ -38,64 +38,64 @@ permalink: "instituciones/index.html"
                                 <option>Noodles & Rice</option>
                                 <option>Ice cream</option>
                             </select-->
-                            <input id="searchField2" type="search" placeholder="Busca alguna Institución..." />
+                            <input autocomplete="off" id="searchField2" type="search" placeholder="Busca alguna Institución..." />
                             <ol id="searchResults2" class="search-container" style="display:none"/>
                         </form>
                     </div>
                 </div>
                 <div class="row vendor-grid">
-                    <div id="lista_instituciones">
-                        <ol>
-                        {% for institucion in collections.instituciones_comp%}
+                    {% for institucion in collections.instituciones_comp%}
 
-                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
-                            <div class="vendor-wrap style-2 mb-40">
-                                <div class="product-badges product-badges-position product-badges-mrg ">
-                                    <span class="hot">Institución</span>
+                    <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                        <div class="vendor-wrap style-2 mb-40">
+                            <div class="product-badges product-badges-position product-badges-mrg ">
+                                <span class="hot">Institución</span>
+                            </div>
+                            <div class="vendor-img-action-wrap">
+                                <div class="vendor-img">
+                                    <a href="{{institucion.url}}">
+                                        <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                    </a>
                                 </div>
-                                <div class="vendor-img-action-wrap">
-                                    <div class="vendor-img">
-                                        <a href="{{institucion.url}}">
-                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
-                                        </a>
-                                    </div>
-                                    <!--div class="mt-10">
-                                        <span class="font-small total-product">380 products</span>
+                                <!--div class="mt-10">
+                                    <span class="font-small total-product">380 products</span>
+                                </div-->
+                            </div>
+                            <div class="vendor-content-wrap w-100">
+                                <div class="mb-30 mt-30">
+                                    <!--div class="product-category">
+                                        <span class="text-muted">Since 2012</span>
                                     </div-->
-                                </div>
-                                <div class="vendor-content-wrap w-100">
-                                    <div class="mb-30 mt-30">
-                                        <!--div class="product-category">
-                                            <span class="text-muted">Since 2012</span>
-                                        </div-->
-                                        <div class="overflow-hidden" style="height:60px">
-                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                    <div class="overflow-hidden" style="height:60px">
+                                        <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                    </div>
+                                    <!--div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
                                         </div>
-                                        <!--div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div-->
+                                    <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                        <ul class="contact-infor text-muted">
+                                            <div class="overflow-hidden" style="height:45px">
+                                                <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" />{{institucion.data.instituciones.description}}</li>
                                             </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div-->
-                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
-                                            <ul class="contact-infor text-muted">
-                                                <div class="overflow-hidden" style="height:45px">
-                                                    <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" />{{institucion.data.instituciones.description}}</li>
-                                                </div>
-                                                <!--li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) - 540-025-124553</span></li-->
-                                            </ul>
-                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
-                                        </div>
+                                            <!--li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) - 540-025-124553</span></li-->
+                                        </ul>
+                                        <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--end vendor card-->
-
-                        {% endfor %}
-                        </ol>
                     </div>
+                    <!--end vendor card-->
+
+                    {% endfor %}
                 </div>
             </div>
         </div>
 {% endblock %}
+
+{% block javascripts %}
+    <script src="/assets/js/searchI.js"></script>
+{% endblock %} 
