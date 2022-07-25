@@ -189,21 +189,21 @@
                                         <ul class="mega-menu">
                                             <li class="sub-mega-menu sub-mega-menu-width-33">
                                                 <ul>
-                                                    {% for institucion in collections.instituciones | limit(5)%}
+                                                    {% for institucion in collections.instituciones | reverse | limit(5)%}
                                                     <li><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></li>
                                                     {% endfor%}
                                                 </ul>
                                             </li>
                                             <li class="sub-mega-menu sub-mega-menu-width-33">
                                                 <ul>
-                                                    {% for institucion in collections.instituciones | limitPart(6,11)%}
+                                                    {% for institucion in collections.instituciones | reverse | limitPart(6,11)%}
                                                     <li><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></li>
                                                     {% endfor%}
                                                 </ul>
                                             </li>
                                             <li class="sub-mega-menu sub-mega-menu-width-34">
                                                 <ul>
-                                                    {% for institucion in collections.instituciones | limitPart(11,16)%}
+                                                    {% for institucion in collections.instituciones | reverse | limitPart(11,16)%}
                                                     <li><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></li>
                                                     {% endfor%}
                                                 </ul>
