@@ -13096,3 +13096,13 @@ footer .hotline img {
     margin-bottom: 100px!important;
   }
 }
+
+.filter-institutions{
+  font-size: 16px;
+  height: 48px;
+  color: #253D4E;
+  border-radius: 26px;
+  border: 1px solid #f5f5f5;
+  background-color: #f5f5f5;
+  max-width: 370px;
+}

@@ -22,7 +22,7 @@ permalink: "instituciones/index.html"
         </div>
         <div class="page-content pt-50">
             <div class="container">
-                <div class="row mb-40">
+                <div class="row mb-40 justify-content-center d-flex">
                     <div class="search-style-1">
                         <form action="#" class="m-auto">
                             <!--select class="select-active">
@@ -42,6 +42,14 @@ permalink: "instituciones/index.html"
                             <ol id="searchResults2" class="search-container" style="display:none"/>
                         </form>
                     </div>
+                    <!--div class="filter-institutions my-4">
+                        <select name="select">
+                            <option value="todos">Todos</option>
+                            <option value="ministerios">Ministerios</option>
+                            <option value="comisionados">Comisionados</option>
+                            <option value="secretariados">Secretariados</option>
+                        </select>
+                    </div-->
                 </div>
                 <div class="row vendor-grid">
                     {% for institucion in collections.instituciones_comp%}
