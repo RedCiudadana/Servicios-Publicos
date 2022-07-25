@@ -36,6 +36,12 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addCollection('ministerios', (collectionApi) => {
+        return collectionApi.getFilteredByTag('instituciones').filter((item) => {
+          return item.data.instituciones.type == 'Ministerio';
+        });
+    });
+
     eleventyConfig.addCollection("categorias", function(collectionApi) {
         return collectionApi.getFilteredByTag('categoria');
     });
