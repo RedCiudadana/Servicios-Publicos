@@ -39,7 +39,7 @@
     fetch("/search-index.json").then((response) =>
         response.json().then((rawIndex) => {
             window.searchIndex = elasticlunr.Index.load(rawIndex);
-            document.getElementById("searchFieldMov").addEventListener("input", search );
+            document.getElementById("searchinputMov").addEventListener("input", search );
             document.getElementById("keypress", function(event) {
                 if (event.key === "Enter") {
                 alert(event.key  + " " + event.which);
