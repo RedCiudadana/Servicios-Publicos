@@ -54,8 +54,8 @@ permalink: index.html
                 <div class="row mb-40 mt-40">
                     <h4>Instituciones</h4>
                 </div>
-                <div class="row mb-20 mt-40 justify-content-center">
-                    {% for item in collections.instituciones_comp | reverse | limit(15) %}
+                <div class="row mb-20 mt-40">
+                    {% for item in collections.ministerios | limit(15) %}
                     <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0 mb-40">
                         <a href="{{item.url}}"><div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay="0">
                             <div class="banner-icon">
@@ -67,6 +67,10 @@ permalink: index.html
                         </div></a>
                     </div>
                     {% endfor %}
+                    
+                </div>
+
+                <div class="row mb-20 mt-40 justify-content-center">
                     <a class="btn col-lg-2"  href="/instituciones/index.html">Ver Más<a/>
                 </div>
                 
