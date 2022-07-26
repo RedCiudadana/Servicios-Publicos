@@ -20,14 +20,24 @@ tags:
             <div class="container">
                 <div class="breadcrumb">
                     <a href="/index2.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
-                    <span></span> {{instituciones.name}} | {{instituciones.type}}
+                    <span></span> {{instituciones.type}}
+                    <span></span> {{instituciones.name}}
                 </div>
             </div>
         </div>
         <div class="page-content pt-50">
             <div class="container">
                 <div class="archive-header-2 text-center">
-                    <h4 class="display-4 mb-50">Servicios</h4>
+                    <h4 class="display-4 mb-50">Trámites del {{instituciones.name}}
+                    </h4>
+                    {% set cuenta = 0 %}
+                    {% for servicio in collections.servicios%}
+                    {% if instituciones.name == servicio.data.servicio.institution.name%}
+                    {% set cuenta = cuenta + 1 %}
+                    {% endif %}
+                    {% endfor %}
+                    <h6 class="mb-40">La institución cuenta con {{ cuenta }} trámites en el catálogo.</h6>
+
                 </div>
                 <div class="row vendor-grid">
                 {% for servicio in collections.servicios%}
