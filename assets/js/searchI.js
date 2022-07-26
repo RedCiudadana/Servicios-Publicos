@@ -3,19 +3,15 @@
     
     const search = (e) => {
         const container = document.getElementById('container-all')  
-        const cuadro = document.getElementById('searchResults2')  
         
         const results = window.searchIndex.search(e.target.value, {
         bool: "OR",
         expand: true,
         });
-
-        const resEl = document.getElementById("searchResults2");
         
         const res = document.getElementById("row-results");
 
         res.innerHTML = "";
-        resEl.innerHTML = "";
         if (results) {
             container.style.display = "none"
             results.map((r) => {
@@ -114,7 +110,7 @@
     fetch("/search-indexI.json").then((response) =>
         response.json().then((rawIndex) => {
             window.searchIndex = elasticlunr.Index.load(rawIndex);
-            document.getElementById("searchField2").addEventListener("input", search );
+            document.getElementById("search-instituciones").addEventListener("input", search );
             document.getElementById("keypress", function(event) {
                 if (event.key === "Enter") {
                 alert(event.key  + " " + event.which);
