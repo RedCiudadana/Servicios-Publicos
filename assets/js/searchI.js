@@ -15,7 +15,7 @@
         if (results) {
             container.style.display = "none"
             results.map((r) => {
-                const { id, nombre } = r.doc;
+                const { id, nombre_ins } = r.doc;
                 
 
                 const col = document.createElement("div");
@@ -68,7 +68,7 @@
 
                 const a_title = document.createElement("a");
                 a_title.setAttribute("href", id);
-                a_title.textContent = nombre;
+                a_title.textContent = nombre_ins;
                 
                 const vendor_info = document.createElement("div")
                 vendor_info.classList.add("vendor-info")
