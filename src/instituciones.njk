@@ -276,6 +276,7 @@ permalink: "instituciones/index.html"
         </div>
         <section class="hero-3 position-relative align-items">
             <h2 class="mb-30 text-center text-white">Instituciones</h2>
+            <h6></h6>
         </section>
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -306,16 +307,22 @@ permalink: "instituciones/index.html"
                         </form>
                     </div>
                     <div class="filter-institutions my-4">
-                        <select name="select">
-                            <option value="todos">Todos</option>
+                        <select id="filtro" name="select" onChange="filter()">
+                            <option value="todos">Ver Todos</option>
                             <option value="ministerios">Ministerios</option>
                             <option value="comisionados">Comisionados</option>
                             <option value="secretariados">Secretariados</option>
+                            <option value="autoridades">Autoridades</option>
+                            <option value="consejos">Consejos</option>
+                            <option value="defensorias">Defensorías</option>
+                            <option value="fondos">Fondos</option>
+                            <option value="gobernaciones">Gobernaciones</option>
+                            <option value="coordinadoras">coordinadoras</option>
                         </select>
                     </div>
                 </div>
                 <div id="container-all">
-                    <div class="row vendor-grid">
+                    <div id="all" class="row vendor-grid">
                         {% for institucion in collections.instituciones_comp%}
 
                         <div class="col-lg-6 col-md-6 col-12 col-sm-6">
@@ -364,6 +371,348 @@ permalink: "instituciones/index.html"
 
                         {% endfor %}
                     </div>
+
+                    <div id="ministerio" class="row vendor-grid">
+                        {% for institucion in collections.ministerios%}
+
+                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                            <div class="vendor-wrap style-2 mb-40">
+                                <div class="product-badges product-badges-position product-badges-mrg ">
+                                    <span class="hot">Institución</span>
+                                </div>
+                                <div class="vendor-img-action-wrap">
+                                    <div class="vendor-img">
+                                        <a href="{{institucion.url}}">
+                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vendor-content-wrap w-100">
+                                    <div class="mb-30 mt-30">
+                                        <div class="overflow-hidden" style="height:60px">
+                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                        </div>
+                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                            <ul class="contact-infor text-muted">
+                                                <div class="overflow-hidden" style="height:45px">
+                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                </div>
+                                            </ul>
+                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endfor %}
+                    </div>
+
+                    <div id="comision" class="row vendor-grid">
+                        {% for institucion in collections.comisionados%}
+
+                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                            <div class="vendor-wrap style-2 mb-40">
+                                <div class="product-badges product-badges-position product-badges-mrg ">
+                                    <span class="hot">Institución</span>
+                                </div>
+                                <div class="vendor-img-action-wrap">
+                                    <div class="vendor-img">
+                                        <a href="{{institucion.url}}">
+                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vendor-content-wrap w-100">
+                                    <div class="mb-30 mt-30">
+
+                                        <div class="overflow-hidden" style="height:60px">
+                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                        </div>
+                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                            <ul class="contact-infor text-muted">
+                                                <div class="overflow-hidden" style="height:45px">
+                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                </div>
+                                            </ul>
+                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endfor %}
+                    </div>
+
+                    <div id="autoridad" class="row vendor-grid">
+                        {% for institucion in collections.autoridades%}
+
+                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                            <div class="vendor-wrap style-2 mb-40">
+                                <div class="product-badges product-badges-position product-badges-mrg ">
+                                    <span class="hot">Institución</span>
+                                </div>
+                                <div class="vendor-img-action-wrap">
+                                    <div class="vendor-img">
+                                        <a href="{{institucion.url}}">
+                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vendor-content-wrap w-100">
+                                    <div class="mb-30 mt-30">
+
+                                        <div class="overflow-hidden" style="height:60px">
+                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                        </div>
+                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                            <ul class="contact-infor text-muted">
+                                                <div class="overflow-hidden" style="height:45px">
+                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                </div>
+                                            </ul>
+                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endfor %}
+                    </div>
+
+                    <div id="consejo" class="row vendor-grid">
+                        {% for institucion in collections.consejos%}
+
+                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                            <div class="vendor-wrap style-2 mb-40">
+                                <div class="product-badges product-badges-position product-badges-mrg ">
+                                    <span class="hot">Institución</span>
+                                </div>
+                                <div class="vendor-img-action-wrap">
+                                    <div class="vendor-img">
+                                        <a href="{{institucion.url}}">
+                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vendor-content-wrap w-100">
+                                    <div class="mb-30 mt-30">
+
+                                        <div class="overflow-hidden" style="height:60px">
+                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                        </div>
+                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                            <ul class="contact-infor text-muted">
+                                                <div class="overflow-hidden" style="height:45px">
+                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                </div>
+                                            </ul>
+                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endfor %}
+                    </div>
+
+                    <div id="defensoria" class="row vendor-grid">
+                        {% for institucion in collections.defensorias%}
+
+                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                            <div class="vendor-wrap style-2 mb-40">
+                                <div class="product-badges product-badges-position product-badges-mrg ">
+                                    <span class="hot">Institución</span>
+                                </div>
+                                <div class="vendor-img-action-wrap">
+                                    <div class="vendor-img">
+                                        <a href="{{institucion.url}}">
+                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vendor-content-wrap w-100">
+                                    <div class="mb-30 mt-30">
+
+                                        <div class="overflow-hidden" style="height:60px">
+                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                        </div>
+                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                            <ul class="contact-infor text-muted">
+                                                <div class="overflow-hidden" style="height:45px">
+                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                </div>
+                                            </ul>
+                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endfor %}
+                    </div>
+
+                    <div id="fondo" class="row vendor-grid">
+                        {% for institucion in collections.fondos%}
+
+                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                            <div class="vendor-wrap style-2 mb-40">
+                                <div class="product-badges product-badges-position product-badges-mrg ">
+                                    <span class="hot">Institución</span>
+                                </div>
+                                <div class="vendor-img-action-wrap">
+                                    <div class="vendor-img">
+                                        <a href="{{institucion.url}}">
+                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vendor-content-wrap w-100">
+                                    <div class="mb-30 mt-30">
+
+                                        <div class="overflow-hidden" style="height:60px">
+                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                        </div>
+                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                            <ul class="contact-infor text-muted">
+                                                <div class="overflow-hidden" style="height:45px">
+                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                </div>
+                                            </ul>
+                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endfor %}
+                    </div>
+
+                    <div id="gobernacion" class="row vendor-grid">
+                        {% for institucion in collections.gobernaciones%}
+
+                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                            <div class="vendor-wrap style-2 mb-40">
+                                <div class="product-badges product-badges-position product-badges-mrg ">
+                                    <span class="hot">Institución</span>
+                                </div>
+                                <div class="vendor-img-action-wrap">
+                                    <div class="vendor-img">
+                                        <a href="{{institucion.url}}">
+                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vendor-content-wrap w-100">
+                                    <div class="mb-30 mt-30">
+
+                                        <div class="overflow-hidden" style="height:60px">
+                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                        </div>
+                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                            <ul class="contact-infor text-muted">
+                                                <div class="overflow-hidden" style="height:45px">
+                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                </div>
+                                            </ul>
+                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endfor %}
+                    </div>
+
+                    <div id="secretaria" class="row vendor-grid">
+                        {% for institucion in collections.secretarias%}
+
+                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                            <div class="vendor-wrap style-2 mb-40">
+                                <div class="product-badges product-badges-position product-badges-mrg ">
+                                    <span class="hot">Institución</span>
+                                </div>
+                                <div class="vendor-img-action-wrap">
+                                    <div class="vendor-img">
+                                        <a href="{{institucion.url}}">
+                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vendor-content-wrap w-100">
+                                    <div class="mb-30 mt-30">
+
+                                        <div class="overflow-hidden" style="height:60px">
+                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                        </div>
+                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                            <ul class="contact-infor text-muted">
+                                                <div class="overflow-hidden" style="height:45px">
+                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                </div>
+                                            </ul>
+                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endfor %}
+                    </div>
+
+                    <div id="coordinadoras" class="row vendor-grid">
+                        {% for institucion in collections.coordinadoras%}
+
+                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                            <div class="vendor-wrap style-2 mb-40">
+                                <div class="product-badges product-badges-position product-badges-mrg ">
+                                    <span class="hot">Institución</span>
+                                </div>
+                                <div class="vendor-img-action-wrap">
+                                    <div class="vendor-img">
+                                        <a href="{{institucion.url}}">
+                                            <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-22.png" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="vendor-content-wrap w-100">
+                                    <div class="mb-30 mt-30">
+
+                                        <div class="overflow-hidden" style="height:60px">
+                                            <h4 class="mb-5"><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></h4>
+                                        </div>
+                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                            <ul class="contact-infor text-muted">
+                                                <div class="overflow-hidden" style="height:45px">
+                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                </div>
+                                            </ul>
+                                            <a href="{{institucion.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endfor %}
+                    </div>
+
                 </div>
                 <div id="container-results">
                     <div class="row vendor-grid" id="row-results">
@@ -502,6 +851,7 @@ permalink: "instituciones/index.html"
     <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
 
     <script src="/assets/js/searchI.js"></script>
+    <script src="/assets/js/filtroI.js"></script>
 </body>
 
 </html>

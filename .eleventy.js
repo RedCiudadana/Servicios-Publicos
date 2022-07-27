@@ -42,6 +42,54 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addCollection('comisionados', (collectionApi) => {
+        return collectionApi.getFilteredByTag('instituciones').filter((item) => {
+          return item.data.instituciones.type == 'Comisión';
+        });
+    });
+
+    eleventyConfig.addCollection('autoridades', (collectionApi) => {
+        return collectionApi.getFilteredByTag('instituciones').filter((item) => {
+          return item.data.instituciones.type == 'Autoridad';
+        });
+    });
+
+    eleventyConfig.addCollection('consejos', (collectionApi) => {
+        return collectionApi.getFilteredByTag('instituciones').filter((item) => {
+          return item.data.instituciones.type == 'Consejo';
+        });
+    });
+
+    eleventyConfig.addCollection('defensorias', (collectionApi) => {
+        return collectionApi.getFilteredByTag('instituciones').filter((item) => {
+          return item.data.instituciones.type == 'Defensoría';
+        });
+    });
+
+    eleventyConfig.addCollection('fondos', (collectionApi) => {
+        return collectionApi.getFilteredByTag('instituciones').filter((item) => {
+          return item.data.instituciones.type == 'Fondo';
+        });
+    });
+    
+    eleventyConfig.addCollection('gobernaciones', (collectionApi) => {
+        return collectionApi.getFilteredByTag('instituciones').filter((item) => {
+          return item.data.instituciones.type == 'Gobernación';
+        });
+    });
+
+    eleventyConfig.addCollection('secretarias', (collectionApi) => {
+        return collectionApi.getFilteredByTag('instituciones').filter((item) => {
+          return item.data.instituciones.type == 'Secretaría';
+        });
+    });
+
+    eleventyConfig.addCollection('coordinadoras', (collectionApi) => {
+        return collectionApi.getFilteredByTag('instituciones').filter((item) => {
+          return item.data.instituciones.type == 'Coordinadora';
+        });
+    });
+
     eleventyConfig.addCollection("categorias", function(collectionApi) {
         return collectionApi.getFilteredByTag('categoria');
     });

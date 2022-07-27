@@ -13110,3 +13110,39 @@ footer .hotline img {
   background-color: #f5f5f5;
   max-width: 370px;
 }
+
+#ministerio{
+  display: none;
+}
+
+#autoridad{
+  display: none;
+}
+
+#consejo{
+  display: none;
+}
+
+#defensoria{
+  display: none;
+}
+
+#fondo{
+  display: none;
+}
+
+#gobernacion{
+  display: none;
+}
+
+#secretaria{
+  display: none;
+}
+
+#coordinadoras{
+  display: none;
+}
+
+#comision{
+  display: none;
+}
