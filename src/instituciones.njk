@@ -288,27 +288,33 @@ permalink: "instituciones/index.html"
         </div>
         <div class="page-content pt-50">
             <div class="container">
-                <div class="row mb-40 justify-content-center d-flex">
-                    <div class="search-style-1">
-                        <form action="#" class="m-auto">
-                            <input autocomplete="off" id="search-instituciones" type="search" placeholder="Busca alguna Institución..." />
-                        </form>
+
+                <div class="row mb-40 justify-content-center d-flex" style="align-items:center">
+                    <div class="col-lg-9 col-sm-12">
+                        <div >
+                            <form action="#" class="m-auto">
+                                <input class="search-ins" autocomplete="off" id="search-instituciones" type="search" placeholder="Busca alguna Institución..." />
+                            </form>
+                        </div>    
                     </div>
-                    <div class="filter-institutions my-4">
-                        <select id="filtro" name="select" onChange="filter()">
-                            <option value="todos">Ver Todos</option>
-                            <option value="ministerios">Ministerios</option>
-                            <option value="comisionados">Comisiones</option>
-                            <option value="secretariados">Secretarías</option>
-                            <option value="autoridades">Autoridades</option>
-                            <option value="consejos">Consejos</option>
-                            <option value="defensorias">Defensorías</option>
-                            <option value="fondos">Fondo</option>
-                            <option value="gobernaciones">Gobernaciones</option>
-                            <option value="coordinadoras">Coordinadoras</option>
-                        </select>
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="my-4">
+                            <select class="select-filtro" id="filtro" name="select" onChange="filter()">
+                                <option value="todos">Ver Todos</option>
+                                <option value="ministerios">Ministerios</option>
+                                <option value="comisionados">Comisiones</option>
+                                <option value="secretariados">Secretarías</option>
+                                <option value="autoridades">Autoridades</option>
+                                <option value="consejos">Consejos</option>
+                                <option value="defensorias">Defensorías</option>
+                                <option value="fondos">Fondo</option>
+                                <option value="gobernaciones">Gobernaciones</option>
+                                <option value="coordinadoras">Coordinadoras</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+
                 <div id="container-all">
                     <div id="all" class="row vendor-grid">
                         {% for institucion in collections.instituciones_comp%}

@@ -13101,16 +13101,6 @@ footer .hotline img {
   }
 }
 
-.filter-institutions{
-  font-size: 16px;
-  height: 48px;
-  color: #253D4E;
-  border-radius: 26px;
-  border: 1px solid #f5f5f5;
-  background-color: #f5f5f5;
-  max-width: 370px;
-}
-
 #ministerio{
   display: none;
 }
@@ -13145,4 +13135,20 @@ footer .hotline img {
 
 #comision{
   display: none;
+}
+
+.select-filtro{
+  padding: 21px;
+  color: #253D4E;
+  border-radius: 26px;
+  border: 1px solid rgb(214,224,239);
+  background-color: rgb(214,224,239);
+}
+
+.search-ins{
+  padding: 25px;
+  color: #253D4E;
+  border-radius: 26px;
+  border: 1px solid rgb(214,224,239);
+  background-color: rgb(214,224,239);
 }
