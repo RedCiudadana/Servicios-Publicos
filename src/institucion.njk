@@ -13,6 +13,26 @@ tags:
 {% block head %}
     <title>Catálogo de Trámites | {{instituciones.name}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+
+        function showall() {
+            var todos = document.getElementById("servicios_full")
+            var parte = document.getElementById("servicios_part")
+            var boton = document.getElementById("vermas")
+            if (todos.style.display == "none"){
+                parte.style.display = "none"
+                todos.style.display = "flex"
+                boton.innerHTML = "Ver menos"
+            }
+            else {
+                parte.style.display = "flex"
+                todos.style.display = "none"
+                boton.innerHTML = "Ver más"
+            }
+        }
+
+    </script>
 {% endblock %}
 
 {% block content %}
@@ -36,14 +56,62 @@ tags:
                     {% set cuenta = cuenta + 1 %}
                     {% endif %}
                     {% endfor %}
-                    <h6 class="text-body">La institución cuenta con {{ cuenta }} trámites en el catálogo.</h6>
+                    <h6 class="text-body mb-40">La institución cuenta con {{ cuenta }} trámites en el catálogo.</h6>
 
                 </div>
-                <div class="row vendor-grid">
+
+                <div class="row vendor-grid" id="servicios_part">
+                {% set cuentaserv = 1 %}
                 {% for servicio in collections.servicios%}
 
                 {% if instituciones.name == servicio.data.servicio.institution.name%}
+                {% if cuentaserv <= 12 %}
+                {% set cuentaserv = cuentaserv + 1 %}
+                    <div class="col-lg-3 col-md-6 col-12 col-sm-6">
+                        <div class="vendor-wrap mb-40">
+                            <div class="vendor-img-action-wrap">
+                                <div class="vendor-img">
+                                    <a href="{{servicio.url}}">
+                                        <img class="default-img" src="/assets/imgs/ICONOSpng-13.png" alt="" />
+                                    </a>
+                                </div>
+                                <div class="product-badges product-badges-position product-badges-mrg">
+                                    <span class="hot">Trámite</span>
+                                </div>
+                            </div>
+                            <div class="vendor-content-wrap">
+                                <div class="d-flex justify-content-between align-items-end mb-30">
+                                    <div class="overflow-hidden" style="height:60px">
+                                        <h4 class="mb-5"><a href="{{servicio.url}}">{{servicio.data.servicio.name}}</a></h4>
+                                    </div>
+                                </div>
+                                <div class="vendor-info mb-30">
+                                    <ul class="contact-infor text-muted overflow-hidden" style="height:70px">
+                                        <li><img src="assets/imgs/theme/icons/icon-location.svg" alt="" /><span >{{servicio.data.servicio.description}}</span></li>
+                                    </ul>
+                                </div>
+                                <a href="{{servicio.url}}" class="btn btn-xs">Ver Trámite <i class="fi-rs-arrow-small-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end vendor card-->
                 
+                {% endif %}
+                {% endif %}
+
+                {% endfor %}
+                </div>
+
+                <div class="row mt-40 mb-40 justify-content-center">
+                    <div chlass="col-lg-6 col-sm-12" style="text-align:center!important">
+                        <button id="vermas" onclick="showall()" class="btn" style="width:270px!important">Ver más</button>
+                    </div>
+                </div>
+
+                <div class="row vendor-grid" id="servicios_full" style="display:none">
+                {% for servicio in collections.servicios%}
+
+                {% if instituciones.name == servicio.data.servicio.institution.name%}
                     <div class="col-lg-3 col-md-6 col-12 col-sm-6">
                         <div class="vendor-wrap mb-40">
                             <div class="vendor-img-action-wrap">
@@ -77,6 +145,11 @@ tags:
 
                 {% endfor %}
                 </div>
+
+                
+
+                
+
             </div>
         </div>
 {% endblock %}
