@@ -28,6 +28,7 @@ tags:
         <div class="container">
             <div class="breadcrumb">
                 <a href="/index2.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+                <span></span> {%for item in collections.categoriaesp2 %}{% if item.data.categoriaesp2.name == servicio.subcategory.name %} {% for categoria in collections.categorias2 %}{% if categoria.data.categoria2.id == item.data.categoriaesp2.category | lastSlash %}<a href="{{categoria.url}}">{{categoria.data.categoria2.name}}</a> {%endif%}{%endfor%}{%endif%}{%endfor%}
                 <span></span> {%for item in collections.categoriaesp2 %}{% if item.data.categoriaesp2.name == servicio.subcategory.name %} <a href="{{item.url}}">{{item.data.categoriaesp2.name}}</a> {%endif%}{%endfor%}
                 <span></span> {{servicio.name}}
             </div>
