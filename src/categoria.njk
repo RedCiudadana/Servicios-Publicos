@@ -40,6 +40,7 @@ tags:
                     {% endfor %}
                     <h6 class="text-body">La categoría cuenta con {{ cuenta }} trámites en el catálogo.</h6>
                 </div>
+                
                 <div class="row vendor-grid mt-40">
                 {% for catesp in collections.categoriaesp2 %}
                 {% if categoria2.id == catesp.data.categoriaesp2.category | lastSlash %}
