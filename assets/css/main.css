@@ -13152,3 +13152,12 @@ footer .hotline img {
   border: 1px solid rgb(214,224,239);
   background-color: rgb(214,224,239);
 }
+
+.text-overflow{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width:330px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

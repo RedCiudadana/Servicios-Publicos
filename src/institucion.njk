@@ -4,7 +4,7 @@ pagination:
   size: 1
   alias: instituciones
   addAllPagesToCollections: true
-permalink: "instituciones/{{instituciones.id}}/{{instituciones.name | slug}}/index.html"
+permalink: "instituciones/{{instituciones.name | slug}}/index.html"
 tags:
   - instituciones
 ---
@@ -39,8 +39,9 @@ tags:
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="/index2.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
-                    <span></span> {{instituciones.type}}
+                    <a href="/index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+                    <span></span> <a href="/instituciones/index.html" >Instituciones</a>
+                    <span></span> <a href="/instituciones/index.html" >{{instituciones.type}}</a>
                     <span></span> {{instituciones.name}}
                 </div>
             </div>
@@ -48,15 +49,24 @@ tags:
         <div class="page-content pt-50">
             <div class="container">
                 <div class="archive-header-2 text-center">
-                    <h4 class="display-4 mb-50">Trámites del {{instituciones.name}}
+                    <h4 class="display-4 mb-50">{{instituciones.name}}
                     </h4>
+                    <div class="d-flex justify-content-center">
+                        <h5 class="display-9 mb-40 w-50">{{instituciones.description}}</h5>
+                    </div>
                     {% set cuenta = 0 %}
                     {% for servicio in collections.servicios%}
                     {% if instituciones.name == servicio.data.servicio.institution.name%}
                     {% set cuenta = cuenta + 1 %}
                     {% endif %}
                     {% endfor %}
-                    <h6 class="text-body mb-40">La institución cuenta con {{ cuenta }} trámites en el catálogo.</h6>
+                    {% if cuenta == 1%}
+                        <h6 class="text-body mb-40">La institución cuenta con {{ cuenta }} trámite en el catálogo.</h6>
+                    {% endif %}
+                    {% if cuenta != 1%}
+                        <h6 class="text-body mb-40">La institución cuenta con {{ cuenta }} trámites en el catálogo.</h6>
+                    {% endif %}
+                    
 
                 </div>
 

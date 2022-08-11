@@ -191,6 +191,11 @@ permalink: "instituciones/index.html"
                                                     {% for institucion in collections.ministerios | limitPart(11,16)%}
                                                     <li><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></li>
                                                     {% endfor%}
+                                                    {% for institucion in collections.instituciones_comp%}
+                                                        {% if institucion.data.instituciones.id == "154"%}
+                                                        <li><a href="{{institucion.url}}">{{institucion.data.instituciones.name}}</a></li>
+                                                        {%endif%}
+                                                    {% endfor %}
                                                 </ul>
                                             </li>
                                             <a href="/instituciones/index.html" class="btn">Ver más</a>
@@ -376,8 +381,8 @@ permalink: "instituciones/index.html"
                                         </div-->
                                         <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
                                             <ul class="contact-infor text-muted">
-                                                <div class="overflow-hidden" style="height:45px">
-                                                    <li>{{institucion.data.instituciones.description}}</li>
+                                                <div  >
+                                                    <li><p class="text-overflow">{{institucion.data.instituciones.description}}</p></li>
                                                 </div>
                                                 <!--li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) - 540-025-124553</span></li-->
                                             </ul>
