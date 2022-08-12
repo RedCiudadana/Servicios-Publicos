@@ -13161,3 +13161,12 @@ footer .hotline img {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.text-overflow2{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width:300px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

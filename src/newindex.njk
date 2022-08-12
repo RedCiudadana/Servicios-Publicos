@@ -87,7 +87,61 @@ permalink: index.html
                     <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0 mb-40">
                         <a href="{{item.url}}"><div class="banner-left-icon d-flex align-items-center wow animate__animated animate__fadeInUp" data-wow-delay="0">
                             <div class="banner-icon">
-                                <img src="/assets/imgs/ICONOSpng-15.png" alt="" />
+                                {% for cat in collections.categorias2%}
+                                {% if cat.data.categoria2.id == item.data.categoriaesp2.category | lastSlash %}
+                                    {% if cat.data.categoria2.id == "27" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-41.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "28" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-35.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "29" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-47.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "30" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-36.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "31" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-48.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "32" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-37.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "33" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-45.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "34" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-40.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "35" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-39.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "36" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-34.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "37" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-46.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "38" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-44.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "39" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-32.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "40" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-43.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "41" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-42.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "42" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-38.png" alt="" />
+                                    {%endif%}
+                                    {% if cat.data.categoria2.id == "43" %}
+                                        <img  src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-33.png" alt="" />
+                                    {%endif%}
+                                {% endif %}
+                                {% endfor %}
                             </div>
                             <div class="banner-text">
                                 <h3 class="icon-box-title">{{item.data.categoriaesp2.name}}</h3>

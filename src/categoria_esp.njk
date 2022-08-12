@@ -30,7 +30,61 @@ tags:
                             <div class="vendor-img-action-wrap ">
                                 <div class="vendor-img">
                                     <a href="{{servicio.url}}">
-                                        <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/ICONOS/ICONOS-33.png" alt="" />
+                                        {% for cat in collections.categorias2%}
+                                        {% if cat.data.categoria2.id == categoriaesp2.category | lastSlash %}
+                                            {% if cat.data.categoria2.id == "27" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-41.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "28" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-35.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "29" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-47.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "30" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-36.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "31" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-48.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "32" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-37.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "33" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-45.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "34" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-40.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "35" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-39.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "36" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-34.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "37" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-46.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "38" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-44.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "39" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-32.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "40" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-43.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "41" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-42.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "42" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-38.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "43" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-33.png" alt="" />
+                                            {%endif%}
+                                        {% endif %}
+                                        {% endfor %}
                                     </a>
                                 </div>
                                 <!--div class="mt-10">
