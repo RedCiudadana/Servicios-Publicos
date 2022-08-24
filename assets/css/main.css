@@ -852,6 +852,12 @@ h4 {
   font-size: 24px;
 }
 
+@media only screen and (min-width: 576px) {
+  .custom-overflow-hidden h4{
+    font-size: 17px;
+  }
+}
+
 h5 {
   font-size: 20px;
 }
@@ -13169,4 +13175,17 @@ footer .hotline img {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+/*Overflow hidden menos movil*/
+.custom-overflow-hidden{
+  overflow: hidden!important;
+  height: 60px;
+}
+
+@media only screen and (max-width: 576px) {
+  .custom-overflow-hidden{
+    overflow:visible!important;
+    height: auto;
+  }
 }
