@@ -33,7 +33,7 @@ permalink: "categorias/index.html"
                             </div>
                             <div class="vendor-img-action-wrap">
                                 <div class="vendor-img">
-                                    <a href="vendor-details-1.html">
+                                    <a href="{{cat.url}}">
                                         {% if cat.data.categoria2.id == "27" %}
                                             <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-41.png" alt="" />
                                         {%endif%}
@@ -97,7 +97,7 @@ permalink: "categorias/index.html"
                                         <span class="text-muted">Since 2012</span>
                                     </div-->
                                     <div class="overflow-hidden" style="height:60px">
-                                        <h4 class="mb-5"><a href="vendor-details-1.html">{{cat.data.categoria2.name}}</a></h4>
+                                        <h4 class="mb-5"><a href="{{cat.url}}">{{cat.data.categoria2.name}}</a></h4>
                                     </div>
                                     <!--div class="product-rate-cover">
                                         <div class="product-rate d-inline-block">
