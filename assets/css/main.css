@@ -13189,3 +13189,16 @@ footer .hotline img {
     height: auto;
   }
 }
+
+.search_button{
+  background-image: none!important;
+  border: #053D5E!important;
+  width: 40%!important;
+  padding: 2px 6px!important;
+  background: #053D5E!important;
+  color: white!important;
+}
+
+.search_button:hover{
+  background-color: #1B86BD!important;
+}

@@ -144,6 +144,18 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('log', value => {
         console.log(value)
+    });
+
+    eleventyConfig.addFilter("rem_accent", function(string) {
+        return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    })
+
+    eleventyConfig.addFilter("sub_string", function(string) {
+        return string.substring(0,150);
+    })
+
+    eleventyConfig.addFilter("parse", function(string) {
+        return string.replace(/[\r\n]/gm, '').replace('•','').replace('	','');
     })
 
 }
