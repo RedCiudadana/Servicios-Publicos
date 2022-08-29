@@ -25,6 +25,12 @@
             localStorage.setItem("busqueda",busqueda);
             return false;
         }
+
+        function passvalues2(){
+            var busqueda = document.getElementById("searchinputMov").value;
+            localStorage.setItem("busqueda",busqueda);
+            return false;
+        }
     </script>
 
     {% block head %}
@@ -313,8 +319,8 @@
             </div>
             <div class="mobile-header-content-area">
                 <div class="mobile-search search-style-3 mobile-header-border">
-                    <form action="#">
-                        <input autocomplete="off" id="searchinputMov"  type="text" placeholder="Busca algún Trámite..." />
+                    <form action="/resultados.html">
+                        <input autocomplete="off" id="searchinputMov" onchange="passvalues2();" type="text" placeholder="Busca algún Trámite..." />
                         <!--button type="submit"><i class="fi-rs-search"></i></button-->
                         <ol id="searchResultsMov" class="search-container" style="display:none"/>
                     </form>
