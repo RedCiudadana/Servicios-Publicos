@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     const results = document.getElementById('results');
     let data = [];
     let search_term = localStorage.getItem("busqueda").toLowerCase();
+    search_term = search_term.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 
     fetch('/search.json')
         .then(response => response.json())

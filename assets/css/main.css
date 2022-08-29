@@ -13202,3 +13202,8 @@ footer .hotline img {
 .search_button:hover{
   background-color: #1B86BD!important;
 }
+
+.texto-servicio ol{
+  list-style:decimal!important;
+  margin-left: 20px;
+}
