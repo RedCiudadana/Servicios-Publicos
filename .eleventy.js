@@ -151,11 +151,11 @@ module.exports = function (eleventyConfig) {
     })
 
     eleventyConfig.addFilter("sub_string", function (string) {
-        return string.substring(0, 95);
+        return string.substring(0, 150);
     })
 
     eleventyConfig.addFilter("parse", function (string) {
-        return string.replace(/[\r\n]/gm, '').replace('•', '').replace('	', '');
+        return string.replace(/[\r\n]/gm, '').replace('•', '').replace('	', '').replace('	', '');
     })
 
 }
