@@ -6969,6 +6969,7 @@ h6.post-title {
 }
 
 .vendor-wrap .vendor-img-action-wrap img {
+  width: 120px;
   max-width: 144px;
 }
 
@@ -13206,4 +13207,5 @@ footer .hotline img {
 .texto-servicio ol{
   list-style:decimal!important;
   margin-left: 15px;
+  margin-bottom: 20px;
 }
