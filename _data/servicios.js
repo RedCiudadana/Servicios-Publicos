@@ -53,6 +53,5 @@ module.exports = async function () {
   }
 
   const response_final = response.flat()
-  console.log(response_final)
   return response_final;
 };
