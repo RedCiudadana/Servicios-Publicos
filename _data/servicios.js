@@ -20,38 +20,39 @@ module.exports = async function () {
 
   /* This returns a promise */
   const response = []
-  
+
   let pagina = 1;
-  
-  while(true){
-    
-    let  data  = await EleventyFetch(url+(pagina++), {
-        fetchOptions,
-        duration: "1h", // save for 1 hour
-        type: "json"    // we’ll parse JSON for you
-      });
+
+  while (true) {
+
+    let data = await EleventyFetch(url + (pagina++), {
+      fetchOptions,
+      duration: "1h", // save for 1 hour
+      type: "json"    // we’ll parse JSON for you
+    });
 
     // Cache item resource to get cached response from `/category/1`
     // when called in related resources.
     data.forEach(element => {
-        let asset = new AssetCache(`${url}/${element.id}`);
+      let asset = new AssetCache(`${url}/${element.id}`);
 
-        if (asset.isCacheValid('1m')) {
+      if (asset.isCacheValid('1m')) {
         return;
-        }
+      }
 
-        asset.save(element, 'json');
+      asset.save(element, 'json');
     });
 
-    if(data.length>0){
+    if (data.length > 0) {
       response.push(data)
-      
+
     }
-    else{
+    else {
       break
     }
   }
-  
+
   const response_final = response.flat()
+  console.log(response_final)
   return response_final;
 };
