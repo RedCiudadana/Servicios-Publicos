@@ -51,9 +51,15 @@ tags:
                                         <li>
                                             <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS 2-10.png" alt="" />Resultado: {{servicio.typeOfDocumentObtainable}}</a>
                                         </li>
+                                        {% if (servicio.typeOfCost == null) or (servicio.typeOfCost == "Costo fijo") %}
                                         <li>
                                             <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS 2-11.png" alt="" />Costo: {{servicio.currency.symbol}} {{servicio.cost}} </a>
                                         </li>
+                                        {% else %}
+                                        <li>
+                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS 2-11.png" alt="" />Costo: {{servicio.currency.symbol}} {{servicio.variableCostDescription}} </a>
+                                        </li>
+                                        {% endif %}
                                         <li>
                                             <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS 2-12.png" alt="" />Tiempo de Respuesta: {{servicio.timeResponse}}</a>
                                         </li>
