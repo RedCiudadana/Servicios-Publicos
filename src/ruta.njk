@@ -1,0 +1,99 @@
+---
+pagination:
+  data: rutas
+  size: 1
+  alias: ruta
+  addAllPagesToCollections: true
+permalink: "ruta/{{ruta.route[1407374883553281].properties.identifier }}/index.html"
+tags:
+  - ruta
+---
+{% extends "src/base.njk" %}
+
+{% block head %}
+  <title>Ruta de Prueba | Catálogo de Trámites </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="/index2.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+                    <span></span> <a href="/rutas/index.html" rel="nofollow">Rutas</a>
+                    <span></span> Nombre de la Ruta 
+                </div>
+            </div>
+        </div>
+        <div class="page-content pt-50">
+            <div class="container">
+                <div class="archive-header-2 text-center mb-50">
+                    <h1 class="heading-2 mb-10">{{ruta.route[1407374883553281].properties.identifier }}</h1>
+                    <h6 class="text-body">Sigue los pasos guiados para Nombre de la Ruta</h6>
+                </div>
+
+
+                <div id="container-all">
+                    <div class="row vendor-grid">
+                        {% macro field(nodes, parent, level, index) %}
+                            {% for id, node in nodes %}
+                                {% set servicio = (collections.servicios | findBy(node.properties.identifier)) %}
+                                
+                                <div class="col-lg-8 col-md-8 col-8 col-sm-8" style="margin-left: {{level}}rem">
+                                    <div class="vendor-wrap style-2 mb-40">
+                                        <div class="product-badges product-badges-position product-badges-mrg">
+                                            <span class="hot">Trámite</span>
+                                        </div>
+                                        <div class="vendor-img-action-wrap">
+                                            <div class="vendor-img">
+                                                <h3>
+                                                    
+                                                    {% if index == "Paso " %}
+                                                        {{ "Paso " ~ loop.index }}
+                                                    {% else %}
+                                                        {{ index ~ "." ~ loop.index }}
+                                                    {% endif %}
+
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="vendor-content-wrap w-100">
+                                            <div class="mb-30">
+                                                <div class="overflow-hidden" style="height:60px">
+                                                    <h4 class="mb-5"><a href="{{servicio.url}}">{{servicio.data.servicio.name}}</a></h4>
+                                                </div>
+                                                <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                                    <ul class="contact-infor text-muted">
+                                                        <div >
+                                                            <li><p class="text-overflow">{{servicio.data.servicio.description}}</p></li>
+                                                        </div>
+                                                    </ul>
+                                                    <a href="{{servicio.url}}" class="btn btn-xs">Ver Más<i class="fi-rs-arrow-small-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end vendor card-->
+
+                                {% if node.children %}
+                                    {{ field(node.children, node, level + 2, index ~ "." ~ loop.index) }}
+                                {% endif %}
+                            {% endfor %}
+                        {% endmacro %}
+
+
+                        {{field((ruta.route | firstObject).children, null, 0, 'Paso ')}}
+                        
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}

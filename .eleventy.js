@@ -147,6 +147,20 @@ module.exports = function (eleventyConfig) {
         console.log(value)
     });
 
+    eleventyConfig.addFilter('firstObject', (value) => {
+        return Object.values(value)[0];;
+    });
+
+    eleventyConfig.addFilter('findBy', (value, id) => {
+        var result = value.filter((item) => parseInt(item.data.servicio.id) === parseInt(id));
+
+        if (result) {
+            return result[0];
+        }
+
+        return result;
+    });
+
     eleventyConfig.addFilter("rem_accent", function (string) {
         return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     })
