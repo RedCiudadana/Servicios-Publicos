@@ -57,7 +57,7 @@ tags:
                                         </li>
                                         {% else %}
                                         <li>
-                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS 2-11.png" alt="" />Costo: {{servicio.currency.symbol}} {{servicio.variableCostDescription}} </a>
+                                            <a style="pointer-events:none" href="shop-grid-right.html"> <img src="/ELEMENTOS/ICONOS/ICONOS 2-11.png" alt="" />Costo: {{servicio.currency.symbol}} {{servicio.variableCostDescription | rmj | safe}} </a>
                                         </li>
                                         {% endif %}
                                         <li>
