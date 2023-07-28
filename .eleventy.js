@@ -6,6 +6,7 @@ const now = new Date();
 
 module.exports = function (eleventyConfig) {
 
+
     eleventyConfig.setTemplateFormats("njk,html,md");
 
     eleventyConfig.addPassthroughCopy('src');
@@ -158,5 +159,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("parse", function (string) {
         return string.replace(/[\r\n]/gm, '').replace('•', '').replace('	', '').replace('	', '');
     })
+
+    eleventyConfig.addFilter('jsonify', function(obj) {
+        return JSON.stringify(obj, null, 2);
+    });
 
 }
