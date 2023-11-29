@@ -18,8 +18,18 @@ tags:
         <div class="page-content pt-50">
             <div class="container">
                 <div class="row vendor-grid">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTab(event, 'grid')" id="defaultOpen"><i class="fa-solid fa-border-all"></i></button>
+                        <button class="tablinks" onclick="openTab(event, 'list')"><i class="fa-solid fa-list"></i></button>
+                    </div>
+                </div>
 
-                    {% for servicio in collections.servicios%}
+                <div id="grid" class="tabcontent">
+                    
+
+                    <div  class="row vendor-grid">
+
+                        {% for servicio in collections.servicios%}
                         {% for subcategoria in servicio.data.servicio.subcategories %}
                         {% if categoriaesp2.name == subcategoria.name%}
 
@@ -121,10 +131,119 @@ tags:
                         </div>
                         <!--end vendor card-->
 
-                        {%endif%}
+                        {% endif %}
                         {% endfor %}
-                    {% endfor %}
+                        {% endfor %}
+
+                        
+
+                    </div>
+                </div>
+
+                <div id="list" class="tabcontent"  >
+
+                    <div class="row vendor-grid">
+                        {% for servicio in collections.servicios%}
+                        {% for subcategoria in servicio.data.servicio.subcategories %}
+                        {% if categoriaesp2.name == subcategoria.name%}
+
+                        <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+                            <div class="vendor-flex style-2 mb-5 ">
+                                <div class="d-flex align-items-center">
+                                    <a href="{{servicio.url}}">
+                                        {% for cat in collections.categorias2%}
+                                        {% if cat.data.categoria2.id == categoriaesp2.category | lastSlash %}
+                                            {% if cat.data.categoria2.id == "27" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-41.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "28" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-35.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "29" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-47.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "30" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-36.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "31" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-48.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "32" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-37.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "33" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-45.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "34" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-40.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "35" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-39.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "36" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-34.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "37" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-46.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "38" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-44.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "39" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-32.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "40" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-43.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "41" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-42.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "42" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-38.png" alt="" />
+                                            {%endif%}
+                                            {% if cat.data.categoria2.id == "43" %}
+                                                <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-33.png" alt="" />
+                                            {%endif%}
+                                        {% endif %}
+                                        {% endfor %}
+                                    </a>
+
+                                    <h4 class="mb-5"><a href="{{servicio.url}}">{{servicio.data.servicio.name}}</a></h4>
+                                </div>
+                                <div>
+                                    <a href="{{servicio.url}}" class="btn btn-xs">Ver Trámite <i class="fi-rs-arrow-small-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end vendor card-->
+
+                        {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+                    
+                    </div>
+                    
                 </div>
             </div>
         </div>
+{% endblock %}
+
+{% block javascripts%}
+<script>
+    function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
 {% endblock %}

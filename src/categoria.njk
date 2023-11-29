@@ -51,21 +51,136 @@ tags:
                     </div>
                 </div-->
 
-                <div id="container-all">
+                <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'grid')" id="defaultOpen"><i class="fa-solid fa-border-all"></i></button>
+                    <button class="tablinks" onclick="openTab(event, 'list')"><i class="fa-solid fa-list"></i></button>
+                </div>
+
+                <div id="grid" class="tabcontent">
+
+                    <div id="container-all">
+
+                        <div class="row vendor-grid mt-40">
+                        {% for catesp in collections.categoriaesp2 %}
+                        {% if categoria2.id == catesp.data.categoriaesp2.category | lastSlash %}
+                            {% for servicio in collections.servicios%}
+                            {% if catesp.data.categoriaesp2.name == servicio.data.servicio.subcategory.name%}
+                        
+                            <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                                <div class="vendor-wrap style-2 mb-40 ">
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                        <span class="hot">Trámite</span>
+                                    </div>
+                                    <div class="vendor-img-action-wrap ">
+                                        <div class="vendor-img">
+                                            <a href="{{servicio.url}}">
+                                                {% if categoria2.id == "27" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-41.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "28" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-35.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "29" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-47.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "30" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-36.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "31" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-48.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "32" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-37.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "33" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-45.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "34" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-40.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "35" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-39.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "36" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-34.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "37" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-46.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "38" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-44.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "39" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-32.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "40" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-43.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "41" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-42.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "42" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-38.png" alt="" />
+                                                {%endif%}
+                                                {% if categoria2.id == "43" %}
+                                                    <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-33.png" alt="" />
+                                                {%endif%}
+                                            </a>
+                                        </div>
+                                        <!--div class="mt-10">
+                                            <span class="font-small total-product">380 products</span>
+                                        </div-->
+                                    </div>
+                                    <div class="vendor-content-wrap pt-40 w-100">
+                                        <div class="mb-30">
+                                            <!--div class="product-category">
+                                                <span class="text-muted">Since 2012</span>
+                                            </div-->
+                                            <div class="custom-overflow-hidden">
+                                                <h4 class="mb-5"><a href="{{servicio.url}}">{{servicio.data.servicio.name}}</a></h4>
+                                            </div>
+                                            <!--div class="product-rate-cover">
+                                                <div class="product-rate d-inline-block">
+                                                    <div class="product-rating" style="width: 90%"></div>
+                                                </div>
+                                                <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                            </div-->
+                                            <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
+                                                <ul class="contact-infor text-muted">
+                                                    <div class="overflow-hidden" style="height:45px">
+                                                        <li><p class="text-overflow">{{servicio.data.servicio.description}}</p></li>
+                                                    </div>
+                                                    <!--li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) - 540-025-124553</span></li-->
+                                                </ul>
+                                                <a style="position: absolute;bottom: 0;right: 0;" href="{{servicio.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end vendor card-->
+                            {% endif %}
+                            {% endfor %}
+                        
+                        {% endif %}
+                        {% endfor %}
+                        </div>
+                    
+                    </div>
+
+                </div>
+
+                <div id="list" class="tabcontent">
 
                     <div class="row vendor-grid mt-40">
-                    {% for catesp in collections.categoriaesp2 %}
-                    {% if categoria2.id == catesp.data.categoriaesp2.category | lastSlash %}
-                        {% for servicio in collections.servicios%}
-                        {% if catesp.data.categoriaesp2.name == servicio.data.servicio.subcategory.name%}
-                    
-                        <div class="col-lg-6 col-md-6 col-12 col-sm-6">
-                            <div class="vendor-wrap style-2 mb-40 ">
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="hot">Trámite</span>
-                                </div>
-                                <div class="vendor-img-action-wrap ">
-                                    <div class="vendor-img">
+                        {% for catesp in collections.categoriaesp2 %}
+                        {% if categoria2.id == catesp.data.categoriaesp2.category | lastSlash %}
+                            {% for servicio in collections.servicios%}
+                            {% if catesp.data.categoriaesp2.name == servicio.data.servicio.subcategory.name%}
+                        
+                            <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+                                <div class="vendor-flex style-2 mb-5 ">
+                                    <div class="d-flex align-items-center">
                                         <a href="{{servicio.url}}">
                                             {% if categoria2.id == "27" %}
                                                 <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-41.png" alt="" />
@@ -119,46 +234,24 @@ tags:
                                                 <img class="default-img" src="/ELEMENTOS/ELEMENTOS MEJORAS/NEWICONS/ICONOS-33.png" alt="" />
                                             {%endif%}
                                         </a>
+
+                                        <h4 class="mb-5"><a href="{{servicio.url}}">{{servicio.data.servicio.name}}</a></h4>
                                     </div>
-                                    <!--div class="mt-10">
-                                        <span class="font-small total-product">380 products</span>
-                                    </div-->
-                                </div>
-                                <div class="vendor-content-wrap pt-40 w-100">
-                                    <div class="mb-30">
-                                        <!--div class="product-category">
-                                            <span class="text-muted">Since 2012</span>
-                                        </div-->
-                                        <div class="custom-overflow-hidden">
-                                            <h4 class="mb-5"><a href="{{servicio.url}}">{{servicio.data.servicio.name}}</a></h4>
-                                        </div>
-                                        <!--div class="product-rate-cover">
-                                            <div class="product-rate d-inline-block">
-                                                <div class="product-rating" style="width: 90%"></div>
-                                            </div>
-                                            <span class="font-small ml-5 text-muted"> (4.0)</span>
-                                        </div-->
-                                        <div class="vendor-info d-flex justify-content-between align-items-end mt-30">
-                                            <ul class="contact-infor text-muted">
-                                                <div class="overflow-hidden" style="height:45px">
-                                                    <li><p class="text-overflow">{{servicio.data.servicio.description}}</p></li>
-                                                </div>
-                                                <!--li><img src="assets/imgs/theme/icons/icon-contact.svg" alt="" /><strong>Call Us:</strong><span>(+91) - 540-025-124553</span></li-->
-                                            </ul>
-                                            <a style="position: absolute;bottom: 0;right: 0;" href="{{servicio.url}}" class="btn btn-xs">Ver más <i class="fi-rs-arrow-small-right"></i></a>
-                                        </div>
+                                    <div class="mx-2">            
+                                        <a href="{{servicio.url}}" class="btn btn-xs">Ver Trámite <i class="fi-rs-arrow-small-right"></i></a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--end vendor card-->
+                            <!--end vendor card-->
+                            {% endif %}
+                            {% endfor %}
+                        
                         {% endif %}
                         {% endfor %}
+                        </div>
                     
-                    {% endif %}
-                    {% endfor %}
                     </div>
-                    
+
                 </div>
 
                 <div id="container-results">
@@ -171,6 +264,23 @@ tags:
 
 {% endblock %}
 
-{% block javascript %}
-    <script src="/assets/js/searchC.js"></script>
+{% block javascripts%}
+{# <script src="/assets/js/searchC.js"></script> #}
+<script>
+    function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
 {% endblock %}
