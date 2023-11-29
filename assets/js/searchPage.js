@@ -1,12 +1,26 @@
 document.getElementById("busqueda").innerHTML = " "+localStorage.getItem("busqueda")
 document.getElementById("searchField").value = localStorage.getItem("busqueda")
 
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 document.addEventListener('DOMContentLoaded', function(event) {
     const search = document.getElementById('search');
     const results = document.getElementById('results');
     let data = [];
+    
     let search_term = localStorage.getItem("busqueda").toLowerCase();
-    search_term = search_term.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    search_term = search_term.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    // Modify the search term to match singular and plural forms
+    const singularSearchTerm1 = search_term.replace(/es$/, '').replace(/s$/, ''); // Remove 's' or 'es' at the end
+    const pluralSearchTerm1 = search_term + 's';
+    const pluralSearchTerm2 = search_term + 'es';
+    const combinedSearchTerm = `(${escapeRegExp(search_term)}|${escapeRegExp(singularSearchTerm1)}|${escapeRegExp(pluralSearchTerm1)}|${escapeRegExp(pluralSearchTerm2)})`;
+
+    // Use the combined search term in the regular expression
+    const match = new RegExp(combinedSearchTerm, 'gi');
 
     fetch('/search.json')
         .then(response => response.json())
@@ -15,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
             results.innerHTML = '';
             if (search_term.length <= 0) return;
-            const match = new RegExp(`${search_term}`, 'gi');
             let result = data.filter(name => match.test(name.name_search,name.description));
             if (result.length == 0) {
                 const h1 = document.createElement('h1');
