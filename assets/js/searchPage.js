@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let search_term = localStorage.getItem("busqueda").toLowerCase();
     search_term = search_term.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-    // Modify the search term to match singular and plural forms
     const singularSearchTerm1 = search_term.replace(/es$/, '').replace(/s$/, ''); // Remove 's' or 'es' at the end
     const pluralSearchTerm1 = search_term + 's';
     const pluralSearchTerm2 = search_term + 'es';
