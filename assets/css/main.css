@@ -13273,3 +13273,24 @@ footer .hotline img {
   background-color: #1B86BD;
   color: #fff;
 }
+
+.searchResultsv2{
+  display: block;
+  position: absolute;
+  z-index: 100000;
+  width: 63%;
+  background: white;
+  overflow-y: scroll;
+  height: 400px;
+}
+
+.searchResultsv2 li{
+  padding: 2px 5px;
+  border: 1px solid rgb(5, 61, 94, 0.2);
+}
+
+@media only screen and (max-width: 976) {
+  .searchResultsv2{
+    width: 80%;
+  }
+}
