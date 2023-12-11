@@ -1,0 +1,129 @@
+---
+permalink: chatbot/index.html
+---
+
+{% extends "src/base.njk" %}
+
+
+{% block head %}
+  <!--NETLIFY CMS-->
+  <title>Catálogo de Trámites | Chatbot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Inicio</a>
+                    <span></span> Chatbot
+                </div>
+            </div>
+        </div>
+        <div class="page-content pt-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-10 col-lg-12 m-auto">
+                        <section class="row align-items-center mb-50">
+                            <div class="col-lg-6">
+                                <img src="/assets/imgs/quees.png" alt="" class="border-radius-15 mb-md-3 mb-lg-0 mb-sm-4" />
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="pl-25">
+                                    <div id="chat-container"></div>
+                                    <input type="text" id="user-input" placeholder="Escribe tu pregunta...">
+                                    <button onclick="askQuestion()">Enviar</button>
+                                </div>
+                            </div>
+                        </section>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            // chat.js
+            const chatContainer = document.getElementById('chat-container');
+            const userInput = document.getElementById('user-input');
+
+            // Función para mostrar mensajes en el chat
+            function showMessage(message) {
+                const messageElement = document.createElement('div');
+                messageElement.innerText = message;
+                chatContainer.appendChild(messageElement);
+            }
+
+            // Función para cargar el JSON desde el archivo servicios.json
+            async function loadJSON() {
+            try {
+                    // Cargamos el JSON desde el objeto site.data proporcionado por Eleventy
+                    data = {{ site.data.tramites | jsonify }};
+                    console.log('JSON cargado correctamente.');
+                } catch (error) {
+                    console.error('Error al cargar el JSON:', error);
+                    data = null; // Asignamos null si hay un error al cargar el JSON
+                }
+            }
+
+            // Llamar a loadJSON() para cargar el JSON antes de usarlo
+            loadJSON();
+
+            // Función para enviar la pregunta a la API de ChatGPT
+            async function sendQuestionToChatGPT(question) {
+                const apiKey = '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';
+                const apiUrl = 'https://api.openai.com/v1/engines/gpt-3.5/completions';
+
+                const requestBody = {
+                    prompt: question,
+                    max_tokens: 150,
+                };
+
+                try {
+                    const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`,
+                    },
+                    body: JSON.stringify(requestBody),
+                    });
+
+                    const data = await response.json();
+                    return data.choices[0].text;
+                } catch (error) {
+                    console.error('Error al llamar a la API de ChatGPT:', error);
+                    return 'Lo siento, ha ocurrido un error al obtener la respuesta.';
+                }
+            }
+
+            // Función para responder a la pregunta del usuario
+            async function answerQuestion() {
+                const question = userInput.value.trim();
+
+                if (question === '') {
+                    showMessage('Por favor, ingresa una pregunta válida.');
+                    return;
+                }
+
+                showMessage(`Pregunta: ${question}`);
+
+                try {
+                    const answer = await sendQuestionToChatGPT(question);
+                    showMessage(`Respuesta: ${answer}`);
+                } catch (error) {
+                    console.error('Error al responder a la pregunta:', error);
+                    showMessage('Lo siento, ha ocurrido un error al obtener la respuesta.');
+                }
+            }
+
+            // Función para manejar el evento click del botón "Enviar"
+            function askQuestion() {
+                answerQuestion();
+            }
+
+        </script>
+
+{% endblock %}
