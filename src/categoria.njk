@@ -28,16 +28,22 @@ tags:
             <div class="container">
                 <div class="archive-header-2 text-center">
                     <h1 class="heading-2 mb-10">{{categoria2.name}}</h1>
-                    {% set cuenta = 0 %}
+
+                    
+
+
+                    {% set cuenta = serviciosCategoria | length %}
+
                     {% for catesp in collections.categoriaesp2 %}
-                    {% if categoria2.id == catesp.data.categoriaesp2.category | lastSlash %}
-                    {% for servicio in collections.servicios%}
-                    {% if catesp.data.categoriaesp2.name == servicio.data.servicio.subcategory.name%}
-                    {% set cuenta = cuenta + 1 %}
-                    {% endif %}
+                        {% if categoria2.id == catesp.data.categoriaesp2.category | lastSlash %}
+                            {% for servicio in collections.servicios%}
+                                {% if catesp.data.categoriaesp2.name == servicio.data.servicio.subcategory.name%}
+                                    {% set cuenta = cuenta + 1 %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     {% endfor %}
-                    {% endif %}
-                    {% endfor %}
+
                     <h6 class="text-body">La categoría cuenta con {{ cuenta }} trámites en el catálogo.</h6>
                 </div>
                 <!--BUSCADOR-->

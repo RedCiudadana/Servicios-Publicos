@@ -13281,7 +13281,7 @@ footer .hotline img {
   width: 63%;
   background: white;
   overflow-y: scroll;
-  height: 400px;
+  max-height: 400px;
 }
 
 .searchResultsv2 li{
@@ -13293,4 +13293,8 @@ footer .hotline img {
   .searchResultsv2{
     width: 80%;
   }
+}
+
+.hidden {
+  display: none;
 }

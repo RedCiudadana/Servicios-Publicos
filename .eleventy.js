@@ -114,9 +114,48 @@ module.exports = function (eleventyConfig) {
         return collectionApi.getFilteredByTag('podcast_cms');
     });
 
+    // Custom filter to filter services by institution name
+    eleventyConfig.addFilter("filterByInstitution", (services, institutionName) => {
+        return services.filter(service => service.data.servicio.institution.name === institutionName);
+    });
+
+    // Custom filter to filter services by category name
+    eleventyConfig.addFilter("filterByCategory", (services, categoryName) => {
+        return services.filter(service => service.data.servicio.subcategory.name === categoryName);
+    });
+
+    eleventyConfig.addFilter("sortAlphabetically", services => {
+        return services.sort((a, b) => {
+            const titleA = a.data.servicio.name || '';
+            const titleB = b.data.servicio.name || '';
+    
+            // Función de comparación que tiene en cuenta números
+            const compareFunction = (strA, strB) => {
+                const numA = parseFloat(strA);
+                const numB = parseFloat(strB);
+    
+                // Si ambos son números, compáralos numéricamente
+                if (!isNaN(numA) && !isNaN(numB)) {
+                    return numA - numB;
+                }
+    
+                // Si al menos uno no es un número, usa localeCompare para ordenar alfabéticamente
+                return strA.localeCompare(strB);
+            };
+    
+            return compareFunction(titleA, titleB);
+        });
+    });
+    
+      
+      
     //FILTROS
     eleventyConfig.addFilter("search", searchFilter);
     eleventyConfig.addFilter("searchI", searchFilterI);
+
+    eleventyConfig.addFilter("json", function(value) {
+        return JSON.stringify(value, null, 2);
+    });
 
     eleventyConfig.addNunjucksFilter("rmj", function (content) {
         return rmj(content);

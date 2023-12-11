@@ -74,12 +74,11 @@ tags:
                     <div class="d-flex justify-content-center">
                         <h5 class="display-9 mb-40 " style="width:75%">{{instituciones.description}}</h5>
                     </div>
-                    {% set cuenta = 0 %}
-                    {% for servicio in collections.servicios%}
-                    {% if instituciones.name == servicio.data.servicio.institution.name%}
-                    {% set cuenta = cuenta + 1 %}
-                    {% endif %}
-                    {% endfor %}
+
+                    {% set serviciosInstitucion = collections.servicios | filterByInstitution(instituciones.name) %}
+                    {% set serviciosSorted = serviciosInstitucion | sortAlphabetically %}
+
+                    {% set cuenta = serviciosSorted | length %}
                     {% if cuenta == 1%}
                         <h6 class="text-body mb-40">La institución cuenta con {{ cuenta }} trámite en el catálogo.</h6>
                     {% endif %}
@@ -87,17 +86,23 @@ tags:
                         <h6 class="text-body mb-40">La institución cuenta con {{ cuenta }} trámites en el catálogo.</h6>
                     {% endif %}
 
-                    <!--div class="row justify-content-center">
+                    <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="field">
-                                <input type="search" placeholder="Busca tu trámite" id="searchFieldv2" />    
+                                <input type="text" placeholder="Busca tu trámite dentro de esta institución..." id="searchInput" oninput="doSearch()" autocomplete="off"/>    
                             </div>
-                            <ol id="searchResultsv2" />
-                            <div id="noResultsFound" style="display: none">
-                                <p>No results found.</p>
-                            </div>
+                            <ol class="searchResultsv2 hidden" id="searchResultsv2">
+                                {% for servicio in serviciosSorted %}
+                                <li class="datarow hidden" data-values="{{servicio.data.servicio.name}}">
+                                    <span>
+                                        <a href="{{servicio.url}}">{{servicio.data.servicio.name}}</a>
+                                    </span>
+                                </li>
+                                {% endfor %}
+                            </ol>
                         </div>
-                    </div-->
+                    </div>
+                    
                     
 
                 </div>
@@ -111,10 +116,8 @@ tags:
 
                     <div class="row vendor-grid" id="servicios_part">
                     {% set cuentaserv = 1 %}
-                    {% for servicio in collections.servicios%}
+                    {% for servicio in serviciosSorted%}
                     
-
-                    {% if instituciones.name == servicio.data.servicio.institution.name%}
                     {% if cuentaserv <= 12 %}
                     {% set cuentaserv = cuentaserv + 1 %}
                         <div class="col-lg-3 col-md-6 col-12 col-sm-6">
@@ -203,8 +206,7 @@ tags:
                             </div>
                         </div>
                         <!--end vendor card-->
-                    
-                    {% endif %}
+
                     {% endif %}
 
                     {% endfor %}
@@ -217,9 +219,8 @@ tags:
                     </div>
 
                     <div class="row vendor-grid" id="servicios_full" style="display:none">
-                    {% for servicio in collections.servicios%}
+                    {% for servicio in serviciosSorted%}
 
-                    {% if instituciones.name == servicio.data.servicio.institution.name%}
                         <div class="col-lg-3 col-md-6 col-12 col-sm-6">
                             <div class="vendor-wrap mb-40">
                                 <div class="vendor-img-action-wrap">
@@ -306,8 +307,7 @@ tags:
                             </div>
                         </div>
                         <!--end vendor card-->
-                    
-                    {% endif %}
+
 
                     {% endfor %}
                     </div>
@@ -318,9 +318,8 @@ tags:
 
                     <div class="row vendor-grid" id="servicios_part2">
                     {% set cuentaserv = 1 %}
-                    {% for servicio in collections.servicios%}
+                    {% for servicio in serviciosSorted%}
 
-                    {% if instituciones.name == servicio.data.servicio.institution.name%}
                     {% if cuentaserv <= 12 %}
                     {% set cuentaserv = cuentaserv + 1 %}
                         <div class="col-lg-12 col-md-12 col-12 col-sm-12">
@@ -396,8 +395,7 @@ tags:
                             </div>
                         </div>
                         <!--end vendor card-->
-                    
-                    {% endif %}
+
                     {% endif %}
 
                     {% endfor %}
@@ -410,9 +408,8 @@ tags:
                     </div>
 
                     <div class="row vendor-grid" id="servicios_full2" style="display:none">
-                    {% for servicio in collections.servicios%}
+                    {% for servicio in serviciosSorted%}
 
-                    {% if instituciones.name == servicio.data.servicio.institution.name%}
                         <div class="col-lg-12 col-md-12 col-12 col-sm-12">
                             <div class="vendor-flex mb-5">
                                 <div class="d-flex align-items-center">
@@ -486,8 +483,7 @@ tags:
                             </div>
                         </div>
                         <!--end vendor card-->
-                    
-                    {% endif %}
+  
 
                     {% endfor %}
                     </div>
@@ -502,7 +498,7 @@ tags:
 
 {% block javascripts%}
 
-<script src="/assets/js/search.js"></script>
+<!--script src="/assets/js/search.js"></script-->
 
 <script>
     function openTab(evt, cityName) {
@@ -520,6 +516,42 @@ tags:
     }
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
+</script>
+
+<script>
+    function doSearch() {
+        // Get the string entered by the user in the input element
+        const searchStr = document.getElementById('searchInput').value;
+
+        const result_container = document.getElementById('searchResultsv2');
+        
+        // List all the elements which will have to be shown/hidden
+        const tableLines = document.getElementsByClassName('datarow');
+        
+        // Check if searchStr is empty
+        if (searchStr.trim() === '') {
+            // If searchStr is empty, hide all lines
+            for (const line of tableLines) {
+                line.classList.add('hidden');
+            }
+            result_container.classList.add('hidden');
+            return; // Exit the function early
+        }
+
+        // For each element get the content of the data attribute
+        // match the content against the query string
+        // and change the class accordingly
+        for (const line of tableLines) {
+            const values = line.dataset.values;
+            if (values.toLowerCase().includes(searchStr.toLowerCase())) {
+                result_container.classList.remove('hidden');
+                line.classList.remove('hidden');
+            } else {
+                line.classList.add('hidden');
+            }
+        }
+    }
+
 </script>
 
 {% endblock %}
